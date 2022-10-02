@@ -4,28 +4,35 @@ export const homeSlice = createSlice({
   name: 'home',
   initialState: {
     value: 0,
-    domList:[]
+    domList: [],
+    domId: '',
+    domType: '',
+    domOptions: {}
   },
   reducers: {
-    increment: (state,action) => {
-      // Redux Toolkit allows us to write "mutating" logic in reducers. It
-      // doesn't actually mutate the state because it uses the Immer library,
-      // which detects changes to a "draft state" and produces a brand new
-      // immutable state based off those changes
-      // state.value += 1
-      
-      state.domList.push({type:action.payload})
+    increment: (state, action) => {
+      state.domList.push(action.payload)
+      state.domOptions = action.payload
+      state.domId = action.payload.id
+      state.domType = action.payload.type
     },
-    decrement: (state) => {
-      state.value -= 1
+    changeOptions: (state, action) => {
+      console.log(action.payload);
+      // state.domOptions = action.payload
+      state.domList.map((item, index) => {
+        console.log(state.domList[index]);
+        return item.id === action.payload.id ? state.domList[index] = { ...action.payload } : item = item;
+      })
+      console.log(state.domList[0]);
     },
-    incrementByAmount: (state, action) => {
-      state.value += action.payload
-    },
+    changeId: (state, action) => {
+      console.log(action.payload);
+      state.domId = action.payload.id
+      state.domType = action.payload.type
+    }
   },
 })
 
-// Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount } = homeSlice.actions
+export const { increment, changeOptions, changeId } = homeSlice.actions
 
 export default homeSlice.reducer

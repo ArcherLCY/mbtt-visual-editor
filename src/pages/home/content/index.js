@@ -1,21 +1,25 @@
-import { Card } from 'antd'
+import Card from '../../../components/card/index'
 import { useSelector } from 'react-redux'
 import './contentStyle.scss'
+
+function renderDomList(domList) {
+  return domList.map((item) => {
+    console.log(item);
+    switch (item.type) {
+      case 'Card': return <Card options={item} key={item.id}></Card>
+      default: return null
+    }
+  })
+}
 
 function Content() {
   const domList = useSelector((state) => state.home.domList)
   return (
     <div className="Content">
-
       中间内容区
       <div>
-        {domList.map((item, index) => {
-          return <Card onClick={()=>{console.log('123')}} key={Date.now() + index}
-          >{item.type}</Card>
-        })}
+        {renderDomList(domList)}
       </div>
-
-
     </div>
   );
 }
