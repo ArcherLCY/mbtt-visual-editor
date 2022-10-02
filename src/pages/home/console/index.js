@@ -1,13 +1,17 @@
-import { Input } from 'antd';
 import './consoleStyle.css'
+import {useSelector} from 'react-redux'
+import CardConsole from '../../../components/card/cardConsole'
+import ButtonConsole from '../../../components/button/buttonConsole'
 
 function Console() {
+  const id = useSelector((state)=>state.home.domId)
+  const options = useSelector((state)=>state.home.domOptions)
+  const type = useSelector((state)=>state.home.domType)
     return (
       <div className="Console">
-        右侧控制台
-        <Input placeholder="Basic usage" onChange={(value)=>{
-            console.log(value)
-        }} />
+        <h2 className='Consoole-title'>编辑区</h2>
+        {id === options.id && type === options.type && <CardConsole options={options}/>}
+        {id === options.id && type === options.type && <ButtonConsole options={options}/>}
       </div>
     );
   }

@@ -1,33 +1,14 @@
 import { Card } from 'antd';
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import {changeId} from '../../pages/home/slice'
 
-const App = ({options}) => (
-  <>
-    <Card
-      title="Default size card"
-      extra={<a href="#">More</a>}
-      style={{
-        width: 300,
-      }}
-    >
-      <p>Card content</p>
-      <p>Card content</p>
-      <p>Card content</p>
-      <p>{options.name}</p>
-    </Card>
-    <Card
-      size="small"
-      title="Small size card"
-      extra={<a href="#">More</a>}
-      style={{
-        width: 300,
-      }}
-    >
-      <p>Card content</p>
-      <p>Card content</p>
-      <p>Card content</p>
-    </Card>
-  </>
-);
+function App(options) {
+  const dispatch = useDispatch()
+  return (
+    <Card title={options.options?.title || ""} hoverable onClick={() => { console.log(options); dispatch(changeId(options.options))}}></Card>
+  )
+}
+    
 
 export default App;
