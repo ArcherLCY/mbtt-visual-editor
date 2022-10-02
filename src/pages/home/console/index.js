@@ -10,8 +10,8 @@ function Console() {
     return (
       <div className="Console">
         <h2 className='Consoole-title'>编辑区</h2>
-        {id === options.id && type === options.type && <CardConsole options={options}/>}
-        {id === options.id && type === options.type && <ButtonConsole options={options}/>}
+        {id === options.id && type === 'Card' && <CardConsole options={options}/>}
+        {id === options.id && type === 'Button' && <ButtonConsole options={options}/>}
       </div>
     );
   }
