@@ -2,6 +2,8 @@ import './consoleStyle.css'
 import {useSelector} from 'react-redux'
 import CardConsole from '../../../components/card/cardConsole'
 import ButtonConsole from '../../../components/button/buttonConsole'
+import RadioConsole from '../../../components/radio/radioConsole'
+import TextConsole from '../../../components/text/textConsole'
 
 function Console() {
   const id = useSelector((state)=>state.home.domId)
@@ -12,6 +14,8 @@ function Console() {
         <h2 className='Consoole-title'>编辑区</h2>
         {id === options.id && type === 'Card' && <CardConsole options={options}/>}
         {id === options.id && type === 'Button' && <ButtonConsole options={options}/>}
+        {id === options.id && type === 'Radio' && <RadioConsole options={options}/>}
+        {id === options.id && type === 'Text' && <TextConsole options={options}/>}
       </div>
     );
   }

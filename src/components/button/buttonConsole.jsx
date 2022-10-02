@@ -18,20 +18,13 @@ const App = (data) => {
 
     return (
         <Form
-            wrapperCol={{
-                span: 15,
-            }}
             layout="vertical"
-            initialValues={{
-                size: 'small',
-            }}
-            size='small'
         >
-            <Form.Item label="按钮名称">
+            <Form.Item label="按钮文字">
                 <Input onChange={(e) => {
                     options.value = e.target.value;
                     dispatch(changeOptions(options))
-                }} />
+                }} placeholder="修改按钮的文字"/>
             </Form.Item>
             <Form.Item label="按钮大小">
             <Radio.Group onChange={(e) => {
@@ -70,20 +63,19 @@ const App = (data) => {
                 <Checkbox onChange={(e) => {
                     options.disabled = e.target.checked;
                     dispatch(changeOptions(options))
-                }}></Checkbox>禁止点击
+                }}>点击禁止</Checkbox>
             </Form.Item>
             <Form.Item label="跳转地址">
                 <Input onChange={(e) => {
                     options.href = e.target.value;
                     dispatch(changeOptions(options))
-                }} placeholder="输入地址进行链接同样的跳转" />
+                }} placeholder="输入地址进行链接同样的跳转"/>
             </Form.Item>
             <Form.Item label="新建页面" style={{display: options.href ? 'block' : 'none'}}>
                 <Checkbox onChange={(e) => {
                     options.target = e.target.checked ? '_blank' : '_self';
                     dispatch(changeOptions(options))
-                }}></Checkbox>
-                <label>跳转时是否新建页</label>
+                }}>跳转时是否新建页</Checkbox>
             </Form.Item>
         </Form>
     );
