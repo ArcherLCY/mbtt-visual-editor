@@ -1,6 +1,7 @@
 import './consoleStyle.css'
 import {useSelector} from 'react-redux'
 import CardConsole from '../../../components/card/cardConsole'
+import ButtonConsole from '../../../components/button/buttonConsole'
 
 function Console() {
   const id = useSelector((state)=>state.home.domId)
@@ -9,7 +10,8 @@ function Console() {
     return (
       <div className="Console">
         右侧控制台
-        {id === options.id && type === options.type && <CardConsole options={options}/>}
+        {id === options.id && type === 'Card' && <CardConsole options={options}/>}
+        {id === options.id && type === 'Button' && <ButtonConsole options={options}/>}
       </div>
     );
   }
