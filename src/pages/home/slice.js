@@ -25,6 +25,7 @@ export const homeSlice = createSlice({
     changeId: (state, action) => {
       state.domId = action.payload.id
       state.domType = action.payload.type
+      state.domOptions = action.payload
     }
   },
 })

@@ -5,7 +5,6 @@ import './contentStyle.scss'
 
 function renderDomList(domList) {
   return domList.map((item) => {
-    console.log(item);
     switch (item.type) {
       case 'Card': return <Card options={item} key={item.id}></Card>
       case 'Button': return <Button options={item} key={item.id}></Button>
