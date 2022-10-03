@@ -31,7 +31,6 @@ const App = (data) => {
                   options.mode = e.target.value;
                   dispatch(changeOptions(options))
               }} 
-                value="month" 
                 optionType="button" />
             </Form.Item>
             <Form.Item label="按钮大小">

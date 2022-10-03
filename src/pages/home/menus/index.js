@@ -15,8 +15,9 @@ function Menu() {
                 <button onClick={() => dispatch(increment({ type: 'Radio', id: nanoid(), text: '单选框1' }))}>单选框</button>
             </div>
             <h2>高级组件</h2>
+            <button onClick={() => dispatch(increment({ type: 'Calendar', id: nanoid(), mode: 'month' }))}>日历</button>
+
             <div style={{ height: '10000px' }}>
-                <button onClick={() => dispatch(increment({ type: 'Calendar', id: nanoid(), mode: 'month' }))}>日历</button>
             </div>
         </div>
     );

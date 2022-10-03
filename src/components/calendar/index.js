@@ -7,9 +7,10 @@ function App(options) {
   const dispatch = useDispatch()
   const { mode } = options.options;
   return (
-    <div className="site-calendar-demo-card">
-      <Calendar fullscreen={false} onChange={() => { dispatch(changeId(options.options))}} mode={mode}/>
-    </div>
+      <Calendar 
+      fullscreen={false} 
+      onChange={() => { dispatch(changeId(options.options))}} 
+      mode={mode}/>
   )
 }
 

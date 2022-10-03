@@ -17,7 +17,7 @@ function Console() {
         {id === options.id && type === 'Button' && <ButtonConsole options={options}/>}
         {id === options.id && type === 'Radio' && <RadioConsole options={options}/>}
         {id === options.id && type === 'Text' && <TextConsole options={options}/>}
-        {id === options.id && type === 'Text' && <CalendarConsole options={options}/>}
+        {id === options.id && type === 'Calendar' && <CalendarConsole options={options}/>}
       </div>
     );
   }
