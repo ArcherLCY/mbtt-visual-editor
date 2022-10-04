@@ -1,4 +1,4 @@
-import './headerStyle.css'
+import './headerStyle.scss'
 import {LeftOutlined} from '@ant-design/icons';
 
 function Header() {
