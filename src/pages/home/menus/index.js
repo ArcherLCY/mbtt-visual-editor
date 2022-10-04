@@ -1,26 +1,41 @@
 import { useDispatch } from 'react-redux';
 import { increment } from '../slice';
 import './menuStyle.css';
-import {nanoid} from 'nanoid';
+import { nanoid } from 'nanoid';
 
 function Menu() {
-    const dispatch = useDispatch()
-    return (
-        <div className="Menu">
-            <h2>基础组件</h2>
-            <div className='Menu-list'>
-                <button onClick={() => dispatch(increment({ type: 'Text', id: nanoid(), value: '单行文本' }))}>单行文本</button>
-                <button onClick={() => dispatch(increment({ type: 'Card', id: nanoid(), size: 'small', title: '标题' }))}>卡片</button>
-                <button onClick={() => dispatch(increment({ type: 'Button', id: nanoid(), style: 'primary', value: '主要按钮' }))}>按钮</button>
-                <button onClick={() => dispatch(increment({ type: 'Radio', id: nanoid(), text: '单选框1' }))}>单选框</button>
-            </div>
-            <h2>高级组件</h2>
-            <button onClick={() => dispatch(increment({ type: 'Calendar', id: nanoid(), mode: 'month' }))}>日历</button>
+  const dispatch = useDispatch()
+  return (
+    <div className="Menu">
+      <h2>基础组件</h2>
+      <div className='Menu-list'>
+        <button onClick={() => dispatch(increment({ type: 'Text', id: nanoid(), value: '单行文本' }))}>单行文本</button>
+        <button onClick={() => dispatch(increment({ type: 'Card', id: nanoid(), size: 'small', title: '标题' }))}>卡片</button>
+        <button onClick={() => dispatch(increment({ type: 'Button', id: nanoid(), style: 'primary', value: '主要按钮' }))}>按钮</button>
+        <button onClick={() => dispatch(increment({ type: 'Radio', id: nanoid(), text: '单选框1' }))}>单选框</button>
+      </div>
+      <h2>高级组件</h2>
+      <button onClick={() => dispatch(increment({
+        type: 'Calendar',
+        id: nanoid(),
+        mode: 'month',
+        fullscreen: true,
+      }))}>日历</button>
 
-            <div style={{ height: '10000px' }}>
-            </div>
-        </div>
-    );
+      <button onClick={() => dispatch(increment({
+        type: 'UpLoad',
+        id: nanoid(),
+        accept:'*',
+        action:'',
+        showUploadList:true,
+        multiple:false,
+
+      }))}>上传</button>
+
+      <div style={{ height: '10000px' }}>
+      </div>
+    </div>
+  );
 }
 
 export default Menu;

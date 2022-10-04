@@ -1,10 +1,14 @@
-import './consoleStyle.css';
 import {useSelector} from 'react-redux';
+
 import CardConsole from '../../../components/card/cardConsole';
 import ButtonConsole from '../../../components/button/buttonConsole';
 import RadioConsole from '../../../components/radio/radioConsole';
 import TextConsole from '../../../components/text/textConsole';
 import CalendarConsole from '../../../components/calendar/calendarConsole';
+import UpLoadConsole from '../../../components/upload/uploadConsole';
+
+import './consoleStyle.css';
+
 
 function Console() {
   const id = useSelector((state)=>state.home.domId)
@@ -18,6 +22,7 @@ function Console() {
         {id === options.id && type === 'Radio' && <RadioConsole options={options}/>}
         {id === options.id && type === 'Text' && <TextConsole options={options}/>}
         {id === options.id && type === 'Calendar' && <CalendarConsole options={options}/>}
+        {id === options.id && type === 'UpLoad' && <UpLoadConsole options={options}/>}
       </div>
     );
   }
