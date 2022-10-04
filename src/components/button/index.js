@@ -8,7 +8,10 @@ function App(data) {
     const dispatch = useDispatch()
     return (
         <>
-            <Button type="primary" onClick={() => { console.log(options); dispatch(changeId(options))}}>{options.title}</Button>
+            <Button type="primary" 
+            onClick={() => { console.log(options); 
+            dispatch(changeId(options))}}>
+            {options.title}</Button>
         </>
     )
 
