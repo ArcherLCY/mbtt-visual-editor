@@ -1,0 +1,27 @@
+.Menu {
+  width: 220px;
+  height: 100%;
+  background: #fff;
+  overflow-y: scroll;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.Menu h3 {
+  font-weight: bold;
+}
+
+.Menu .menuButton {
+  width: 80px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  background: #f2f2f2;
+  opacity: 0.5;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.Menu .menuButton:hover {
+  opacity: 0.8;
+}

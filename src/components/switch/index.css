@@ -1,0 +1,13 @@
+.Switch{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.Switch:hover{
+    background-color: skyblue;
+}
+
+.Switch-span {
+    margin-left: 8px;
+}
