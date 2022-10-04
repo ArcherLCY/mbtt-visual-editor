@@ -5,13 +5,19 @@ import {changeId} from '../../pages/home/slice'
 
 function App(options) {
   const dispatch = useDispatch()
+  let state = {
+    checked: false
+  }
   const { autoFocus, defaultChecked, disabled, text } = options.options;
-  console.log(options.options);
+  
+  state.checked = defaultChecked
+  console.log(state.checked);
   return (
     <Checkbox 
       autoFocus={autoFocus || false} 
-      defaultChecked={defaultChecked || false} 
+      checked={state.checked || false} 
       disabled={disabled || false} 
+      onChange={(e) => state.checked = e}
       onClick={() => { dispatch(changeId(options.options))}}>
         {text}
     </Checkbox>

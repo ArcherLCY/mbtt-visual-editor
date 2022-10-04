@@ -1,13 +1,19 @@
 import { useDispatch } from 'react-redux'
 import { increment } from '../slice'
+<<<<<<< HEAD
 import './menuStyle.css'
 import { FontColorsOutlined,WalletOutlined,AppstoreAddOutlined } from '@ant-design/icons';
+=======
+import './menuStyle.scss'
+import { Divider } from 'antd'
+>>>>>>> d13daf9a5aa2c24a0a69e64e97412054689551af
 
 
 function Menu() {
     const dispatch = useDispatch()
     return (
         <div className="Menu">
+<<<<<<< HEAD
             <h2>基础组件</h2>
             <div className='Menu-list'>
                  
@@ -46,6 +52,13 @@ function Menu() {
             <div style={{ height: '10000px' }}>
                 more
             </div>
+=======
+            <Divider><h3>基础字段</h3></Divider>
+            <button className='menuButton' onClick={() => dispatch(increment({type:'Card',id:Date.parse(new Date()),size:'small',title:'a'}))}>addCard</button>
+            <button className='menuButton' onClick={() => dispatch(increment({type:'Button',id:Date.parse(new Date()),size:'small',title:'a'}))}>addButton</button>
+            <Divider><h3>高级字段</h3></Divider>
+            <div style={{height:'10000px'}}>1233</div>
+>>>>>>> d13daf9a5aa2c24a0a69e64e97412054689551af
         </div>
     );
 }

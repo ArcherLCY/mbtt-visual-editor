@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 .Content{width:calc(100% - 500px);height:100%;overflow-y:scroll;background:#fff}
+=======
+.Content{width:calc(100% - 440px);height:100%;overflow-y:scroll;background:#fff;padding:10px;margin-right:10px}
+>>>>>>> d13daf9a5aa2c24a0a69e64e97412054689551af
