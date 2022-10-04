@@ -13,6 +13,7 @@ function Console() {
       <Divider><h3>控制台</h3></Divider>
       {id === options.id && type === 'Card' && <CardConsole options={options} />}
       {id === options.id && type === 'Button' && <ButtonConsole options={options} />}
+    </div>
   );
 }
 
