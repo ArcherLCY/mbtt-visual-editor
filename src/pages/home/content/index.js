@@ -18,7 +18,6 @@ function Content() {
   const domList = useSelector((state) => state.home.domList)
   return (
     <div className="Content">
-      中间内容区
       <div>
         {renderDomList(domList)}
       </div>
