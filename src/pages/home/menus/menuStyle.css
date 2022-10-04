@@ -1,0 +1,19 @@
+.Menu{
+    width: 220px;
+    height: 100%;
+    background: #fff;
+    overflow-y: scroll;
+}
+
+.Menu button {
+    background-color: rgb(249,250,252);
+    border-radius: 5px;
+    width: 90px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    color: rgb(73,79,77);
+}
+
+.Menu button:hover {
+    color: black;
+}
