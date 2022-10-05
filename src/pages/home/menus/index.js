@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux'
 import { increment } from '../slice'
-import './menuStyle.css'
+import './menuStyle.scss'
 import { FontColorsOutlined,WalletOutlined,AppstoreAddOutlined } from '@ant-design/icons';
 
 
