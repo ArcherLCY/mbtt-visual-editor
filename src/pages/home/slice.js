@@ -7,7 +7,8 @@ export const homeSlice = createSlice({
     domList: [],
     domId: '',
     domType: '',
-    domOptions: {}
+    domOptions: {},
+    environment:'edit'
   },
   reducers: {
     increment: (state, action) => {

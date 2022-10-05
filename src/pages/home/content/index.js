@@ -2,7 +2,7 @@ import Card from '../../../components/card/index'
 import Button from '../../../components/button/index'
 import Radio from '../../../components/radio/index'
 import Text from '../../../components/text/index'
-import Calendar from '../../../components/calendar/index'
+import DatePicker from '../../../components/datePicker/index'
 import { useSelector } from 'react-redux'
 import './contentStyle.scss'
 
@@ -13,7 +13,7 @@ function renderDomList(domList) {
       case 'Button': return <Button options={item} key={item.id}></Button>
       case 'Radio': return <Radio options={item} key={item.id}></Radio>
       case 'Text': return <Text options={item} key={item.id}></Text>
-      case 'Calendar': return <Calendar options={item} key={item.id} />
+      case 'DatePicker': return <DatePicker options={item} key={item.id} />
       default: return null
     }
   })
