@@ -1,9 +1,10 @@
 import './consoleStyle.scss'
 import { useSelector } from 'react-redux'
+// 导入自定义组件
 import CardConsole from '../../../components/card/cardConsole'
 import ButtonConsole from '../../../components/button/buttonConsole'
 import { Divider } from 'antd'
-
+import RateConsole from '../../../components/rate/rateConsole'
 function Console() {
   const id = useSelector((state) => state.home.domId)
   const options = useSelector((state) => state.home.domOptions)
