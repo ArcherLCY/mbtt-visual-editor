@@ -1,0 +1,8 @@
+.Header {
+  height: calc(10% - 10px);
+  background: #fff;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  box-shadow: 0px 2px 5px 0px rgba(120, 114, 108, 0.18);
+  box-sizing: border-box;
+}
