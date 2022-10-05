@@ -5,7 +5,7 @@ import {
     Input,
     Select,
     Checkbox,
-    Radio 
+    Radio
 } from 'antd';
 
 const { Option } = Select;
@@ -20,20 +20,24 @@ const App = (data) => {
         <Form
             layout="vertical"
         >
+            <Form.Item>
+                <h2>按钮</h2>
+            </Form.Item>
+
             <Form.Item label="按钮文字">
                 <Input onChange={(e) => {
                     options.value = e.target.value;
                     dispatch(changeOptions(options))
-                }} placeholder="修改按钮的文字"/>
+                }} placeholder="修改按钮的文字" />
             </Form.Item>
             <Form.Item label="按钮大小">
-            <Radio.Group onChange={(e) => {
+                <Radio.Group onChange={(e) => {
                     options.size = e.target.value;
                     dispatch(changeOptions(options))
                 }} defaultValue='middle'>
-                <Radio value='large'>大号</Radio>
-                <Radio value='middle'>中等</Radio>
-                <Radio value='small'>小号</Radio>
+                    <Radio value='large'>大号</Radio>
+                    <Radio value='middle'>中等</Radio>
+                    <Radio value='small'>小号</Radio>
                 </Radio.Group>
             </Form.Item>
             <Form.Item label="按钮样式">
@@ -46,7 +50,7 @@ const App = (data) => {
                     <Option value="ghost">空背景</Option>
                     <Option value="dashed">虚线</Option>
                     <Option value="link">链接</Option>
-                    <Option value="danger">危险</Option>                
+                    <Option value="danger">危险</Option>
                 </Select>
             </Form.Item>
             <Form.Item label="按钮形状">
@@ -69,9 +73,9 @@ const App = (data) => {
                 <Input onChange={(e) => {
                     options.href = e.target.value;
                     dispatch(changeOptions(options))
-                }} placeholder="输入地址进行链接同样的跳转"/>
+                }} placeholder="输入地址进行链接同样的跳转" />
             </Form.Item>
-            <Form.Item label="新建页面" style={{display: options.href ? 'block' : 'none'}}>
+            <Form.Item label="新建页面" style={{ display: options.href ? 'block' : 'none' }}>
                 <Checkbox onChange={(e) => {
                     options.target = e.target.checked ? '_blank' : '_self';
                     dispatch(changeOptions(options))
