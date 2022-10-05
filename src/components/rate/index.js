@@ -3,20 +3,20 @@ import { Rate } from 'antd';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { changeId } from '../../pages/home/slice'
+import './rateStyle.css'
 const App = (data) => {
   const options = data.options
   const dispatch = useDispatch()
   return (
-    <div
-      style={{ margin: options?.margin || '0' }}
+
+    <div className='rate'
+      style={{ justifyContent: options?.justifyContent || 'flex-start' }}
       onClick={
         () => {
           console.log(options);
           dispatch(changeId(options))
         }
       }>
-
-      <h3>{options.title}</h3>
 
       <Rate
         onClick={

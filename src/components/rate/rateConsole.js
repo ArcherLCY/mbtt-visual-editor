@@ -1,5 +1,5 @@
 import {
-  Form, Input
+  Form
 } from 'antd';
 import { useDispatch } from 'react-redux';
 import { changeOptions } from '../../pages/home/slice'
@@ -19,35 +19,31 @@ const App = (data) => {
         size: 'small',
       }}
       size='small'>
-      <Form.Item label="Title" >
-        <Input
-          onChange={(e) => {
-            options.title = e.target.value;
-            console.log(options);
-            dispatch(changeOptions(options))
-          }} />
-      </Form.Item>
+
       <Form.Item label="布局" >
-        <button onClick={(e) => { 
+        <button
+          onClick={(e) => {
             // 居左
-            options.margin='0';
+            options.justifyContent = 'start';
             console.log(options);
             dispatch(changeOptions(options))
           }}>居左</button>
-          <button onClick={(e) => {
+        <button
+          onClick={(e) => {
             // 居中
-            options.margin='0% 35%';
+            options.justifyContent = 'center'
             console.log(options);
             dispatch(changeOptions(options))
           }}>居中</button>
-          <button onClick={(e) => {
+        <button
+          onClick={(e) => {
             // 居右
-            options.margin='0 %';
+            options.justifyContent = 'end';
             console.log(options);
             dispatch(changeOptions(options))
           }}>居右</button>
       </Form.Item>
-     
+
     </Form>
   );
 };
