@@ -1,0 +1,65 @@
+.resume {
+    display: grid;
+    grid-row-gap: 50px;
+}
+
+.firstLine {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.firstLine_content {
+    display: flex;
+    flex-direction: column;
+}
+
+.secondLine {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+}
+
+.secondLine_content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.secondLine_textarea {
+    display: flex;
+}
+
+
+
+.thirdLine_content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.thirdLine_textarea_one {
+    display: flex;
+}
+
+.thirdLine_textarea_two {
+    display: flex;
+}
+
+.flower {
+    background-color: rgb(48,65,114);
+    height: 2px;
+}
+
+.teachFlower {
+    background-color: rgb(48,65,114);
+    color: white;
+    width: 70px;
+    height: 20px;
+    text-align: center;
+}
+
+
+
+

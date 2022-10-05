@@ -39,6 +39,21 @@ function Menu() {
                     <FontColorsOutlined />
                     <span>开关</span>
                 </button>
+
+                <button onClick={() => dispatch(increment({ type: 'Picture', id: Date.parse(new Date()), text: '图片' }))}>
+                    <FontColorsOutlined />
+                    <span>选择图片</span>
+                </button>
+
+                <button onClick={() => dispatch(increment({ type: 'Textarea', id: Date.parse(new Date()), text: '文本域' }))}>
+                    <FontColorsOutlined />
+                    <span>多行文本</span>
+                </button>
+
+                <button onClick={() => dispatch(increment({ type: 'Content', id: Date.parse(new Date()), text: '文本' }))}>
+                    <FontColorsOutlined />
+                    <span>单行文本</span>
+                </button>
             </div>
             <h2>高级组件</h2>
             <div style={{ height: '10000px' }}>

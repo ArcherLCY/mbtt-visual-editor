@@ -1,6 +1,9 @@
 import Card from '../../../components/card/index'
 import Button from '../../../components/button/index'
 import Rate from '../../../components/rate/index'
+import Picture from '../../../components/picture/index_'
+import Textarea from '../../../components/textarea/index'
+import ContentLine from '../../../components/content/index'
 import { useSelector } from 'react-redux'
 import './contentStyle.scss'
 
@@ -19,6 +22,9 @@ function renderDomList(domList) {
       case 'Card': return <Card options={item} key={item.id}></Card>
       case 'Button': return <Button options={item} key={item.id}></Button>
       case 'Rate': return <Rate options={item} key={item.id}></Rate>
+      case 'Picture': return <Picture options={item} key={item.id}></Picture>
+      case 'Textarea': return <Textarea options={item} key={item.id}></Textarea>
+      case 'Content': return <ContentLine options={item} key={item.id}></ContentLine>
 
       default: return null
     }
