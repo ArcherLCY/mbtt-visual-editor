@@ -1,0 +1,22 @@
+.header_card{
+    height: calc(10% - 10px);
+    border-bottom: 2px solid skyblue;
+}
+
+.header{  
+    height: 100%;
+    background: #fff;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;   
+
+    &>div{
+        margin-left: 50px;
+    }
+}
+
+.header_right {
+    display: flex;
+    align-items: center; 
+}
