@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { Button } from 'antd';
 import React from 'react';
 import { useDispatch } from 'react-redux';
@@ -22,22 +21,4 @@ function App(options) {
 }
     
 
-=======
-import { Button } from 'antd';
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import {changeId} from '../../pages/home/slice'
-
-function App(data) {
-    const options = data.options
-    const dispatch = useDispatch()
-    return (
-        <>
-            <Button type="primary" onClick={() => { console.log(options); dispatch(changeId(options))}}>{options.title}</Button>
-        </>
-    )
-
-}
-
->>>>>>> d13daf9a5aa2c24a0a69e64e97412054689551af
 export default App;
