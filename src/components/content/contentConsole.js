@@ -4,7 +4,7 @@ import { changeOptions } from '../../pages/home/slice';
 import { useDispatch } from 'react-redux';
 import './index_style.css'
 const App = (data) => {
-    let options = {...data.options }
+    let options = { ...data.options }
     const dispatch = useDispatch();
     return (
         <>
@@ -13,7 +13,11 @@ const App = (data) => {
                     maxLength={8}
                     placeholder={"请输入文本"}
                     className='input_nian'
-                    onChange={(e) => { options.value_content = e.target.value; console.log(options); dispatch(changeOptions(options)) }} />
+                    onChange={(e) => {
+                        options.value_content = e.target.value; console.log(options);
+                        options.value_content_resume = e.target.value
+                        dispatch(changeOptions(options))
+                    }} />
                 height<Input type={'text'} onChange={(e) => {
                     options.height = e.target.value; console.log(options);
                     dispatch(changeOptions(options))

@@ -4,6 +4,7 @@ import Rate from '../../../components/rate/index'
 import Picture from '../../../components/picture/index_'
 import Textarea from '../../../components/textarea/index'
 import ContentLine from '../../../components/content/index'
+import Resume from '../../../components/resume/index'
 import { useSelector } from 'react-redux'
 import './contentStyle.scss'
 
@@ -25,7 +26,7 @@ function renderDomList(domList) {
       case 'Picture': return <Picture options={item} key={item.id}></Picture>
       case 'Textarea': return <Textarea options={item} key={item.id}></Textarea>
       case 'Content': return <ContentLine options={item} key={item.id}></ContentLine>
-
+      case 'Resume': return <Resume options={item} key={item.id}></Resume>
       default: return null
     }
   })

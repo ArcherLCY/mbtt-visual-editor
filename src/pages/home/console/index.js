@@ -5,7 +5,8 @@ import CardConsole from '../../../components/card/cardConsole'
 import ButtonConsole from '../../../components/button/buttonConsole'
 import PictureConsole from '../../../components/picture/indexCosole'
 import TextareaConsole from '../../../components/textarea/indexConsole'
-import ContentConsole from '../../../components/content/contentConsole'
+import ContentConsole from '../../../components/content/contentConsole' 
+// import ResumeConsole from '../../../components/resume/resumeConsole'
 import { Divider } from 'antd'
 function Console() {
   const id = useSelector((state) => state.home.domId)
@@ -19,7 +20,7 @@ function Console() {
       {id === options.id && type === 'Picture' && <PictureConsole options={options} />}
       {id === options.id && type === 'Textarea' && <TextareaConsole options={options} />}
       {id === options.id && type === 'Content' && <ContentConsole options={options} />}
-
+      {/* {id === options.id && type === 'Resume' && <ResumeConsole options={options} />} */}
     </div>
   );
 }

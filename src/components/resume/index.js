@@ -8,22 +8,27 @@ import { useDispatch } from 'react-redux';
 import { changeId } from '../../pages/home/slice'
 import './index.css'
 import { increment } from '../card/silce'
-import { type } from '@testing-library/user-event/dist/type'
 
 const Resume = (options) => {
     const dispatch = useDispatch();
+    console.log('id',options.options.id)
     return (
         <>
             <div className='resume'>
                 <div className='firstLine'>
-                    <div className='firstLine_content'>
+                    <div className='firstLine_content' >
                         <div>
+                        {/* options.options.id */}
                             <Content 
-                             onClick={() => {
-                                dispatch(increment({ type: 'input', id: Date.parse(new Date())}))
-                            }}
+                            // value={options.options?.value_content_resume}
+
+                            // onClick={() => {
+                            //     console.log(options);
+                            //     dispatch(changeId(options.options))
+                            // }}
                              />
-                            <Content />
+                             {/* Date.parse(new Date())}} */}
+                            <Content options={{type:'Content',id:2}} />
                         </div>
                         <div>
                             <Content />

@@ -54,6 +54,11 @@ function Menu() {
                     <FontColorsOutlined />
                     <span>单行文本</span>
                 </button>
+
+                <button onClick={() => dispatch(increment({ type: 'Resume', id: Date.parse(new Date()), text: '简历' }))}>
+                    <FontColorsOutlined />
+                    <span>生成简历</span>
+                </button>
             </div>
             <h2>高级组件</h2>
             <div style={{ height: '10000px' }}>
