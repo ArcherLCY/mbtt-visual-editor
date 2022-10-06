@@ -25,7 +25,8 @@ const App = (data) => {
             </Form.Item>
 
             <Form.Item label="大小">
-                <Radio.Group onChange={(e) => {
+                <Radio.Group 
+                onChange={(e) => {
                         options.fontSize = e.target.value;
                         dispatch(changeOptions(options))
                     }} defaultValue='16'>
@@ -46,7 +47,7 @@ const App = (data) => {
                     </Radio.Group>
             </Form.Item>
 
-            <Form.Item label="宽度">
+            <Form.Item label="加粗">
                 <Radio.Group onChange={(e) => {
                         options.width = e.target.value;
                         dispatch(changeOptions(options))
@@ -55,7 +56,7 @@ const App = (data) => {
                     <Radio value='50%'>50%</Radio>
                     <Radio value='75%'>75%</Radio>
                     <Radio value='100%'>100%</Radio>
-                    </Radio.Group>
+                </Radio.Group>
             </Form.Item>
 
             <Form.Item label="字体">

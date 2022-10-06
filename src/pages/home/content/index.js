@@ -3,7 +3,12 @@ import Button from '../../../components/button/index'
 import Rate from '../../../components/rate/index'
 import Picture from '../../../components/picture/index_'
 import Textarea from '../../../components/textarea/index'
-import ContentLine from '../../../components/content/index'
+import Contents from '../../../components/content/index'
+import Switch from '../../../components/switch/index'
+import Checkbox from '../../../components/checkbox/index'
+import Radio from '../../../components/radio/index'
+import Text from '../../../components/text/index'
+
 import { useSelector } from 'react-redux'
 import './contentStyle.scss'
 
@@ -20,11 +25,15 @@ function renderDomList(domList) {
     switch (item.type) {
 
       case 'Card': return <Card options={item} key={item.id}></Card>
-      case 'Button': return <Button options={item} key={item.id}></Button>
+      case 'Text': return <Text options={item} key={item.id}></Text>
       case 'Rate': return <Rate options={item} key={item.id}></Rate>
+      case 'Radio': return <Radio options={item} key={item.id}></Radio>
+      case 'Switch': return <Switch options={item} key={item.id}></Switch>
+      case 'Button': return <Button options={item} key={item.id}></Button>
+      case 'Content': return <Contents options={item} key={item.id}></Contents>
       case 'Picture': return <Picture options={item} key={item.id}></Picture>
       case 'Textarea': return <Textarea options={item} key={item.id}></Textarea>
-      case 'Content': return <ContentLine options={item} key={item.id}></ContentLine>
+      case 'Checkbox': return <Checkbox options={item} key={item.id}></Checkbox>
 
       default: return null
     }
