@@ -12,7 +12,10 @@ const App = (data) => {
                 maxLength={8}
                 placeholder={"请输入文本"}
                 className='input_nian'
-                onChange={(e) => { options.value_content = e.target.value; console.log(options); dispatch(changeOptions(options)) }} />
+                onChange={(e) => {
+                    options.value_content_resume = e.target.value; console.log(options);
+                    dispatch(changeOptions(options))
+                }} />
             height<Input type={'text'} onChange={(e) => {
                 options.height = e.target.value; console.log(options);
                 dispatch(changeOptions(options))

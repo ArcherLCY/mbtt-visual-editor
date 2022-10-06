@@ -25,6 +25,7 @@ function typeToAntd(dom) {
     case 'radio': return <Radio options={dom} key={dom.id}></Radio>
     case 'checkbox': return <Checkbox options={dom} key={dom.id}></Checkbox>
     case 'switch': return <Switch options={dom} key={dom.id}></Switch>
+    case 'resume': return <Resume options={dom} key={dom.id}></Resume>
     default: return null
   }
 }

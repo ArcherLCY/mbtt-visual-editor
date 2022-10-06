@@ -11,6 +11,7 @@ export const homeSlice = createSlice({
     isEdit: true,
     contentSize: { width: 800, height: 1000} //中心画布的大小
   },
+    // 将新增的action的信息转移到 state 当中
   reducers: {   
     // 增加一个组件
     increment: (state, action) => {

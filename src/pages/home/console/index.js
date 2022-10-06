@@ -28,8 +28,8 @@ function Console() {
       {id === options.id && type === 'Content' && <ContentConsole options={options} />}
       {id === options.id && type === 'Picture' && <PictureConsole options={options} />}
       {id === options.id && type === 'Textarea' && <TextareaConsole options={options} />}
-      {id === options.id && type === 'Checkbox' && <CheckboxConsole options={options} />}
-
+      {id === options.id && type === 'Content' && <ContentConsole options={options} />}
+      {/* {id === options.id && type === 'Resume' && <ResumeConsole options={options} />} */}
     </div>
   );
 }
