@@ -2,7 +2,8 @@ import { useDispatch } from 'react-redux';
 import { changeOptions } from '../../pages/home/slice'
 import {
   Form,
-  Radio
+  Radio,
+  Input
 } from 'antd';
 
 const chooseMode = [
@@ -17,7 +18,7 @@ const isAllow = [
 
 const App = (data) => {
   let options = { ...data.options };
-
+ 
   const dispatch = useDispatch();
 
   return (
@@ -42,6 +43,16 @@ const App = (data) => {
             dispatch(changeOptions(options))
           }}
           optionType="button" />
+      </Form.Item>
+
+      <Form.Item label="输入框提示文字">
+        <Input 
+        placeholder="请在此输入提示文字"
+        onBlur={(e) => {
+          options.placeholder = e.target.value;
+          dispatch(changeOptions(options));
+        }}
+         />
       </Form.Item>
 
     </Form>

@@ -14,13 +14,13 @@ const App_picture = (data) => {
     function choosefile(file) {
         let url = null;
         // 需要针对不同的浏览器执行不同的 js 函数
-        if (window.createObjectURL != undefined) { // basic
+        if (window.createObjectURL !== undefined) { // basic
             url = window.createObjectURL(file);
         }
-        else if (window.URL != undefined) { // mozilla(firefox)
+        else if (window.URL !== undefined) { // mozilla(firefox)
             url = window.URL.createObjectURL(file);
         }
-        else if (window.webkitURL != undefined) { // webkit or chrome
+        else if (window.webkitURL !== undefined) { // webkit or chrome
             url = window.webkitURL.createObjectURL(file);
         }
         return url
