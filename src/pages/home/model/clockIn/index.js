@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
-import {
-  Form,
-  Radio,
-  Select,
-  TreeSelect,
-  Checkbox,
-} from 'antd';
-
+import Checkbox from '../../../../components/checkbox/index';
+import Raido from '../../../../components/radio/index';
+import DatePicker from '../../../../components/datepicker/index';
+import Picture from '../../../../components/picture/index';
 import DatePicker from '../../../../components/datePicker/index';
 
 
@@ -27,9 +23,9 @@ function clockIn() {
         disabled={componentDisabled}
       >
         <Form.Item label="您的健康状况" valuePropName="checked">
-          <Checkbox.Group 
-          options={['无异常', '发热', '干咳','乏力','咽痛','其它']} 
-          defaultValue={['Apple']} />
+          <Checkbox.Group
+            options={['无异常', '发热', '干咳', '乏力', '咽痛', '其它']}
+            defaultValue={['Apple']} />
         </Form.Item>
 
         <Form.Item label="您是否在校">
@@ -53,17 +49,14 @@ function clockIn() {
         </Form.Item>
 
         <Form.Item label="您核酸检测的结果">
-          <Select>
-            <Select.Option value="demo">Demo</Select.Option>
-          </Select>
+          <Radio.Group>
+            <Radio value="noIsolation">阴性 </Radio>
+            <Radio value="leaveSchool">阳性 </Radio>
+          </Radio.Group>
         </Form.Item>
 
         <Form.Item label="请上传您最近一次核酸检测结果的图片">
-          <TreeSelect
-            treeData={[
-              { title: 'Light', value: 'light', children: [{ title: 'Bamboo', value: 'bamboo' }] },
-            ]}
-          />
+          <Picture></Picture>
         </Form.Item>
 
       </Form>

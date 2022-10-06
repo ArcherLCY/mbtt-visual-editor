@@ -8,7 +8,8 @@ export const homeSlice = createSlice({
     domId: '',
     domType: '',
     domOptions: {},
-    environment:'edit'
+    environment:'edit',
+    modelName:''
   },
   reducers: {
     // 将新增的action的信息转移到 state 当中
