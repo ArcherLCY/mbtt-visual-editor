@@ -2,6 +2,7 @@ import { Card } from 'antd';
 import { LeftOutlined } from '@ant-design/icons';
 import Display from './compontents/display'
 import ContentSizeEdit from './compontents/ContentSizeEdit'
+import IsEdit from './compontents/IsEdit'
 import styles from './index.module.scss';
 
 function Header() {
@@ -10,12 +11,15 @@ function Header() {
         <div className={styles.header}>
           <div>
             <LeftOutlined />
-            未命名应用11111
-            自由表单设计
+            <span style={{marginLeft: 10 + 'px'}}>未命名应用 自由表单设计</span>
           </div>
           <div className={styles.header_right}>
-            <ContentSizeEdit/>
+            {/* 辑和预览切换的组件 */}
+            <IsEdit/>  
+            {/* 操作按钮 */}
             <Display />
+            {/* 配置面板 */}
+            <ContentSizeEdit/>
           </div>
         </div>
       </Card>

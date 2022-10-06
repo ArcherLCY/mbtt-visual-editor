@@ -9,7 +9,7 @@ export const homeSlice = createSlice({
     domType: '',
     domOptions: {},
     isEdit: true,
-    contentSize: { width: 800, height: 1000} //中心画布的大小
+    contentSize: { width: 800, height: 1000}, //中心画布的大小
   },
   reducers: {   
     // 增加一个组件
@@ -22,18 +22,13 @@ export const homeSlice = createSlice({
 
     // 改变高亮聚焦的dom
     changeOptions: (state, action) => {
-      console.log(action.payload);
-      // state.domOptions = action.payload
       state.domList.map((item, index) => {
-        console.log(state.domList[index]);
         return item.id === action.payload.id ? state.domList[index] = { ...action.payload } : item = item;
       })
-      console.log(state.domList[0]);
     },
 
     // 改变聚焦的id
     changeId: (state, action) => {
-      console.log(action.payload);
       state.domId = action.payload.id
       state.domOptions = action.payload
       state.domType = action.payload.type
@@ -46,12 +41,25 @@ export const homeSlice = createSlice({
 
     // 改变中心画布大小
     changeContentSize: (state, action) => {
-      console.log(action.payload)
       state.contentSize = action.payload
+    },
+
+    // 清空domList
+    clearDomList: (state, action) => {
+      state.domList = []
+    },
+
+    // 删除选中的dom
+    deleteDom: (state, action) => {
+      console.log(state.domList);
+      state.domList.filter(item => {
+        return item.id !== state.domId
+      })
+      console.log(state.domList);
     },
   },
 })
 
-export const { increment, changeOptions, changeId, changeEditStatus, changeContentSize  } = homeSlice.actions
+export const { increment, changeOptions, changeId, changeEditStatus, changeContentSize, clearDomList, deleteDom  } = homeSlice.actions
 
 export default homeSlice.reducer

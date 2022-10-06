@@ -44,7 +44,7 @@ export default function App() {
 
     return (
         <div className={styles.ContentSizeEdit}>
-            <div style={{ marginRight: 50 + 'px' }}>
+            <div>
                 <label>选择画板：</label>
                 <Select
                     defaultValue={data[0].width + '*' + data[0].height}

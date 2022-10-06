@@ -1,48 +1,71 @@
 import { useDispatch } from 'react-redux'
 import { increment } from '../slice'
 import './menuStyle.css'
-import { FontColorsOutlined,WalletOutlined,AppstoreAddOutlined } from '@ant-design/icons';
-
+import {Button} from 'antd'
+import beseMenu from '../../../api/menuData/baseMenu'
+import mediaMenu from '../../../api/menuData/mediaMenu'
 
 function Menu() {
     const dispatch = useDispatch()
+
+    const handler_dragStart = (e, id, type) => {
+        console.log(e,id,type);
+    }
     return (
         <div className="Menu">
             <h2>基础组件</h2>
-            <div className='Menu-list'>                       
-                <button onClick={() => dispatch(increment({ type: 'Text', id: Date.parse(new Date()), value: '单行文本' }))}>
-                    <FontColorsOutlined />
-                    <span>单行文本</span>
-                </button>
-                
-                <button onClick={() => dispatch(increment({ type: 'Card', id: Date.parse(new Date()), size: 'small', title: '标题' }))}>
-                    <WalletOutlined />
-                    <span>卡片</span>
-                </button>
-
-                <button onClick={() => dispatch(increment({ type: 'Button', id: Date.parse(new Date()), style: 'primary', value: '主要按钮' }))}>
-                    <AppstoreAddOutlined />
-                    <span>按钮</span>
-                </button>
-
-                <button onClick={() => dispatch(increment({ type: 'Radio', id: Date.parse(new Date()), text: '单选框1' }))}>
-                    <FontColorsOutlined />
-                    <span>单选按钮</span>
-                </button>
-
-                <button onClick={() => dispatch(increment({ type: 'Checkbox', id: Date.parse(new Date()), text: '复选框1' }))}>
-                    <FontColorsOutlined />
-                    <span>复选按钮</span>
-                </button>
-
-                <button onClick={() => dispatch(increment({ type: 'Switch', id: Date.parse(new Date()), text: '开关' }))}>
-                    <FontColorsOutlined />
-                    <span>开关</span>
-                </button>
+            <div className='Menu-list'>   
+                {
+                    beseMenu.map((item, index) => {
+                        const id = Date.parse(new Date())
+                        return (
+                            <div className='Menu-item' key={index}>
+                                <Button key={index}
+                                    style={{width: 100 + 'px'}}
+                                    onClick={() => dispatch(increment({ 
+                                        type: item.type || '', 
+                                        id: id, 
+                                        value: item.value, 
+                                        size: item.size || '',
+                                        title: item.title || '',
+                                        style: item.style || '',
+                                        text: item.text || ''
+                                    }))}
+                                    onDragStart={(e) => handler_dragStart(e, id, item.type)}
+                                >
+                                    {item.text}
+                                </Button>
+                            </div>
+                        )
+                    })
+                }                    
             </div>
             <h2>高级组件</h2>
-            <div style={{ height: '10000px' }}>
-                more
+            <div style={{ height: '10000px' }} className='Menu-list'>
+                {
+                    mediaMenu.map((item, index) => {
+                        const id = Date.parse(new Date())
+                        return (
+                            <div className='Menu-item' key={index}>
+                                <Button key={index}
+                                    style={{width: 100 + 'px'}}
+                                    onClick={() => dispatch(increment({ 
+                                        type: item.type || '', 
+                                        id: id, 
+                                        value: item.value, 
+                                        size: item.size || '',
+                                        title: item.title || '',
+                                        style: item.style || '',
+                                        text: item.text || ''
+                                    }))}
+                                    onDragStart={(e) => handler_dragStart(e, id, item.type)}
+                                >
+                                    {item.text}
+                                </Button>
+                            </div>
+                        )
+                    })
+                }
             </div>
         </div>
     );

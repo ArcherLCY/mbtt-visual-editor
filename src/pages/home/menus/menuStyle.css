@@ -11,30 +11,24 @@
 .Menu h2{
     font-size: 18px;
     font-weight: bold;
+    margin-top: 50px;
+    color: #1890ff;
 }
 
 .Menu .Menu-list {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-.Menu .Menu-list button {
-    height: 40px;
-    border: none;
-    cursor: pointer;
-    background-color: #fff;
-    margin: 10px 0;
-    border-bottom: 2px solid #efefef;
+.Menu .Menu-list .Menu-item {
+    margin: 5px 0;
 }
-
+/* 
 .Menu .Menu-list button:last-child{
     border-bottom: none;
 }
 
-/* .Menu .Menu-list button:first-child{
-    background: linear-gradient(90deg, skyblue, #fcfcfc);
-    color: rgb(79, 131, 228);
-} */
 
 .Menu .Menu-list button:hover {
     color: skyblue;
@@ -43,4 +37,4 @@
 
 .Menu .Menu-list button span{
     margin-left: 5px;
-}
+} */
