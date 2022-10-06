@@ -21,6 +21,7 @@ export const homeSlice = createSlice({
       state.domId = action.payload.id
       state.domType = action.payload.type
     },
+    // 将用户修改或增加的属性更新到 dolist 中对应的元素当中
 
     // 改变高亮聚焦的dom
     changeOptions: (state, action) => {
@@ -32,6 +33,7 @@ export const homeSlice = createSlice({
       })
       console.log(state.domList[0]);
     },
+    // 将新增的action的信息转移到 state 当中
 
     // 改变聚焦的id
     changeId: (state, action) => {

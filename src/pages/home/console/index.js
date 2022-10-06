@@ -12,7 +12,6 @@ import CheckboxConsole from '../../../components/checkbox/checkboxConsole'
 import RadioConsole from '../../../components/radio/radioConsole'
 import TextConsole from '../../../components/text/textConsole'
 import { Divider,} from 'antd'
-
 function Console() {
   const id = useSelector((state) => state.home.domId)
   const options = useSelector((state) => state.home.domOptions)

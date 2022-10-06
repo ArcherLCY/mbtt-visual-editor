@@ -10,11 +10,12 @@ function App(options) {
     <div className='textarea_index'>
       <div onClick={() => { console.log(options); dispatch(changeId(options.options)) }}
         style={{
+          
           fontSize: options.options?.fontSize,
           marginTop: 15
         }}>
         {options.options?.value_input || "多行文字"}
-      </div>
+      </div>     
       <TextArea rows={5} value={options.options?.value_textarea || ""} onClick={() => {
         console.log(options);
         dispatch(changeId(options.options))
