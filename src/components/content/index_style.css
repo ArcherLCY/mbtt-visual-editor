@@ -1,0 +1,28 @@
+
+
+.inputClass {
+    display: flex;
+    flex-direction: column;
+}
+
+.input_nian,.input_yuan,.input_ban {
+    border-radius: 15px;
+    margin-top: 15px;
+}
+
+.contentConsole {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+.content_input {
+    box-shadow: 5px 3px 4px #E6E6FA
+}
+
+.content_input:hover {
+    background-color:rgb( 250,250,251);
+}

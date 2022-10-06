@@ -1,29 +1,43 @@
 import Card from '../../../components/card/index'
 import Button from '../../../components/button/index'
-import Radio from '../../../components/radio/index'
-import Text from '../../../components/text/index'
-import DatePicker from '../../../components/datePicker/index'
+import Rate from '../../../components/rate/index'
+import Picture from '../../../components/picture/index_'
+import Textarea from '../../../components/textarea/index'
+import ContentLine from '../../../components/content/index'
 import { useSelector } from 'react-redux'
 import './contentStyle.scss'
 
+
+// 查询新添加组件的类型 并返回 新组件
 function renderDomList(domList) {
+  // 遍历每一个action，
+  // 将他们的id作为标签的key属性
+  // 将用户设置的 action 直接作为标签的options属性
   return domList.map((item) => {
+    console.log(item);
+    //通过switch判断组件的类型
+    // 返回 对应的HTML标签
     switch (item.type) {
+
       case 'Card': return <Card options={item} key={item.id}></Card>
       case 'Button': return <Button options={item} key={item.id}></Button>
-      case 'Radio': return <Radio options={item} key={item.id}></Radio>
-      case 'Text': return <Text options={item} key={item.id}></Text>
-      case 'DatePicker': return <DatePicker options={item} key={item.id} />
+      case 'Rate': return <Rate options={item} key={item.id}></Rate>
+      case 'Picture': return <Picture options={item} key={item.id}></Picture>
+      case 'Textarea': return <Textarea options={item} key={item.id}></Textarea>
+      case 'Content': return <ContentLine options={item} key={item.id}></ContentLine>
+
       default: return null
     }
   })
 }
 
 function Content() {
+  // 存放组件action的domList
   const domList = useSelector((state) => state.home.domList)
+  // 将domLIst传入renderDomList函数
+  // 将函数返回的HTML标签渲染到中间画布当中
   return (
     <div className="Content">
-      中间内容区
       <div>
         {renderDomList(domList)}
       </div>

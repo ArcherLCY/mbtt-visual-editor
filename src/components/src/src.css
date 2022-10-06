@@ -1,0 +1,10 @@
+.src {
+    width: 200px;
+    height: 20px;
+    border: 1px solid #E6E6FA;
+}
+
+.srcConsole Input,select {
+    display: flex;
+    flex-direction: column;
+}
