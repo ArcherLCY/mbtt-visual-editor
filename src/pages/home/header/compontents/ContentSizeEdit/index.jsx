@@ -28,6 +28,12 @@ export default function App() {
         const width = parseInt(strs[0])
         const height = parseInt(strs[1])
         if(typeof width != 'number' || typeof height != 'number') return alert('格式不正确！')
+        if(width < 200 || width > 2000 || height < 100 || height > 10000) return alert('范围不足或超出！')
+        const index = data.findIndex(item => {
+            return item.width === width && item.height === height
+        })
+        if(index !== -1) return alert('面板重复！')
+
         data.push({ width, height, name: '自定义' + (data.length - list.length + 1) })    
         setData([...data])
         setInput('')

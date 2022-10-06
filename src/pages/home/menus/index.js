@@ -8,6 +8,7 @@ import mediaMenu from '../../../api/menuData/mediaMenu'
 function Menu() {
     const dispatch = useDispatch()
 
+    // 开启拖拽
     const dragStart = (e, option) => {
         option.id = Date.parse(new Date())
         e.dataTransfer.setData('option', JSON.stringify(option))
@@ -46,16 +47,11 @@ function Menu() {
                             <div className='Menu-item' key={index}>
                                 <Button key={index}
                                     style={{width: 100 + 'px'}}
-                                    onClick={() => dispatch(increment({ 
-                                        type: item.type || '', 
-                                        id: Date.parse(new Date()), 
-                                        value: item.value, 
-                                        size: item.size || '',
-                                        title: item.title || '',
-                                        style: item.style || '',
-                                        text: item.text || ''
-                                    }))}
-                                    onDragStart={(e) => dragStart(e, Date.parse(new Date()), item.type)}
+                                    onClick={() => {
+                                        item.id =Date.parse(new Date())  
+                                        dispatch(increment(item))
+                                    }}
+                                    onDragStart={(e) => dragStart(e, item)}
                                 >
                                     {item.text}
                                 </Button>
