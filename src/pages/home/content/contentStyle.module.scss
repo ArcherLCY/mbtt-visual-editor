@@ -1,0 +1,45 @@
+.content{
+    width: calc(100% - 500px);
+    height: 100%;
+    overflow-y: scroll;
+    background: #edf0f6;
+    padding: 10px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+
+    &> div {
+        background-color: #fff;
+        box-shadow: 2px 5px 2px rgba($color: #000000, $alpha: 0.1), 
+        1px 1px 1px rgba($color: #000000, $alpha: 0.1), 
+    }
+}
+
+.editBox{
+    display: inline-block;
+    border: 2px dotted #ddd;
+    padding: 10px;
+    cursor: grab;
+    position: relative;
+    margin: 10px;
+}
+
+// 伪元素进行功能遮挡
+.editBox::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 90%;
+    height: 100%;
+    background-color: transparent;
+    z-index: 2;
+}
+
+.editBox:hover{
+    border: 2px dotted rgb(29, 174, 231);
+}
+
+// 正在选择的盒子
+.selectBox{
+    border: 2px dotted rgb(29, 174, 231);
+}

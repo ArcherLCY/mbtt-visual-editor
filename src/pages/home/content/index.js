@@ -1,3 +1,4 @@
+
 import Card from '../../../components/card/index'
 import Button from '../../../components/button/index'
 import Rate from '../../../components/rate/index'
@@ -5,50 +6,62 @@ import Picture from '../../../components/picture/index_'
 import Textarea from '../../../components/textarea/index'
 import Contents from '../../../components/content/index'
 import Switch from '../../../components/switch/index'
-import Checkbox from '../../../components/checkbox/index'
-import Radio from '../../../components/radio/index'
-import Text from '../../../components/text/index'
 
-import { useSelector } from 'react-redux'
-import './contentStyle.scss'
+import { useSelector, useDispatch } from 'react-redux'
+import { changeId } from '../slice'
+import styles from './contentStyle.module.scss'
 
 
-// 查询新添加组件的类型 并返回 新组件
-function renderDomList(domList) {
-  // 遍历每一个action，
-  // 将他们的id作为标签的key属性
-  // 将用户设置的 action 直接作为标签的options属性
-  return domList.map((item) => {
-    console.log(item);
-    //通过switch判断组件的类型
-    // 返回 对应的HTML标签
-    switch (item.type) {
+// 根据传入的type识别并返回antd的组件
+function typeToAntd(dom) {
+  const type = dom.type.toLowerCase()
+  switch (type) {
+    case 'card': return <Card options={dom} key={dom.id}></Card>
+    case 'text': return <Text options={dom} key={dom.id}></Text>
+    case 'button': return <Button options={dom} key={dom.id}>button</Button>
+    case 'radio': return <Radio options={dom} key={dom.id}></Radio>
+    case 'checkbox': return <Checkbox options={dom} key={dom.id}></Checkbox>
+    case 'switch': return <Switch options={dom} key={dom.id}></Switch>
+    default: return null
+  }
+}
 
-      case 'Card': return <Card options={item} key={item.id}></Card>
-      case 'Text': return <Text options={item} key={item.id}></Text>
-      case 'Rate': return <Rate options={item} key={item.id}></Rate>
-      case 'Radio': return <Radio options={item} key={item.id}></Radio>
-      case 'Switch': return <Switch options={item} key={item.id}></Switch>
-      case 'Button': return <Button options={item} key={item.id}></Button>
-      case 'Content': return <Contents options={item} key={item.id}></Contents>
-      case 'Picture': return <Picture options={item} key={item.id}></Picture>
-      case 'Textarea': return <Textarea options={item} key={item.id}></Textarea>
-      case 'Checkbox': return <Checkbox options={item} key={item.id}></Checkbox>
-
-      default: return null
-    }
+// 可编辑的dom树，生成线性
+function Compontent(domList, domId) {
+  const dispatch = useDispatch()
+  return domList.map((item, index) => {
+    return  (
+      <div key={item.id} className={styles.editBox + (domId === item.id ? ' ' + styles.selectBox: '')}
+      onClick={() => { dispatch(changeId(item))}}
+      >
+        {
+          typeToAntd(item)
+        }
+      </div>
+    )
   })
 }
+
+function PreCompontent(domList, domId) {
+  return domList.map((item, index) => {
+    return typeToAntd(item)
+  })
+}
+
 
 function Content() {
   // 存放组件action的domList
   const domList = useSelector((state) => state.home.domList)
-  // 将domLIst传入renderDomList函数
-  // 将函数返回的HTML标签渲染到中间画布当中
+  const domId = useSelector((state) => state.home.domId)
+  const contentSize = useSelector((state) => state.home.contentSize)
+  const isEdit = useSelector((state) => state.home.isEdit)
+
   return (
-    <div className="Content">
-      <div>
-        {renderDomList(domList)}
+    <div className={styles.content}>
+      <div style={{width: contentSize.width, height: contentSize.height}}>
+        {
+          isEdit ? Compontent(domList, domId) : PreCompontent(domList, domId)      
+        }
       </div>
     </div>
   );
