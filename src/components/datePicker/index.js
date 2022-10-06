@@ -5,27 +5,36 @@ import { changeId } from '../../pages/home/slice'
 
 const { RangePicker } = DatePicker;
 
-function App(options) {
+function DatePicker(options) {
   const dispatch = useDispatch()
-  const { hasRange, showTime } = options.options;
+  const { hasRange, showTime, placeholder } = options.options;
   let environment = useSelector(state => state.home.environment);
 
   if (hasRange === 'DatePicker') {
     return (
-      <div>
+      <div onClick={(e) => {
+        dispatch(changeId(options.options));
+        e.stopPropagation();
+        e.preventDefault();
+      }}>
         <DatePicker
-          onPanelChange={() => { dispatch(changeId(options.options)) }}
+          onPanelChange={(e) => {
+            e.preventDefault();
+          }}
           showTime={showTime}
+          placeholder={placeholder}
         />
       </div>
 
     )
   } else if (hasRange === 'RangePicker') {
     return (
-      <div>
+      <div onClick={() => {
+        dispatch(changeId(options.options));
+      }}>
         <RangePicker
-          onPanelChange={() => { dispatch(changeId(options.options)) }}
           showTime={showTime}
+          placeholder={placeholder}
         />
       </div>
 
@@ -37,4 +46,4 @@ function App(options) {
 }
 
 
-export default App;
+export default DatePicker;

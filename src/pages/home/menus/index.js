@@ -15,8 +15,10 @@ function Menu() {
                 <button onClick={() => dispatch(increment({ type: 'Radio', id: nanoid(), text: '单选框1' }))}>单选框</button>
             </div>
             <h2>高级组件</h2>
-            <button onClick={() => dispatch(increment({ type: 'DatePicker', id: nanoid(),hasRange:'DatePicker',showTime:true}))}>日期选择框</button>
-
+            <button onClick={() => dispatch(increment({ type: 'DatePicker', id: nanoid(),hasRange:'DatePicker',showTime:true,placeholder:''}))}>日期选择框</button>
+            
+            <h2>模板</h2>
+            <button onClick={() => dispatch(increment({ type: 'DatePicker', id: nanoid()}))}>疫情打卡</button>
             <div style={{ height: '10000px' }}>
             </div>
         </div>
