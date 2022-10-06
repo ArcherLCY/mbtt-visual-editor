@@ -14,6 +14,7 @@ const App = (data) => {
                     placeholder={"请输入文本"}
                     className='input_nian'
                     onChange={(e) => {
+                        console.log('e',e.target.value)
                         options.value_content = e.target.value; console.log(options);
                         options.value_content_resume = e.target.value
                         dispatch(changeOptions(options))

@@ -28,7 +28,7 @@ const Resume = (options) => {
                             // }}
                              />
                              {/* Date.parse(new Date())}} */}
-                            <Content options={{type:'Content',id:2}} />
+                            <Content options={{type:'Content',id:Date.parse(new Date()) }} />
                         </div>
                         <div>
                             <Content />

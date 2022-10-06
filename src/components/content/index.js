@@ -11,9 +11,10 @@ const App = (options) => {
             className='content_input'
             placeholder='请输入'
             value= {options.options?.value_content_resume||options.options?.value_content || ""} onClick={() => {
-                console.log(options);
+                // console.log('options',options);
                 dispatch(changeId(options.options))
             }}
+            
             style={{
                 height: options.options?.height,
                 width: options.options?.width || 250,

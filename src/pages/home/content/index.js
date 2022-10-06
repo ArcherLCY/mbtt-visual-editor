@@ -5,6 +5,7 @@ import Radio from '../../../components/radio/index'
 import Checkbox from '../../../components/checkbox/index'
 import Text from '../../../components/text/index'
 import Switch from '../../../components/switch/index'
+import Resume from '../../../components/resume/index'
 
 import { useSelector, useDispatch } from 'react-redux'
 import { changeId } from '../slice'
@@ -21,6 +22,7 @@ function typeToAntd(dom) {
     case 'radio': return <Radio options={dom} key={dom.id}></Radio>
     case 'checkbox': return <Checkbox options={dom} key={dom.id}></Checkbox>
     case 'switch': return <Switch options={dom} key={dom.id}></Switch>
+    case 'resume': return <Resume options={dom} key={dom.id}></Resume>
     default: return null
   }
 }
