@@ -8,30 +8,27 @@ import mediaMenu from '../../../api/menuData/mediaMenu'
 function Menu() {
     const dispatch = useDispatch()
 
-    const handler_dragStart = (e, id, type) => {
-        console.log(e,id,type);
+    const dragStart = (e, option) => {
+        option.id = Date.parse(new Date())
+        e.dataTransfer.setData('option', JSON.stringify(option))
     }
+
     return (
         <div className="Menu">
             <h2>基础组件</h2>
             <div className='Menu-list'>   
                 {
                     beseMenu.map((item, index) => {
-                        const id = Date.parse(new Date())
                         return (
                             <div className='Menu-item' key={index}>
                                 <Button key={index}
                                     style={{width: 100 + 'px'}}
-                                    onClick={() => dispatch(increment({ 
-                                        type: item.type || '', 
-                                        id: id, 
-                                        value: item.value, 
-                                        size: item.size || '',
-                                        title: item.title || '',
-                                        style: item.style || '',
-                                        text: item.text || ''
-                                    }))}
-                                    onDragStart={(e) => handler_dragStart(e, id, item.type)}
+                                    onClick={() => {
+                                        item.id =Date.parse(new Date())  
+                                        dispatch(increment(item))
+                                    }}
+                                    draggable
+                                    onDragStart={(e) => dragStart(e, item)}
                                 >
                                     {item.text}
                                 </Button>
@@ -44,21 +41,21 @@ function Menu() {
             <div style={{ height: '10000px' }} className='Menu-list'>
                 {
                     mediaMenu.map((item, index) => {
-                        const id = Date.parse(new Date())
+                        // const id = 
                         return (
                             <div className='Menu-item' key={index}>
                                 <Button key={index}
                                     style={{width: 100 + 'px'}}
                                     onClick={() => dispatch(increment({ 
                                         type: item.type || '', 
-                                        id: id, 
+                                        id: Date.parse(new Date()), 
                                         value: item.value, 
                                         size: item.size || '',
                                         title: item.title || '',
                                         style: item.style || '',
                                         text: item.text || ''
                                     }))}
-                                    onDragStart={(e) => handler_dragStart(e, id, item.type)}
+                                    onDragStart={(e) => dragStart(e, Date.parse(new Date()), item.type)}
                                 >
                                     {item.text}
                                 </Button>

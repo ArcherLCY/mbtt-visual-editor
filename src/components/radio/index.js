@@ -6,7 +6,6 @@ import {changeId} from '../../pages/home/slice'
 function App(options) {
   const dispatch = useDispatch()
   const { autoFocus, defaultChecked, disabled, text } = options.options;
-  console.log(options.options);
   return (
     <Radio 
       autoFocus={autoFocus || false} 

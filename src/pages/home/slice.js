@@ -18,6 +18,7 @@ export const homeSlice = createSlice({
       state.domOptions = action.payload
       state.domId = action.payload.id
       state.domType = action.payload.type
+      console.log(state);
     },
 
     // 改变高亮聚焦的dom
@@ -45,7 +46,7 @@ export const homeSlice = createSlice({
     },
 
     // 清空domList
-    clearDomList: (state, action) => {
+    clearDomList: (state) => {
       state.domList = []
     },
 
@@ -57,9 +58,17 @@ export const homeSlice = createSlice({
       })
       console.log(state.domList);
     },
+
+    // 根据索引插入节点一个组件
+    incrementByIndex: (state, action) => {
+      state.domList.splice(action.payload.index, 0, action.payload.option)
+      state.domOptions = action.payload.option
+      state.domId = action.payload.option.id
+      state.domType = action.payload.option.type
+    },
   },
 })
 
-export const { increment, changeOptions, changeId, changeEditStatus, changeContentSize, clearDomList, deleteDom  } = homeSlice.actions
+export const { increment, changeOptions, changeId, changeEditStatus, changeContentSize, clearDomList, deleteDom, incrementByIndex  } = homeSlice.actions
 
 export default homeSlice.reducer
