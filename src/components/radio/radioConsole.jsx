@@ -1,23 +1,43 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 import { changeOptions } from '../../pages/home/slice'
 import {
     Form,
     Checkbox,
-    Input 
+    Input,
+    Button
 } from 'antd';
 
 const App = (data) => {
+  console.log(data);
     let options = { ...data.options }
+    // 此时options是一个props组成的对象
 
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
+
+    // 单选框值
+    let radioValue = useSelector((state)=>{
+        console.log(state);
+    })
+
+    function addInput(){
+      radioValue.push('')
+    }
 
     return (
         <Form layout="vertical">
             <Form.Item label="单选框文本">
-                <Input onChange={(e) => {
-                    options.text = e.target.value;
-                    dispatch(changeOptions(options))
-                }} placeholder="修改文字"/>
+                {
+                  options.text.map((item,index)=>{
+                    return (
+                      <Input onBlur={(e) => {
+                        radioValue[index] = e.target.value;
+                        dispatch(changeOptions(options))
+                    }} placeholder="修改文字" key={index}/>
+                    )
+                  })
+                }
+                <Button onClick={addInput}>添加</Button>
+                <Button>确认</Button>
             </Form.Item>
 
             <Form.Item>

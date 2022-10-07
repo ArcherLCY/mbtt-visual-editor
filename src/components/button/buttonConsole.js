@@ -11,7 +11,7 @@ const App = (data) => {
     return (
         <Form
             labelCol={{
-                span: 4,
+                div: 4,
             }}
             wrapperCol={{
                 span: 14,

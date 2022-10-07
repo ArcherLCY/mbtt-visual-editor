@@ -1,4 +1,5 @@
 import { useDispatch } from 'react-redux'
+import { nanoid } from 'nanoid';
 import { increment } from '../slice'
 import './menuStyle.css'
 import {Button} from 'antd'
@@ -10,7 +11,7 @@ function Menu() {
 
     // 开启拖拽
     const dragStart = (e, option) => {
-        option.id = Date.parse(new Date())
+        option.id = nanoid()
         e.dataTransfer.setData('option', JSON.stringify(option))
     }
 
@@ -25,7 +26,7 @@ function Menu() {
                                 <Button key={index}
                                     style={{width: 100 + 'px'}}
                                     onClick={() => {
-                                        item.id =Date.parse(new Date())  
+                                        item.id = nanoid() 
                                         dispatch(increment(item))
                                     }}
                                     draggable
@@ -48,7 +49,7 @@ function Menu() {
                                 <Button key={index}
                                     style={{width: 100 + 'px'}}
                                     onClick={() => {
-                                        item.id =Date.parse(new Date())  
+                                        item.id = nanoid()  
                                         dispatch(increment(item))
                                     }}
                                     onDragStart={(e) => dragStart(e, item)}

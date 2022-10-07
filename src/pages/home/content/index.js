@@ -1,10 +1,15 @@
 
 import Card from '../../../components/card/index'
 import Button from '../../../components/button/index'
+import Rate from '../../../components/rate/index'
+import Picture from '../../../components/picture/index_'
+import Textarea from '../../../components/textarea/index'
+import Contents from '../../../components/content/index'
+import Switch from '../../../components/switch/index'
+import Text from '../../../components/text/index'
 import Radio from '../../../components/radio/index'
 import Checkbox from '../../../components/checkbox/index'
-import Text from '../../../components/text/index'
-import Switch from '../../../components/switch/index'
+import Resume from '../../../components/resume/index'
 
 // import useDrag from '../../../hooks/useDrag'
 import { useSelector, useDispatch } from 'react-redux'
@@ -17,10 +22,15 @@ function typeToAntd(dom) {
   switch (type) {
     case 'card': return <Card options={dom} key={dom.id}></Card>
     case 'text': return <Text options={dom} key={dom.id}></Text>
-    case 'button': return <Button options={dom} key={dom.id}>button</Button>
+    case 'button': return <Button options={dom} key={dom.id}></Button>
     case 'radio': return <Radio options={dom} key={dom.id}></Radio>
     case 'checkbox': return <Checkbox options={dom} key={dom.id}></Checkbox>
     case 'switch': return <Switch options={dom} key={dom.id}></Switch>
+    case 'Rate': return <Rate options={dom} key={dom.id}></Rate>
+    case 'resume': return <Resume options={dom} key={dom.id}></Resume>
+    case 'Textarea': return <Textarea options={dom} key={dom.id}></Textarea>
+    case 'Picture': return <Picture options={dom} key={dom.id}></Picture>
+    case 'Contents': return <Contents options={dom} key={dom.id}></Contents>
     default: return null
   }
 }
@@ -68,24 +78,13 @@ function PreCompontent(domList, domId) {
 
 
 function Content() {
+  // 存放组件action的domList
   const domList = useSelector((state) => state.home.domList)
   const domId = useSelector((state) => state.home.domId)
   const contentSize = useSelector((state) => state.home.contentSize)
   const isEdit = useSelector((state) => state.home.isEdit)
 
   const dispatch = useDispatch()
-
-  // 拖拽中
-  const handler_dragOver = (e) => {
-    e.preventDefault()
-  
-    const target = e.target
-    if(!target.id || target.id === '') return 
-  
-    console.log('id',e.dataTransfer.getData('compontent/id'));
-    console.log(_index(target.id));
-    
-  }
 
   //获取元素的domList中的位置索引
   const _index = (id) => {
