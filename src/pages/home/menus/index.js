@@ -12,6 +12,7 @@ function Menu() {
     const dragStart = (e, option) => {
         option.id = Date.parse(new Date())
         e.dataTransfer.setData('option', JSON.stringify(option))
+        e.dataTransfer.setData('targetDom', JSON.stringify(e.target))
     }
 
     return (
