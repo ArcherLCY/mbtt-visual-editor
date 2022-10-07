@@ -2,28 +2,46 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { changeId } from '../../pages/home/slice'
-
-function App(options) {
+import {
+  Form,
+  Select,
+  Input,
+  Radio,
+  Checkbox
+} from 'antd'
+import './index.css'
+function App(data) {
   const dispatch = useDispatch()
-  const { fontSize, color, lineHeight, fontFamily, value, width, border } = options.options;
+  let options = { ...data.options }
+
+  const {justifyContent,fontSize, color, lineHeight, fontFamily, value, fontWeight, border } = options;
   return (
+    <div className = 'textIndex'
+    style={{justifyContent:justifyContent|| 'center'}}
+    onClick={
+      () => {
+        console.log(options);
+        dispatch(changeId(options))
+      }
+    }
+    >
+    <Form.Item>
     <h2
       style={{
-        fontSize: fontSize + 'px',
+        fontSize: fontSize,
         color: color || '#000',
         lineHeight: lineHeight,
-        fontFamily: fontFamily,
-        width: width,
+        fontFamily: fontFamily||'微软雅黑',
+        fontWeight: fontWeight,
         margin: '5px 20px',
         paddingLeft: '5px',
-        border: border ? '2px solid #ddd' : '2px solid transparent',
-        borderRadius: '5px'
       }}
-      onClick={() => { dispatch(changeId(options.options)) }}>
+      onClick={() => { dispatch(changeId(options)) }}>
       {value}
     </h2>
+     </Form.Item>
+    </div>
   )
 }
-
 
 export default App;

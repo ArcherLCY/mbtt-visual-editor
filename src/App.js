@@ -1,7 +1,7 @@
 import './App.css';
 import Home from './pages/home';
-import Index from './pages/index';
-import Template from './pages/template';
+import Index from './pages/index'
+import Template from './pages/template'
 // 路由使用
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 

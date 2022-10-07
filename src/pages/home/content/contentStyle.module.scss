@@ -16,12 +16,14 @@
 }
 
 .editBox{
-    display: inline-block;
+    // display: inline-block;
     border: 2px dotted #ddd;
     padding: 10px;
+    border-radius:10px;
     cursor: grab;
     position: relative;
     margin: 10px;
+    
 }
 
 // 伪元素进行功能遮挡
@@ -36,10 +38,10 @@
 }
 
 .editBox:hover{
-    border: 2px dotted rgb(29, 174, 231);
+    border: 2px solid rgb(29, 174, 231);
 }
 
 // 正在选择的盒子
 .selectBox{
-    border: 2px dotted rgb(29, 174, 231);
+    border: 2px solid rgb(29, 174, 231);
 }

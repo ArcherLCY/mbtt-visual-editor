@@ -1,6 +1,5 @@
-
 #file {
-    opacity:0;
+    opacity: 0;
 }
 
 .picture_input {
@@ -11,8 +10,8 @@
     margin-right: 15px;
 }
 
-.picture_button{
-    background-color: rgb(250,250,251);
+.picture_button {
+    background-color: rgb(250, 250, 251);
     border: none;
     width: 150px;
     vertical-align: center;
@@ -30,14 +29,14 @@
 .picture {
     width: 200px;
     height: 200px;
-    background-color: rgb(250,250,251);
+    background-color: rgb(250, 250, 251);
     border-radius: 5px;
-    box-shadow:5px 3px 4px #E6E6FA;
+    box-shadow: 5px 3px 4px #E6E6FA;
 }
 
 
 
-/* .picture_height {
+.picture_height {
     width: 150px;
     height: 35px;
-} */
+}

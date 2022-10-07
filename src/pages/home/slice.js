@@ -15,17 +15,20 @@ export const homeSlice = createSlice({
     // 增加一个组件
     increment: (state, action) => {
       // 将action push到 domList数组当中
+      
       state.domList.push(action.payload)
       //options 就是 payload,所有的属性都会挂载到 options当中
       state.domOptions = action.payload
       state.domId = action.payload.id
       state.domType = action.payload.type
+      
     },
     // 将用户修改或增加的属性更新到 dolist 中对应的元素当中
 
     // 改变高亮聚焦的dom
     changeOptions: (state, action) => {
       console.log(action.payload);
+      console.log(state.domList);
       // state.domOptions = action.payload
       state.domList.map((item, index) => {
         console.log(state.domList[index]);

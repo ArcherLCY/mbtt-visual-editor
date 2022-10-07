@@ -11,6 +11,9 @@ import SwitchConsole from '../../../components/switch/switchConsole'
 import CheckboxConsole from '../../../components/checkbox/checkboxConsole'
 import RadioConsole from '../../../components/radio/radioConsole'
 import TextConsole from '../../../components/text/textConsole'
+import LinkConsole from '../../../components/link/linkConsole'
+import DateConsole from '../../../components/datePicker/datePickerConsole'
+
 import { Divider,} from 'antd'
 function Console() {
   const id = useSelector((state) => state.home.domId)
@@ -22,6 +25,8 @@ function Console() {
       {id === options.id && type === 'Card' && <CardConsole options={options} />}
       {id === options.id && type === 'Rate' && <RateConsole options={options} />}
       {id === options.id && type === 'Text' && <TextConsole options={options} />} 
+      {id === options.id && type === 'Link' && <LinkConsole options={options} />} 
+      {id === options.id && type === 'Date' && <DateConsole options={options} />}
       {id === options.id && type === 'Radio' && <RadioConsole options={options} />}
       {id === options.id && type === 'Switch' && <SwitchConsole options={options} />}
       {id === options.id && type === 'Button' && <ButtonConsole options={options} />}
@@ -29,6 +34,7 @@ function Console() {
       {id === options.id && type === 'Picture' && <PictureConsole options={options} />}
       {id === options.id && type === 'Textarea' && <TextareaConsole options={options} />}
       {id === options.id && type === 'Checkbox' && <CheckboxConsole options={options} />}
+     
 
     </div>
   );

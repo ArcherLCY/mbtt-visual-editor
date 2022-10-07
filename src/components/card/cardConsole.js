@@ -9,19 +9,7 @@ const App = (data) => {
     const dispatch = useDispatch()
     let options = { ...data.options }
     return (
-        <Form
-            labelCol={{
-                div: 4,
-            }}
-            wrapperCol={{
-                span: 14,
-            }}
-            layout="horizontal"
-            initialValues={{
-                size: 'small',
-            }}
-            size='small'
-        >
+        <Form layout="vertical">
             <Form.Item label="Title">
                 <Input onChange={(e) => {
                     options.title = e.target.value;

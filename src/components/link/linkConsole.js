@@ -1,32 +1,28 @@
 import React from "react";
-import './textarea_style.css';
-import { changeOptions } from '../../pages/home/slice'
-import { useDispatch } from "react-redux/es/exports";
+import { changeOptions } from '../../pages/home/slice';
+import { useDispatch } from 'react-redux';
 import {
     Form,
     Select,
     Button,
     Input,
+    Checkbox,
     Radio,
-    Checkbox
 } from 'antd';
-const App_textarea = (data) => {
+const App = (data) => {
     let options = { ...data.options };
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
     const RadioGroup = Radio.Group;
     const RadioButton= Radio.Button;
 
-    const { TextArea } = Input;
-    // console.log(options.contentSize)
     return (
-        <div className="textareaIndexConsole">
+        <div className="linkIndexConsole">
             <Form layout="vertical"
                 style={{
                     fontWeight: 700,
                     fontFamily: '微软雅黑',
                 }}
             >
-                {/*标题 */}
                 <Form.Item label="标题">
                     <Input
                         placeholder="请输入标题"
@@ -36,7 +32,6 @@ const App_textarea = (data) => {
                             dispatch(changeOptions(options))
                         }} />
                 </Form.Item>
-                {/* 提示 */}
                 <Form.Item label="提示">
                     <Input
                         placeholder="请输入提示"
@@ -46,20 +41,14 @@ const App_textarea = (data) => {
                             dispatch(changeOptions(options))
                         }} />
                 </Form.Item>
-                <Form.Item label="默认内容">
-                    <TextArea
-                        rows={4}
-                        placeholder={'请输入默认内容'}
-                        className='default'
-                        onChange={(e) => {
-                            options.placeholder = e.target.value;
-                            console.log(options);
-                            dispatch(changeOptions(options))
-                        }} />
+                <Form.Item label="链接">
+                    <Input type={'text'} placeholder={'请输入链接'} onChange={(e) => {
+                        options.href = e.target.value; console.log(options);
+                        dispatch(changeOptions(options))
+                    }} />
                 </Form.Item>
-          
-                    
-                <Form.Item label="所占字段">
+
+                <Form.Item label="所占字段%">
                         <RadioGroup
                         defaultValue="d"
                         buttonStyle="solid"
@@ -95,23 +84,13 @@ const App_textarea = (data) => {
                                 }}  >100</RadioButton>
                         </RadioGroup>
                     </Form.Item>
+                <Button onClick={() => {
+                    window.location.href = document.getElementById('srcInput').value
+                }}> 跳转效果预览</Button>
             </Form>
-            <Form.Item label=""
-                style={{
-                    fontFamily: '微软雅黑',
-                }}
-            >
-                <Checkbox
-                    onChange={(e) => {
-                        options.checked = e.target.checked; console.log(options);
-                        dispatch(changeOptions(options))
-                    }}
-                >
-                    这是个必填项
-                </Checkbox>
-            </Form.Item>
+
         </div>
 
     )
 }
-export default App_textarea;
+export default App

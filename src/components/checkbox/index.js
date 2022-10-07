@@ -17,6 +17,4 @@ function App(options) {
     </Checkbox>
   )
 }
-    
-
 export default App;

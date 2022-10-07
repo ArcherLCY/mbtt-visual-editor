@@ -9,6 +9,8 @@ import Switch from '../../../components/switch/index'
 import Text from '../../../components/text/index'
 import Radio from '../../../components/radio/index'
 import Checkbox from '../../../components/checkbox/index'
+import Link from '../../../components/link/index'
+import Date from '../../../components/datePicker/index'
 
 import { useSelector, useDispatch } from 'react-redux'
 import { changeId } from '../slice'
@@ -21,10 +23,16 @@ function typeToAntd(dom) {
   switch (type) {
     case 'card': return <Card options={dom} key={dom.id}></Card>
     case 'text': return <Text options={dom} key={dom.id}></Text>
-    case 'button': return <Button options={dom} key={dom.id}>button</Button>
+    case 'link': return <Link options={dom} key={dom.id}></Link>
+    case 'date': return <Date options={dom} key={dom.id}></Date>
+    case 'rate': return <Rate options={dom} key={dom.id}></Rate>
     case 'radio': return <Radio options={dom} key={dom.id}></Radio>
-    case 'checkbox': return <Checkbox options={dom} key={dom.id}></Checkbox>
     case 'switch': return <Switch options={dom} key={dom.id}></Switch>
+    case 'button': return <Button options={dom} key={dom.id}>button</Button>
+    case 'content': return <Contents options={dom} key={dom.id}></Contents>
+    case 'picture': return <Picture options={dom} key={dom.id}></Picture>
+    case 'checkbox': return <Checkbox options={dom} key={dom.id}></Checkbox>
+    case 'textarea': return <Textarea options={dom} key={dom.id}></Textarea>
     default: return null
   }
 }

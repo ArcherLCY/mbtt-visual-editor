@@ -17,7 +17,7 @@ const App = (data) => {
                 <Input onChange={(e) => {
                     options.text = e.target.value;
                     dispatch(changeOptions(options))
-                }} placeholder="修改文字"/>
+                }} placeholder="选项"/>
             </Form.Item>
 
             <Form.Item>
