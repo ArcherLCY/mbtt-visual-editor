@@ -99,6 +99,8 @@ function Content() {
     let option = e.dataTransfer.getData("option")
     const target = e.target
 
+    let targetDom = e.dataTransfer.getData("targetDom")
+    console.log(targetDom);
     // console.log(target.getBoundingClientRect());
 
     // 存在组件配置项，表示是插入新节点

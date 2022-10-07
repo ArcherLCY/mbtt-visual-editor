@@ -10,6 +10,7 @@ export const homeSlice = createSlice({
     domOptions: {},
     isEdit: true,
     contentSize: { width: 800, height: 1000}, //中心画布的大小
+    dragDom: null, //正在拖拽的dom
   },
     // 将新增的action的信息转移到 state 当中
   reducers: {   
@@ -70,6 +71,15 @@ export const homeSlice = createSlice({
       state.domOptions = action.payload.option
       state.domId = action.payload.option.id
       state.domType = action.payload.option.type
+    },
+
+    // 更新正在拖拽的dom
+    updatedragDom: (state, action) => {
+      state.dragDom = action.payload
+      state.domOptions = action.payload
+      state.domId = action.payload.id
+      state.domType = action.payload.type
+      console.log(state);
     },
   },
 })
