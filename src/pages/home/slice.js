@@ -11,6 +11,7 @@ export const homeSlice = createSlice({
     isEdit: true,
     contentSize: { width: 800, height: 1000} //中心画布的大小
   },
+    // 将新增的action的信息转移到 state 当中
   reducers: {   
     // 增加一个组件
     increment: (state, action) => {
@@ -21,6 +22,7 @@ export const homeSlice = createSlice({
       state.domId = action.payload.id
       state.domType = action.payload.type
     },
+    // 将用户修改或增加的属性更新到 dolist 中对应的元素当中
 
     // 改变高亮聚焦的dom
     changeOptions: (state, action) => {
@@ -28,6 +30,7 @@ export const homeSlice = createSlice({
         return item.id === action.payload.id ? state.domList[index] = { ...action.payload } : item = item;
       })
     },
+    // 将新增的action的信息转移到 state 当中
 
     // 改变聚焦的id
     changeId: (state, action) => {

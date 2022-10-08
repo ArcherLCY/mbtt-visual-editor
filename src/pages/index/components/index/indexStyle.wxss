@@ -1,0 +1,16 @@
+.index {
+  height: 100%;
+}
+
+.index .top {
+  height: 50%;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #000;
+  padding-bottom: 10px;
+}
+
+.index .bottom {
+  height: 50%;
+  overflow-y: scroll;
+  padding-bottom: 10px;
+}

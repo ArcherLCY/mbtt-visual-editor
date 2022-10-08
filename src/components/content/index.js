@@ -14,6 +14,7 @@ const App = (options) => {
             onClick={() => {
                 dispatch(changeId(options.options))
             }}
+            
             style={{
                 height: options.options?.height,
                 width: options.options?.width || 250,
