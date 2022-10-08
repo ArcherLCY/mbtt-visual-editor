@@ -7,44 +7,13 @@ import beseMenu from '../../../api/menuData/baseMenu'
 import mediaMenu from '../../../api/menuData/mediaMenu'
 
 function Menu() {
-  const dispatch = useDispatch()
-  return (
-    <div className="Menu">
-      <h2>基础组件</h2>
-      <div className='Menu-list'>
-
+    const dispatch = useDispatch()
 
     // 开启拖拽
     const dragStart = (e, option) => {
         option.id = nanoid()
         e.dataTransfer.setData('option', JSON.stringify(option))
     }
-
-        <button onClick={() => dispatch(increment({ type: 'Button', id: Date.parse(new Date()), style: 'primary', value: '主要按钮' }))}>
-          <AppstoreAddOutlined />
-          <span>按钮</span>
-        </button>
-
-        <button onClick={() => dispatch(increment({ type: 'Switch', id: Date.parse(new Date()), text: '开关' }))}>
-          <FontColorsOutlined />
-          <span>开关</span>
-        </button>
-
-        <button onClick={() => dispatch(increment({ type: 'Text', id: Date.parse(new Date()), value: '单行文本' }))}>
-          <FontColorsOutlined />
-          <span>单行文本</span>
-        </button>
-
-        <button onClick={() => dispatch(increment({
-          type: 'Radio', 
-          id: nanoid(),
-          inputValue: ['Apple', 'Pear', 'Orange'],
-          title:'单项选择',
-          tooltip:'tooltip'
-        }))}>
-          <FontColorsOutlined />
-          <span>单选按钮</span>
-        </button>
 
     return (
         <div className={styles.Menu}>
@@ -55,9 +24,11 @@ function Menu() {
                         return (
                             <div className={styles.MenuItem} key={index}>
                                 <Button key={index}
-                                    onClick={() => { 
-                                        let temp = {...item}
-                                        getId(temp)
+                                    onClick={() => {
+                                        console.log(item);
+                                        item.id = nanoid() 
+                                        console.log(item);
+                                        dispatch(increment(item))
                                     }}
                                     draggable
                                     onDragStart={(e) => dragStart(e, item)}
@@ -78,8 +49,8 @@ function Menu() {
                             <div className={styles.MenuItem} key={index}>
                                 <Button key={index}
                                     onClick={() => {
-                                        let temp = {...item}
-                                        getId(temp)
+                                        item.id = nanoid()  
+                                        dispatch(increment(item))
                                     }}
                                     onDragStart={(e) => dragStart(e, item)}
                                 >
