@@ -11,24 +11,15 @@ import { increment } from '../card/silce'
 
 const Resume = (options) => {
     const dispatch = useDispatch();
-    console.log('id',options.options.id)
+    console.log('id', options.options.id)
     return (
         <>
             <div className='resume'>
                 <div className='firstLine'>
                     <div className='firstLine_content' >
                         <div>
-                        {/* options.options.id */}
-                            <Content 
-                            // value={options.options?.value_content_resume}
-
-                            // onClick={() => {
-                            //     console.log(options);
-                            //     dispatch(changeId(options.options))
-                            // }}
-                             />
-                             {/* Date.parse(new Date())}} */}
-                            <Content options={{type:'Content',id:Date.parse(new Date()) }} />
+                            <Content />
+                            <Content options={{ type: 'Content', id: Date.parse(new Date()) }} />
                         </div>
                         <div>
                             <Content />

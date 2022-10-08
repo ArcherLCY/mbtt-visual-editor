@@ -16,7 +16,7 @@ function App(options) {
         }}>
         {options.options?.value_input || "多行文字"}
       </div>     
-      <TextArea rows={5} value={options.options?.value_textarea || ""} onClick={() => {
+      <TextArea rows={5} value={options.options?.value || ""} onClick={() => {
         console.log(options);
         dispatch(changeId(options.options))
       }}
@@ -30,6 +30,7 @@ function App(options) {
           zIndex: options.options?.zIndex,
           position: options.options?.position
         }}
+        className={'textarea_index_textarea'}
 
       ></TextArea>
     </div>

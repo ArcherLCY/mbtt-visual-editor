@@ -5,7 +5,7 @@ import { changeId } from '../../pages/home/slice'
 
 const { RangePicker } = DatePicker;
 
-function DatePicker(options) {
+function DatePicker2(options) {
   const dispatch = useDispatch()
   const { hasRange, showTime, placeholder } = options.options;
   let environment = useSelector(state => state.home.environment);
@@ -46,4 +46,4 @@ function DatePicker(options) {
 }
 
 
-export default DatePicker;
+export default DatePicker2;

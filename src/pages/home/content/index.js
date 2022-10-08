@@ -9,23 +9,27 @@ import Switch from '../../../components/switch/index'
 import Text from '../../../components/text/index'
 import Radio from '../../../components/radio/index'
 import Checkbox from '../../../components/checkbox/index'
-
+import DatePickers from '../../../components/datePicker/index'
 import { useSelector, useDispatch } from 'react-redux'
-import { changeId } from '../slice'
+import { changeId, addRealDom } from '../slice'
 import styles from './contentStyle.module.scss'
+import { DatePicker } from 'antd'
 
 
 // 根据传入的type识别并返回antd的组件
 function typeToAntd(dom) {
   const type = dom.type.toLowerCase()
   switch (type) {
-    case 'card': return <Card options={dom} key={dom.id}></Card>
-    case 'text': return <Text options={dom} key={dom.id}></Text>
+    case 'card': return <Card options={dom} key={dom.id} ></Card>
+    case 'text': return <Text options={dom} key={dom.id} ></Text>
     case 'button': return <Button options={dom} key={dom.id}>button</Button>
     case 'radio': return <Radio options={dom} key={dom.id}></Radio>
     case 'checkbox': return <Checkbox options={dom} key={dom.id}></Checkbox>
     case 'switch': return <Switch options={dom} key={dom.id}></Switch>
-    case 'resume': return <Resume options={dom} key={dom.id}></Resume>
+    case 'picture': return <Picture options={dom} key={dom.id}></Picture>
+    case 'textarea':return <Textarea options={dom} key={dom.id}></Textarea>
+    case 'datepicker':return <DatePickers options={dom} key={dom.id}></DatePickers>
+    // case 'resume': return <Resume options={dom} key={dom.id}></Resume>
     default: return null
   }
 }
@@ -34,9 +38,9 @@ function typeToAntd(dom) {
 function Compontent(domList, domId) {
   const dispatch = useDispatch()
   return domList.map((item, index) => {
-    return  (
-      <div key={item.id} className={styles.editBox + (domId === item.id ? ' ' + styles.selectBox: '')}
-      onClick={() => { dispatch(changeId(item))}}
+    return (
+      <div key={item.id} className={styles.editBox + (domId === item.id ? ' ' + styles.selectBox : '')}
+        onClick={() => { dispatch(changeId(item)) }}
       >
         {
           typeToAntd(item)
@@ -60,15 +64,16 @@ function Content() {
   const contentSize = useSelector((state) => state.home.contentSize)
   const isEdit = useSelector((state) => state.home.isEdit)
 
+  console.log('domList', domList);
+
   return (
     <div className={styles.content}>
-      <div style={{width: contentSize.width, height: contentSize.height}}>
+      <div style={{ width: contentSize.width, height: contentSize.height }}>
         {
-          isEdit ? Compontent(domList, domId) : PreCompontent(domList, domId)      
+          isEdit ? Compontent(domList, domId) : PreCompontent(domList, domId)
         }
       </div>
     </div>
   );
 }
-
 export default Content;

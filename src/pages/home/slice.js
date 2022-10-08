@@ -3,13 +3,13 @@ import { createSlice } from '@reduxjs/toolkit'
 export const homeSlice = createSlice({
   name: 'home',
   initialState: {
-    value: 0,
+    tab: 0,
     domList: [],
     domId: '',
     domType: '',
     domOptions: {},
     isEdit: true,
-    contentSize: { width: 800, height: 1000} //中心画布的大小
+    contentSize: { width: 800, height: 1000}, //中心画布的大小
   },
     // 将新增的action的信息转移到 state 当中
   reducers: {   
@@ -54,9 +54,23 @@ export const homeSlice = createSlice({
       console.log(action.payload)
       state.contentSize = action.payload
     },
+    addRealDom:(state,action) => {
+      console.log(action.payload)
+      state.realDomList.push(action.payload)
+    },
+    addTabCount:(state,action) => {
+      state.tab = 1
+    },
+    addTabCountDb:(state,action) => {
+      state.tab = 2
+    },
+    addTabCountTh:(state,action) => {
+      state.tab = 3
+    }
   },
 })
 
-export const { increment, changeOptions, changeId, changeEditStatus, changeContentSize  } = homeSlice.actions
+export const { increment, changeOptions, changeId, changeEditStatus, 
+  changeContentSize,addTabCount,addTabCountDb,addTabCountTh  } = homeSlice.actions
 
 export default homeSlice.reducer

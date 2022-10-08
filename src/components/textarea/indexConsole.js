@@ -27,7 +27,7 @@ const App_textarea = (data) => {
                 placeholder={'请输入文本内容'}
                 className='default'
                 onChange={(e) => {
-                    options.value_textarea = e.target.value; console.log(options);
+                    options.value = e.target.value; console.log(options);
                     dispatch(changeOptions(options))
                 }} />
             height<Input type={'text'} onChange={(e) => {
