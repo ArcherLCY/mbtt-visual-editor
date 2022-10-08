@@ -9,7 +9,6 @@ function App(options) {
     <Card title={options.options?.title || ""}
       hoverable
       onClick={() => {
-        console.log(options);
         dispatch(changeId(options.options))
       }}>
 

@@ -1,0 +1,19 @@
+.leftMenu {
+    width: 256px;
+    display: inline-block;
+    background: rgb(0, 21, 41);
+    height: 100%;
+    float: left;
+    h3 {
+        text-align: center;
+        color: #fff;
+        display: 'inline-block'
+    }
+}
+.content{
+    width: calc(100% - 256px);
+    margin-left: 256px;
+    height: 100%;
+    overflow-y: scroll;
+    padding: 10px;
+}

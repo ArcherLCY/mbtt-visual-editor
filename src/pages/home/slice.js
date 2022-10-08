@@ -22,17 +22,12 @@ export const homeSlice = createSlice({
     },
     // 将用户修改或增加的属性更新到 dolist 中对应的元素当中
     changeOptions: (state, action) => {
-      console.log(action.payload);
-      // state.domOptions = action.payload
       state.domList.map((item, index) => {
-        console.log(state.domList[index]);
         return item.id === action.payload.id ? state.domList[index] = { ...action.payload } : item = item;
       })
-      console.log(state.domList[0]);
     },
     // 将新增的action的信息转移到 state 当中
     changeId: (state, action) => {
-      console.log(action.payload);
       state.domId = action.payload.id
       state.domOptions = action.payload
       state.domType = action.payload.type
