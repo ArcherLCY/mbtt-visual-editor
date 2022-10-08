@@ -2,8 +2,6 @@ import './App.css';
 import Home from './pages/home';
 import Index from './pages/index';
 import Establish from './pages/establish';
-import Index from './pages/index'
-import Template from './pages/template'
 // 路由使用
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom"
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+
 import { changeId } from '../../pages/home/slice'
 import {
   Form,
@@ -9,7 +10,7 @@ const { RangePicker } = DatePicker;
 function App(options) {
   const dispatch = useDispatch()
   const { hasRange, showTime, placeholder } = options.options;
-  let environment = useSelector(state => state.home.environment);
+
   if (hasRange === 'DatePicker') {
     return (
       <div className='dateConsole'

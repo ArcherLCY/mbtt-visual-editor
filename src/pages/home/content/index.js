@@ -9,7 +9,6 @@ import Text from '../../../components/text/index'
 import Radio from '../../../components/radio/index'
 import Checkbox from '../../../components/checkbox/index'
 import Resume from '../../../components/resume/index'
-import DatePicker from '../../../components/datePicker/index'
 import Link from '../../../components/link/index'
 import Date from '../../../components/datePicker/index'
 import Telephone from '../../../components/telephone/index'
@@ -33,10 +32,9 @@ function typeToAntd(dom) {
     case 'radio': return <Radio options={dom} key={dom.id}></Radio>
     case 'email': return <Email options={dom} key={dom.id}></Email>
     case 'switch': return <Switch options={dom} key={dom.id}></Switch>
-    case 'Rate': return <Rate options={dom} key={dom.id}></Rate>
+    case 'rate': return <Rate options={dom} key={dom.id}></Rate>
     case 'resume': return <Resume options={dom} key={dom.id}></Resume>
-    case 'Textarea': return <Textarea options={dom} key={dom.id}></Textarea>
-    case 'Picture': return <Picture options={dom} key={dom.id}></Picture>
+    case 'textarea': return <Textarea options={dom} key={dom.id}></Textarea>
     case 'content': return <Contents options={dom} key={dom.id}></Contents>
     case 'picture': return <Picture options={dom} key={dom.id}></Picture>
     case 'checkbox': return <Checkbox options={dom} key={dom.id}></Checkbox>

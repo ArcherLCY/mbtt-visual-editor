@@ -8,10 +8,17 @@ import mediaMenu from '../../../api/menuData/mediaMenu'
 
 function Menu() {
     const dispatch = useDispatch()
+
     // 开启拖拽
     const dragStart = (e, option) => {
         option.id = nanoid()
         e.dataTransfer.setData('option', JSON.stringify(option))
+    }
+
+    
+    const getId = (option) => {
+        option.id = nanoid()
+        dispatch(increment(option))
     }
 
     return (
@@ -23,11 +30,9 @@ function Menu() {
                         return (
                             <div className={styles.MenuItem} key={index}>
                                 <Button key={index}
-                                    onClick={() => {
-                                        console.log(item);
-                                        item.id = nanoid() 
-                                        console.log(item);
-                                        dispatch(increment(item))
+                                    onClick={() => { 
+                                        let temp = {...item}
+                                        getId(temp)
                                     }}
                                     draggable
                                     onDragStart={(e) => dragStart(e, item)}
@@ -48,9 +53,10 @@ function Menu() {
                             <div className={styles.MenuItem} key={index}>
                                 <Button key={index}
                                     onClick={() => {
-                                        item.id = nanoid()  
-                                        dispatch(increment(item))
+                                        let temp = {...item}
+                                        getId(temp)
                                     }}
+                                    draggable
                                     onDragStart={(e) => dragStart(e, item)}
                                 >
                                     {item.text}
@@ -63,4 +69,5 @@ function Menu() {
         </div>
     );
 }
+
 export default Menu;

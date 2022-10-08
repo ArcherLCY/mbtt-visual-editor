@@ -37,7 +37,7 @@ function App(data) {
         paddingLeft: '5px',
       }}
       onClick={() => { dispatch(changeId(options)) }}>
-      {value}
+      {value||"文本"}
     </h2>
      </Form.Item>
     </div>
