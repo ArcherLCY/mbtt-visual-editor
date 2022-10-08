@@ -58,7 +58,7 @@ const App = (data) => {
                   console.log('copyText',copyText);
                   console.log('index',index);
                   copyText[index] = e.target.value;
-                  options.inputValue = copyText;
+                  options.inputValue = [...copyText];
                   dispatch(changeOptions(options));
                 }}
                 placeholder="修改文字"

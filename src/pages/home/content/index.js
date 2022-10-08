@@ -9,6 +9,7 @@ import Text from '../../../components/text/index'
 import Radio from '../../../components/radio/index'
 import Checkbox from '../../../components/checkbox/index'
 import Resume from '../../../components/resume/index'
+import DatePicker from '../../../components/datePicker/index'
 
 import { useSelector } from 'react-redux'
 import './contentStyle.module.scss'
