@@ -9,6 +9,7 @@ import Switch from '../../../components/switch/index'
 import Text from '../../../components/text/index'
 import Radio from '../../../components/radio/index'
 import Checkbox from '../../../components/checkbox/index'
+import Resume from '../../../components/resume/index'
 
 import { useSelector, useDispatch } from 'react-redux'
 import { changeId } from '../slice'
