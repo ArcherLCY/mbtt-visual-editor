@@ -9,7 +9,7 @@ export const homeSlice = createSlice({
     domType: '',
     domOptions: {},
     isEdit: true,
-    contentSize: { width: 800, height: 1000} //中心画布的大小
+    contentSize: { width: 800, height: 1000}, //中心画布的大小
   },
     // 将新增的action的信息转移到 state 当中
   reducers: {   
@@ -41,17 +41,62 @@ export const homeSlice = createSlice({
 
     // 改变编辑状态
     changeEditStatus: (state, action) => {
+      console.log(action);
       state.isEdit = action.payload
     },
 
     // 改变中心画布大小
     changeContentSize: (state, action) => {
-      console.log(action.payload)
       state.contentSize = action.payload
     },
+
+    // 清空domList
+    clearDomList: (state) => {
+      state.domList = []
+    },
+
+    // 删除选中的dom
+    deleteDom: (state, action) => {
+      state.domList = state.domList.filter(item => {
+        return item.id !== action.payload 
+      })
+      state.domOptions = {}
+      state.domId = ''
+      state.domType = ''
+    },
+
+    // 根据索引插入节点一个组件
+    incrementByIndex: (state, action) => {     
+      const {payload} = action
+      state.domList.splice(payload.index, 0, payload.option)
+      state.domOptions = payload.option
+      state.domId = payload.option.id
+      state.domType = payload.option.type
+    },
+
+    // 根据索引移动一个组件
+    moveByIndex: (state, action) => {
+      const {payload} = action
+      state.domList.splice(payload.indexFrom, 1)
+      state.domList.splice(payload.indexTo, 0, payload.option)
+      state.domOptions = payload.option
+      state.domId = payload.option.id
+      state.domType = payload.option.type
+    },
+
   },
 })
 
-export const { increment, changeOptions, changeId, changeEditStatus, changeContentSize  } = homeSlice.actions
+export const { 
+  increment, 
+  changeOptions, 
+  changeId, 
+  changeEditStatus, 
+  changeContentSize, 
+  clearDomList, 
+  deleteDom, 
+  incrementByIndex,
+  moveByIndex
+} = homeSlice.actions
 
 export default homeSlice.reducer

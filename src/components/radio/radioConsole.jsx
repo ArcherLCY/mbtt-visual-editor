@@ -7,10 +7,11 @@ import {
     Button
 } from 'antd';
 
+// 设置一个计数器
+let count = 0;
+
 const App = (data) => {
-  console.log(data);
-    let options = { ...data.options }
-    // 此时options是一个props组成的对象
+  let options = { ...data.options }
 
     const dispatch = useDispatch();
 
@@ -23,9 +24,9 @@ const App = (data) => {
       radioValue.push('')
     }
 
-    return (
-        <Form layout="vertical">
-            <Form.Item label="单选框文本">
+  return (
+    <Form layout="vertical">
+      <Form.Item label="单选框文本">
                 {
                   options.text.map((item,index)=>{
                     return (
@@ -40,30 +41,29 @@ const App = (data) => {
                 <Button>确认</Button>
             </Form.Item>
 
-            <Form.Item>
-                <Checkbox onChange={(e) => {
-                    options.autoFocus = e.target.checked
-                    dispatch(changeOptions(options))
-                }}>自动获取焦点</Checkbox>
-            </Form.Item>
+      <Form.Item>
+        <Checkbox onChange={(e) => {
+          options.autoFocus = e.target.checked
+          dispatch(changeOptions(options))
+        }}>自动获取焦点</Checkbox>
+      </Form.Item>
 
-            <Form.Item>
-                <Checkbox onChange={(e) => {
-                    options.defaultChecked = e.target.checked
-                    dispatch(changeOptions(options))
-                }}>指定当前是否选中</Checkbox>
-            </Form.Item>
+      {/* <Form.Item>
+        <Checkbox onChange={(e) => {
+          options.defaultChecked = e.target.checked
+          dispatch(changeOptions(options))
+        }}>指定当前是否选中</Checkbox>
+      </Form.Item> */}
 
-            <Form.Item>
-                <Checkbox onChange={(e) => {
-                    options.disabled = e.target.checked
-                    dispatch(changeOptions(options))
-                }}>是否禁用</Checkbox>
-                <p style={{fontSize: 12 + 'px', color: 'red'}}>注：一旦设置，禁止修改</p>
-            </Form.Item>
+      <Form.Item>
+        <Checkbox onChange={(e) => {
+          options.disabled = e.target.checked
+          dispatch(changeOptions(options))
+        }}>是否禁用</Checkbox>
+      </Form.Item>
 
-        </Form>
-    );
+    </Form>
+  );
 };
 
 export default App;

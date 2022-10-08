@@ -1,76 +1,72 @@
 import { useDispatch } from 'react-redux'
 import { nanoid } from 'nanoid';
 import { increment } from '../slice'
-import './menuStyle.scss'
-import { FontColorsOutlined, WalletOutlined, AppstoreAddOutlined } from '@ant-design/icons';
-
-
+import styles from './index.module.scss'
+import {Button} from 'antd'
+import beseMenu from '../../../api/menuData/baseMenu'
+import mediaMenu from '../../../api/menuData/mediaMenu'
 
 function Menu() {
-  const dispatch = useDispatch()
-  return (
-    <div className="Menu">
-      <h2>基础组件</h2>
-      <div className='Menu-list'>
-        <button onClick={() => dispatch(increment({ type: 'Text', id: Date.parse(new Date()), value: '单行文本' }))}>
-          <FontColorsOutlined />
-          <span>单行文本</span>
-        </button>
+    const dispatch = useDispatch()
 
-        <button onClick={() => dispatch(increment({ type: 'Card', id: Date.parse(new Date()), size: 'small', title: '标题' }))}>
-          <WalletOutlined />
-          <span>卡片</span>
-        </button>
+    // 开启拖拽
+    const dragStart = (e, option) => {
+        option.id = nanoid()
+        e.dataTransfer.setData('option', JSON.stringify(option))
+    }
 
-        <button onClick={() => dispatch(increment({ type: 'Button', id: Date.parse(new Date()), style: 'primary', value: '主要按钮' }))}>
-          <AppstoreAddOutlined />
-          <span>按钮</span>
-        </button>
+    
+    const getId = (option) => {
+        option.id = nanoid()
+        dispatch(increment(option))
+    }
 
-        <button onClick={() => dispatch(increment({
-          type: 'Radio', id: Date.parse(new Date()),
-          text: ['Apple', 'Pear', 'Orange']
-        }))}>
-          <FontColorsOutlined />
-          <span>单选按钮</span>
-        </button>
-
-        <button onClick={() => dispatch(increment({ type: 'Checkbox', id: Date.parse(new Date()), text: '复选框1' }))}>
-          <FontColorsOutlined />
-          <span>复选按钮</span>
-        </button>
-
-        <button onClick={() => dispatch(increment({ type: 'Switch', id: Date.parse(new Date()), text: '开关' }))}>
-          <FontColorsOutlined />
-          <span>开关</span>
-        </button>
-
-        <button onClick={() => dispatch(increment({ type: 'Picture', id: Date.parse(new Date()), text: '图片' }))}>
-          <FontColorsOutlined />
-          <span>选择图片</span>
-        </button>
-
-        <button onClick={() => dispatch(increment({ type: 'Textarea', id: Date.parse(new Date()), text: '文本域' }))}>
-          <FontColorsOutlined />
-          <span>多行文本</span>
-        </button>
-
-        <button onClick={() => dispatch(increment({ type: 'Content', id: Date.parse(new Date()), text: '文本' }))}>
-          <FontColorsOutlined />
-          <span>单行文本</span>
-        </button>
-      </div>
-
-      <h2>高级组件</h2>
-      <button onClick={() => dispatch(increment({ type: 'DatePicker', id: nanoid(), hasRange: 'DatePicker', showTime: true, placeholder: '' }))}>日期选择框</button>
-
-      <h2>模板</h2>
-      <button onClick={() => dispatch(increment({ type: 'DatePicker', id: nanoid() }))}>疫情打卡</button>
-      <div style={{ height: '10000px' }}>
-        more
-      </div>
-    </div>
-  );
+    return (
+        <div className={styles.Menu}>
+            <h2>基础组件</h2>
+            <div className={styles.MenuList}>   
+                {
+                    beseMenu.map((item, index) => {
+                        return (
+                            <div className={styles.MenuItem} key={index}>
+                                <Button key={index}
+                                    onClick={() => { 
+                                        let temp = {...item}
+                                        getId(temp)
+                                    }}
+                                    draggable
+                                    onDragStart={(e) => dragStart(e, item)}
+                                >
+                                    {item.text}
+                                </Button>
+                            </div>
+                        )
+                    })
+                }                    
+            </div>
+            <h2>高级组件</h2>
+            <div className={styles.MenuList}>
+                {
+                    mediaMenu.map((item, index) => {
+                        // const id = 
+                        return (
+                            <div className={styles.MenuItem} key={index}>
+                                <Button key={index}
+                                    onClick={() => {
+                                        let temp = {...item}
+                                        getId(temp)
+                                    }}
+                                    onDragStart={(e) => dragStart(e, item)}
+                                >
+                                    {item.text}
+                                </Button>
+                            </div>
+                        )
+                    })
+                }
+            </div>
+        </div>
+    );
 }
 
 export default Menu;
