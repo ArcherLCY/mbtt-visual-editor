@@ -1,4 +1,4 @@
-// import { FontColorsOutlined,WalletOutlined,AppstoreAddOutlined } from '@ant-design/icons';
+
 export default [
     {
         type: 'Card',
