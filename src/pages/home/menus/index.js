@@ -8,7 +8,6 @@ import mediaMenu from '../../../api/menuData/mediaMenu'
 
 function Menu() {
     const dispatch = useDispatch()
-
     // 开启拖拽
     const dragStart = (e, option) => {
         option.id = nanoid()
@@ -64,5 +63,4 @@ function Menu() {
         </div>
     );
 }
-
 export default Menu;

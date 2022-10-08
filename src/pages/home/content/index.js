@@ -10,6 +10,10 @@ import Radio from '../../../components/radio/index'
 import Checkbox from '../../../components/checkbox/index'
 import Resume from '../../../components/resume/index'
 import DatePicker from '../../../components/datePicker/index'
+import Link from '../../../components/link/index'
+import Date from '../../../components/datePicker/index'
+import Telephone from '../../../components/telephone/index'
+import Email from '../../../components/email/index'
 
 // import useDrag from '../../../hooks/useDrag'
 import { useSelector, useDispatch } from 'react-redux'
@@ -23,14 +27,20 @@ function typeToAntd(dom) {
     case 'card': return <Card options={dom} key={dom.id}></Card>
     case 'text': return <Text options={dom} key={dom.id}></Text>
     case 'button': return <Button options={dom} key={dom.id}></Button>
+    case 'link': return <Link options={dom} key={dom.id}></Link>
+    case 'date': return <Date options={dom} key={dom.id}></Date>
+    case 'rate': return <Rate options={dom} key={dom.id}></Rate>
     case 'radio': return <Radio options={dom} key={dom.id}></Radio>
-    case 'checkbox': return <Checkbox options={dom} key={dom.id}></Checkbox>
+    case 'email': return <Email options={dom} key={dom.id}></Email>
     case 'switch': return <Switch options={dom} key={dom.id}></Switch>
     case 'Rate': return <Rate options={dom} key={dom.id}></Rate>
     case 'resume': return <Resume options={dom} key={dom.id}></Resume>
     case 'Textarea': return <Textarea options={dom} key={dom.id}></Textarea>
     case 'Picture': return <Picture options={dom} key={dom.id}></Picture>
-    case 'Contents': return <Contents options={dom} key={dom.id}></Contents>
+    case 'content': return <Contents options={dom} key={dom.id}></Contents>
+    case 'picture': return <Picture options={dom} key={dom.id}></Picture>
+    case 'checkbox': return <Checkbox options={dom} key={dom.id}></Checkbox>
+    case 'telephone': return <Telephone options={dom} key={dom.id}></Telephone>
     default: return null
   }
 }

@@ -3,7 +3,7 @@ import Checkbox from '../../../../components/checkbox/index';
 import Raido from '../../../../components/radio/index';
 import DatePicker from '../../../../components/datepicker/index';
 import Picture from '../../../../components/picture/index';
-import DatePicker from '../../../../components/datePicker/index';
+import Textarea from '../../../../components/textarea/index';
 
 
 function clockIn() {

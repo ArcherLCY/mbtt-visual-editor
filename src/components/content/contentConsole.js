@@ -1,61 +1,108 @@
 import React from "react";
-import { Input } from "antd";
 import { changeOptions } from '../../pages/home/slice';
 import { useDispatch } from 'react-redux';
 import './index_style.css'
+import {
+    Form,
+    Input,
+    Checkbox,
+    Radio,
+} from 'antd'
+import { FontColorsOutlined, } from '@ant-design/icons';
 const App = (data) => {
     let options = { ...data.options }
+    const RadioGroup = Radio.Group;
+    const RadioButton = Radio.Button;
     const dispatch = useDispatch();
     return (
-        <>
-            <div className="contentConsole">
-                <Input
-                    maxLength={8}
-                    placeholder={"请输入文本"}
-                    className='input_nian'
+
+        <div className="contentConsole">
+            <h2 className='title'>
+                <FontColorsOutlined /> 单行文本</h2>
+            <Form layout="vertical"
+                className='formStyle'>
+                <Form.Item label="标题">
+                    <Input
+                        placeholder="请输入标题"
+                        value={options.title}
+                        onChange={(e) => {
+                            options.title = e.target.value;
+                            console.log(options);
+                            dispatch(changeOptions(options))
+                        }} />
+                </Form.Item>
+                <Form.Item label="提示">
+                    <Input
+                        placeholder="请输入提示"
+                        className='tips'
+                        onChange={(e) => {
+                            options.tips = e.target.value; console.log(options);
+                            dispatch(changeOptions(options))
+                        }} />
+                </Form.Item>
+                <Form.Item label="默认内容">
+                    <Input
+                        placeholder={'请输入默认内容'}
+                        className='default'
+                        onChange={(e) => {
+                            options.placeholder = e.target.value;
+                            console.log(options);
+                            dispatch(changeOptions(options))
+                        }} />
+                </Form.Item>
+                <Form.Item label="所占字段%">
+                    <RadioGroup
+                        defaultValue="d"
+                        buttonStyle="solid"
+                    >
+                        <RadioButton
+                            value="a"
+                            onClick={(e) => {
+                                options.width = '25%';
+                                console.log(options);
+                                dispatch(changeOptions(options))
+                            }} >25</RadioButton>
+                        <RadioButton
+                            value="b"
+                            onClick={(e) => {
+                                options.width = '50%';
+                                console.log(options);
+                                dispatch(changeOptions(options))
+                            }} >50</RadioButton>
+                        <RadioButton
+                            value="c"
+                            onClick={(e) => {
+                                options.width = '75%';
+                                console.log(options);
+                                dispatch(changeOptions(options))
+                            }}  >75</RadioButton>
+                        <RadioButton
+                            value="d"
+                            onClick={(e) => {
+
+                                options.width = '100%';
+                                console.log(options);
+                                dispatch(changeOptions(options))
+                            }}  >100</RadioButton>
+                    </RadioGroup>
+                </Form.Item>
+            </Form>
+            <Form.Item label=""
+                style={{
+                    fontFamily: '微软雅黑',
+                }}
+            >
+                <Checkbox
                     onChange={(e) => {
-                        console.log('e',e.target.value)
-                        options.value_content = e.target.value; console.log(options);
-                        options.value_content_resume = e.target.value
+                        options.checked = e.target.checked; console.log(options);
                         dispatch(changeOptions(options))
-                    }} />
-                height<Input type={'text'} onChange={(e) => {
-                    options.height = e.target.value; console.log(options);
-                    dispatch(changeOptions(options))
-                }} />
-                width<Input type={'text'} onChange={(e) => {
-                    options.width = e.target.value; console.log(options);
-                    dispatch(changeOptions(options))
-                }} />
-                left<Input type={'text'} className="picture_marginLeft" onChange={(e) => {
-                    options.marginLeft = e.target.value; console.log(options);
-                    dispatch(changeOptions(options))
-                }} />
-                top  <Input type={'text'} className="picture_marginTop" onChange={(e) => {
-                    options.marginTop = e.target.value; console.log(options);
-                    dispatch(changeOptions(options))
-                }} />
-                bottom<Input type={'text'} className="picture_marginBottom" onChange={(e) => {
-                    options.marginBottom = e.target.value; console.log(options);
-                    dispatch(changeOptions(options))
-                }} />
-                z-index<Input type={'text'} onChange={(e) => {
-                    options.zIndex = e.target.value; console.log(options);
-                    dispatch(changeOptions(options))
-                }} />
-                position
-                <select onChange={(e) => {
-                    options.position = e.target.value; console.log(options);
-                    dispatch(changeOptions(options))
-                }}>
-                    <option value=" "></option>
-                    <option value="fixed">fixed</option>
-                    <option value="relative">relative</option>
-                    <option value="absolute">absolute</option>
-                    <option value="sticky">sticky</option>
-                </select>
-            </div>
-        </>
+                    }}
+                >
+                    这是个必填项
+                </Checkbox>
+            </Form.Item>
+        </div>
+
     )
 }
 export default App

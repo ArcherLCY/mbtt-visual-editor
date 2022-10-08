@@ -6,6 +6,7 @@ import ContentSizeEdit from './compontents/ContentSizeEdit'
 import IsEdit from './compontents/IsEdit'
 
 import styles from './index.module.scss';
+import './headerStyle.css';
 
 function Header() {
   // 定义模板市场浮窗内容
@@ -54,7 +55,6 @@ function Header() {
       </Row>
     </div>
   );
-
   return (
     <Card hoverable className={styles.header_card}>
       <div className={styles.header}>
@@ -73,6 +73,15 @@ function Header() {
           <Display />
           {/* 配置面板 */}
           <ContentSizeEdit />
+          未命名应用
+          自由表单设计
+          <Popover content={modelMarket}>
+            <Button>模板市场</Button>
+          </Popover>
+        </div>
+        <div className={styles.header_right}>
+          <ContentSizeEdit />
+          <Display />
         </div>
       </div>
     </Card>
