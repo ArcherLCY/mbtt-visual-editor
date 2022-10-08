@@ -1,10 +1,10 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 import { changeOptions } from '../../pages/home/slice'
 import {
-  Form,
-  Checkbox,
-  Input,
-  Button,
+    Form,
+    Checkbox,
+    Input,
+    Button
 } from 'antd';
 
 // 设置一个计数器
@@ -13,20 +13,16 @@ let count = 0;
 const App = (data) => {
   let options = { ...data.options }
 
-  const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
-  // 添加input回调
-  function addInput() {
-    options.inputValue = [...options.inputValue, '默认' + (count++)];
-    dispatch(changeOptions(options));
-  }
+    // 单选框值
+    let radioValue = useSelector((state)=>{
+        console.log(state);
+    })
 
-  const changeInputValue = (e , index) => {
-    let obj = Object.assign({}, options.inputValue[index])
-    obj.text = e.target.value;
-    console.log(obj);
-    options.inputValue[index] = obj
-  }
+    function addInput(){
+      radioValue.push('')
+    }
 
   return (
     <Form layout="vertical">
