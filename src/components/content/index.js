@@ -10,8 +10,8 @@ const App = (options) => {
         <Input
             className='content_input'
             placeholder='请输入'
-            value= {options.options?.value_content_resume||options.options?.value_content || ""} onClick={() => {
-                // console.log('options',options);
+            value={options.options?.value_content || ""} 
+            onClick={() => {
                 dispatch(changeId(options.options))
             }}
             

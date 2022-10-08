@@ -1,8 +1,7 @@
-
 import Card from '../../../components/card/index'
 import Button from '../../../components/button/index'
 import Rate from '../../../components/rate/index'
-import Picture from '../../../components/picture/index_'
+import Picture from '../../../components/picture/index'
 import Textarea from '../../../components/textarea/index'
 import Contents from '../../../components/content/index'
 import Switch from '../../../components/switch/index'
@@ -10,6 +9,7 @@ import Text from '../../../components/text/index'
 import Radio from '../../../components/radio/index'
 import Checkbox from '../../../components/checkbox/index'
 import Resume from '../../../components/resume/index'
+import DatePicker from '../../../components/datePicker/index'
 
 // import useDrag from '../../../hooks/useDrag'
 import { useSelector, useDispatch } from 'react-redux'

@@ -14,6 +14,7 @@ function App(options) {
       onClick={() => { dispatch(changeId(options.options))}}>
         {text}
     </Checkbox>
+    
   )
 }
     

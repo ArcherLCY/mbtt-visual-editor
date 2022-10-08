@@ -7,7 +7,12 @@ import beseMenu from '../../../api/menuData/baseMenu'
 import mediaMenu from '../../../api/menuData/mediaMenu'
 
 function Menu() {
-    const dispatch = useDispatch()
+  const dispatch = useDispatch()
+  return (
+    <div className="Menu">
+      <h2>基础组件</h2>
+      <div className='Menu-list'>
+
 
     // 开启拖拽
     const dragStart = (e, option) => {
@@ -15,11 +20,31 @@ function Menu() {
         e.dataTransfer.setData('option', JSON.stringify(option))
     }
 
-    
-    const getId = (option) => {
-        option.id = nanoid()
-        dispatch(increment(option))
-    }
+        <button onClick={() => dispatch(increment({ type: 'Button', id: Date.parse(new Date()), style: 'primary', value: '主要按钮' }))}>
+          <AppstoreAddOutlined />
+          <span>按钮</span>
+        </button>
+
+        <button onClick={() => dispatch(increment({ type: 'Switch', id: Date.parse(new Date()), text: '开关' }))}>
+          <FontColorsOutlined />
+          <span>开关</span>
+        </button>
+
+        <button onClick={() => dispatch(increment({ type: 'Text', id: Date.parse(new Date()), value: '单行文本' }))}>
+          <FontColorsOutlined />
+          <span>单行文本</span>
+        </button>
+
+        <button onClick={() => dispatch(increment({
+          type: 'Radio', 
+          id: nanoid(),
+          inputValue: ['Apple', 'Pear', 'Orange'],
+          title:'单项选择',
+          tooltip:'tooltip'
+        }))}>
+          <FontColorsOutlined />
+          <span>单选按钮</span>
+        </button>
 
     return (
         <div className={styles.Menu}>

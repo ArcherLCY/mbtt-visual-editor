@@ -1,45 +1,76 @@
-import { useDispatch,useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { changeOptions } from '../../pages/home/slice'
 import {
-    Form,
-    Checkbox,
-    Input,
-    Button
+  Form,
+  Checkbox,
+  Input,
+  Button,
 } from 'antd';
 
 // 设置一个计数器
 let count = 0;
 
 const App = (data) => {
+
   let options = { ...data.options }
+  // 此时options是一个props组成的对象
 
-    const dispatch = useDispatch();
+  console.log(data);
 
-    // 单选框值
-    let radioValue = useSelector((state)=>{
-        console.log(state);
-    })
+  const dispatch = useDispatch();
 
-    function addInput(){
-      radioValue.push('')
-    }
+  // 复制一份text值
+  let copyText = [...options.inputValue];
+  console.log("copyText",copyText);
+
+  // 添加input回调
+  function addInput() {
+    options.inputValue = [...options.inputValue, '默认' + (count++)];
+    dispatch(changeOptions(options));
+  }
 
   return (
     <Form layout="vertical">
+      <Form.Item label="标题">
+        <Input onChange={(e) => {
+          options.title = e.target.value;
+          dispatch(changeOptions(options));
+        }} 
+        placeholder="请输入标题"
+        />
+      </Form.Item>
+
+      <Form.Item label="提示">
+        <Input onChange={(e) => {
+          options.tooltip = e.target.value;
+          dispatch(changeOptions(options));
+        }} 
+        placeholder="请输入提示"
+        />
+      </Form.Item>
+
       <Form.Item label="单选框文本">
-                {
-                  options.text.map((item,index)=>{
-                    return (
-                      <Input onBlur={(e) => {
-                        radioValue[index] = e.target.value;
-                        dispatch(changeOptions(options))
-                    }} placeholder="修改文字" key={index}/>
-                    )
-                  })
-                }
-                <Button onClick={addInput}>添加</Button>
-                <Button>确认</Button>
-            </Form.Item>
+        {
+          copyText.map((item, index) => {
+            return (
+              <Input
+                onChange={(e) => {
+                  console.log('copyText',copyText);
+                  console.log('index',index);
+                  copyText[index] = e.target.value;
+                  options.inputValue = [...copyText];
+                  dispatch(changeOptions(options));
+                }}
+                placeholder="修改文字"
+                key={index}
+              />
+
+            )
+          })
+        }
+        <Button onClick={addInput}>添加</Button>
+        {/* <Button onClick={confirmValue}>确认</Button> */}
+      </Form.Item>
 
       <Form.Item>
         <Checkbox onChange={(e) => {
