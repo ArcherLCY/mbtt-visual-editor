@@ -10,7 +10,7 @@ import {
     Input,
     Checkbox
 } from 'antd';
-// import ConsoleStyle from '../console_style/console_style'
+import { PictureOutlined } from '@ant-design/icons';
 import { useRef } from 'react';
 const App_picture = (data) => {
     let options = { ...data.options }
@@ -32,22 +32,14 @@ const App_picture = (data) => {
     }
     return (
         <div className="pictureInput">
-            <Form layout="vertical"
-                style={{
-                    fontWeight: 700,
-                    fontFamily: '微软雅黑',
-                }}
-            // type={'file'} id={'file'} ref={fileInputEl} hidden onChange={() => {
-            //     let url = choosefile(document.getElementById('file').files[0])
-            //     options.src = url
-            //     dispatch(changeOptions(options))
-            // }
-            // }
-            >
+            <h2 className='title'>
+                <PictureOutlined /> 图片</h2>
+        <Form layout="vertical"
+            className='formStyle'>
+                
                 <Form.Item label="标题">
                     <Input
                         placeholder="请输入标题"
-                        className='title'
                         onChange={(e) => {
                             options.title = e.target.value; console.log(options);
                             dispatch(changeOptions(options))
@@ -62,22 +54,25 @@ const App_picture = (data) => {
                             dispatch(changeOptions(options))
                         }} />
                 </Form.Item>
-                <Form.Item label="默认内容">
-                    <input type={'file'} id={'file'} ref={fileInputEl} hidden onChange={() => {
-                        let url = choosefile(document.getElementById('file').files[0])
-                        options.src = url
-                        dispatch(changeOptions(options))
-                    }
-                    } />
-                    <Button type="dashed" onClick={() => fileInputEl.current.click()} className="picture_button">上传图片</Button>
+                <Form.Item label="">
+                    <input type={'file'} id={'file'}
+                        ref={fileInputEl} hidden onChange={() => {
+                            let url = choosefile(document.getElementById('file').files[0])
+                            options.src = url
+                            dispatch(changeOptions(options))
+                        }
+                        } />
+                    <Button type="dashed"
+                        onClick={() => fileInputEl.current.click()}>
+                        上传图片</Button>
                 </Form.Item>
 
             </Form>
 
             <Form.Item
-             style={{
-                fontFamily: '微软雅黑',
-            }}
+                style={{
+                    fontFamily: '微软雅黑',
+                }}
             >
                 <Checkbox
                     onChange={(e) => {

@@ -25,24 +25,34 @@ function App(options) {
         <Form layout="vertical">
           <Form.Item label={options.options?.title || "日期"}
             required={options.options?.checked}
+            onClick={() => {
+              console.log(options);
+              dispatch(changeId(options.options))
+            }}
             style={{
               fontWeight: 700,
               fontFamily: '微软雅黑',
               fontSize: options.options?.fontSize,
             }}
+          >
+            <h4 
+            className='indexTips'
             onClick={() => {
               console.log(options);
               dispatch(changeId(options.options))
-            }}>
+            }}
+            >
+            {options.options?.tips || ""}
+          </h4>
             <DatePicker
-            
+
               onPanelChange={(e) => {
                 e.preventDefault();
               }}
               showTime={showTime}
-              placeholder={placeholder}
+              placeholder={placeholder||"默认提示"}
               style={{
-                width:options.options?.width||'100%',
+                width: options.options?.width || '100%',
               }}
             />
           </Form.Item>
@@ -70,22 +80,23 @@ function App(options) {
               fontSize: options.options?.fontSize,
             }}>
             <h4
-            onClick={() => {
-              console.log(options);
-              dispatch(changeId(options.options))
-            }}
-            style={{
-              fontSize: '10px',
-              fontWeight: 500,
-              fontFamily: '微软雅黑',
-              color: '#b4b4bc',
-            }}/>
+              onClick={() => {
+                console.log(options);
+                dispatch(changeId(options.options))
+              }}
+              style={{
+                fontSize: '10px',
+                fontWeight: 500,
+                fontFamily: '微软雅黑',
+                color: '#b4b4bc',
+              }} >
             {options.options?.tips || ""}
+            </h4>
             <RangePicker
               showTime={showTime}
               placeholder={placeholder}
               style={{
-                width:options.options?.width||'100%',
+                width: options.options?.width || '100%',
               }}
             />
           </Form.Item>

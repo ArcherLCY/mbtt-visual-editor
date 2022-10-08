@@ -6,6 +6,7 @@ import {
   Input,
   Checkbox
 } from 'antd';
+import {  ScheduleOutlined } from '@ant-design/icons';
 
 const chooseMode = [
   { label: '普通模式', value: 'DatePicker' },
@@ -25,12 +26,11 @@ const App = (data) => {
   const RadioButton = Radio.Button;
   return (
     <div className="dateIndexConsole">
+      <h2
+          className='title'
+      ><ScheduleOutlined /> 日期</h2>
       <Form layout="vertical"
-        style={{
-          fontWeight: 700,
-          fontFamily: '微软雅黑',
-        }}
-      >
+            className='formStyle'>
         <Form.Item label="选择模式">
           <Radio.Group
             style={{
@@ -61,10 +61,10 @@ const App = (data) => {
               dispatch(changeOptions(options))
             }} />
         </Form.Item>
-        <Form.Item label="输入框提示文字">
+        <Form.Item label="输入框默认提示">
           <Input
             placeholder="请在此输入提示文字"
-            onBlur={(e) => {
+            onChange={(e) => {
               options.placeholder = e.target.value;
               dispatch(changeOptions(options));
             }}

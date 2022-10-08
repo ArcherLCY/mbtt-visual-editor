@@ -10,6 +10,7 @@ import {
     Checkbox,
     Radio,
 } from 'antd'
+import { FontColorsOutlined, } from '@ant-design/icons';
 const App = (data) => {
     let options = { ...data.options }
     const RadioGroup = Radio.Group;
@@ -18,21 +19,16 @@ const App = (data) => {
     return (
 
         <div className="contentConsole">
+            <h2 className='title'>
+                <FontColorsOutlined /> 单行文本</h2>
             <Form layout="vertical"
-                style={{
-                    fontWeight: 700,
-                    fontFamily: '微软雅黑',
-                }}
-            >
+                className='formStyle'>
                 <Form.Item label="标题">
                     <Input
                         placeholder="请输入标题"
-                        className='title'
                         value={options.title}
                         onChange={(e) => {
-
                             options.title = e.target.value;
-
                             console.log(options);
                             dispatch(changeOptions(options))
                         }} />

@@ -7,28 +7,29 @@ import {
   Input,
   Checkbox
 } from 'antd';
+import { FontColorsOutlined, MailOutlined, PhoneOutlined, SmileOutlined, PictureOutlined, PaperClipOutlined, WalletOutlined, AppstoreAddOutlined, ScheduleOutlined } from '@ant-design/icons';
 const App = (data) => {
   const dispatch = useDispatch()
   const ButtonGroup = Button.Group;
   let options = { ...data.options }
   return (
-    <div className="rateIndexConsole">
-      <Form
-        layout="vertical"
-        style={{
-          fontWeight: 700,
-          fontFamily: '微软雅黑',
-        }}
-      >
+    <div className="rateConsole">
+
+      <h2 className='title'>
+        <SmileOutlined /> 评分</h2>
+
+        <Form layout="vertical"
+            className='formStyle'>
         {/*标题 */}
         <Form.Item label="标题">
           <Input
             placeholder="请输入标题"
-            className='title'
             onChange={(e) => {
-              options.title = e.target.value; console.log(options);
+              options.title = e.target.value;
+              console.log(options);
               dispatch(changeOptions(options))
             }} />
+
         </Form.Item>
         {/* 提示 */}
         <Form.Item label="提示">

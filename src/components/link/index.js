@@ -14,6 +14,7 @@ const App = (options) => {
     const dispatch = useDispatch();
     return (
         <Form layout="vertical">
+
             <Form.Item label={options.options?.title || "链接"}
                 required={options.options?.checked}
                 onClick={() => {
@@ -25,17 +26,12 @@ const App = (options) => {
                     fontFamily: '微软雅黑',
                     fontSize: options.options?.fontSize,
                 }}>
-                <h4
+                <h4 className='indexTips'
                     onClick={() => {
                         console.log(options);
                         dispatch(changeId(options.options))
                     }}
-                    style={{
-                        fontSize: '10px',
-                        fontWeight: 500,
-                        fontFamily: '微软雅黑',
-                        color: '#b4b4bc',
-                    }}>
+                >
                     {options.options?.tips || ""}
                 </h4>
                 <a

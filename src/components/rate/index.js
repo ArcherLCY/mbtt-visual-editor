@@ -1,7 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { changeId } from '../../pages/home/slice'
-import './rateStyle.css'
 import {
   Form,
   Select,
@@ -23,9 +22,11 @@ const App = (data) => {
           dispatch(changeId(options))
         }
       }>
+       
       <Form layout="vertical">
-
-        <Form.Item label={options?.title || "评分"}
+          {/* 标题 */}
+        <Form.Item 
+          label={options?.title || "评分"}
           required={options?.checked}
 
           onClick={() => {
@@ -38,6 +39,7 @@ const App = (data) => {
             fontSize: options?.fontSize,
 
           }}>
+            {/* 提示 */}
           <h4
             onClick={() => {
               console.log(options);

@@ -15,7 +15,7 @@ const App = (options) => {
     <Form layout="vertical">
       {/* 标题 */}
       <Form.Item
-        label={options.options?.title || "单行文本"}
+        label={options.options?.title || "电话"}
         required={options.options?.checked}
 
         onClick={() => {
@@ -36,10 +36,10 @@ const App = (options) => {
             }}
             >
             {options.options?.tips || ""}
-          </h4>
+        </h4>
         <Input
           className='content_input'
-          placeholder={options.options?.placeholder || "输入默认内容"}
+          placeholder={options.options?.placeholder || "输入您的电话"}
           onClick={() => {
             console.log(options);
             dispatch(changeId(options.options))

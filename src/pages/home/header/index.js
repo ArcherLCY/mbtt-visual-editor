@@ -53,8 +53,6 @@ function Header() {
       </Row>
     </div>
   );
-
-
   return (
     <Card hoverable className={styles.header_card}>
       <div className={styles.header}>

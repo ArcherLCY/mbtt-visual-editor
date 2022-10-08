@@ -3,7 +3,7 @@ import { nanoid } from 'nanoid';
 import { increment } from '../slice'
 import './menusStyle.css'
 import './menuStyle.scss'
-import { FontColorsOutlined, WalletOutlined, AppstoreAddOutlined } from '@ant-design/icons';
+import { FontColorsOutlined,MailOutlined,PhoneOutlined,SmileOutlined,PictureOutlined,PaperClipOutlined, WalletOutlined, AppstoreAddOutlined,ScheduleOutlined} from '@ant-design/icons';
 
 function Menu() {
   const dispatch = useDispatch()
@@ -18,22 +18,21 @@ function Menu() {
         </button>
 
         <button onClick={() => dispatch(increment({ type: 'Link', id: Date.parse(new Date()), size: 'small', title: '标题' }))}>
-          <WalletOutlined />
+        <PaperClipOutlined />
           <span>链接</span>
         </button>
 
         <button onClick={() => dispatch(increment({ type: 'Rate', id: Date.parse(new Date()), size: 'small', title: '标题' }))}>
-          <WalletOutlined />
+        <SmileOutlined />
           <span>评分</span>
         </button>
 
-
-        {/* <button onClick={() => dispatch(increment({ type: 'Button', id: Date.parse(new Date()), style: 'primary', value: '主要按钮' }))}>
+        <button onClick={() => dispatch(increment({ type: 'Button', id: Date.parse(new Date()), style: 'primary', value: '主要按钮' }))}>
           <AppstoreAddOutlined />
           <span>按钮</span>
         </button>
 
-        <button onClick={() => dispatch(increment({ type: 'Switch', id: Date.parse(new Date()), text: '开关' }))}>
+        {/* <button onClick={() => dispatch(increment({ type: 'Switch', id: Date.parse(new Date()), text: '开关' }))}>
           <FontColorsOutlined />
           <span>开关</span>
         </button> */}
@@ -42,10 +41,19 @@ function Menu() {
           <FontColorsOutlined />
           <span>文本</span>
         </button>
-
-        <button onClick={() => dispatch(increment({ type: 'Date', id: nanoid(), hasRange: 'DatePicker', showTime: true, placeholder: '' }))}>
-          <FontColorsOutlined />
+        <button onClick={() => dispatch(increment({ type: 'Date', id: nanoid(), hasRange: 'DatePicker', showTime: true, placeholder: '' }))}> 
+        <ScheduleOutlined />
           <span>日期</span>
+        </button>
+
+        <button onClick={() => dispatch(increment({ type: 'Telephone', id: nanoid(), value: '单行文本'  }))}>
+        <PhoneOutlined/>
+          <span>电话</span>
+        </button>
+
+        <button onClick={() => dispatch(increment({ type: 'Email', id: nanoid(), value: '单行文本'  }))}>
+        <MailOutlined />
+          <span>邮箱</span>
         </button>
 
         <button onClick={() => dispatch(increment({ type: 'Content', id: Date.parse(new Date()), text: '文本' }))}>
@@ -62,17 +70,17 @@ function Menu() {
           type: 'Radio', id: Date.parse(new Date()),
           text: ['选项1', '选项2']
         }))}>
-          <FontColorsOutlined />
+          <AppstoreAddOutlined />
           <span>单选按钮</span>
         </button>
 
         <button onClick={() => dispatch(increment({ type: 'Checkbox', id: Date.parse(new Date()), text: '复选框1' }))}>
-          <FontColorsOutlined />
+          <AppstoreAddOutlined />
           <span>复选按钮</span>
         </button>
 
         <button onClick={() => dispatch(increment({ type: 'Picture', id: Date.parse(new Date()), text: '图片' }))}>
-          <FontColorsOutlined />
+        <PictureOutlined />
           <span>选择图片</span>
         </button>
         <h2>高级组件</h2>

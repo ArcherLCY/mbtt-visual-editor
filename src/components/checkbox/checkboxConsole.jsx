@@ -8,9 +8,7 @@ import {
 
 const App = (data) => {
     let options = { ...data.options }
-
     const dispatch = useDispatch()
-
     return (
         <Form layout="vertical">
             <Form.Item label="单选框文本">
