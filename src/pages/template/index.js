@@ -6,7 +6,7 @@ import Textarea from '../../components/textarea/index';
 function Template(){
     return(
         <div className="Template">
-            <Textarea></Textarea>
+            <Textarea>Template</Textarea>
         </div>
     )
 }
