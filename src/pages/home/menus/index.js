@@ -13,7 +13,6 @@ function Menu() {
     const dragStart = (e, option) => {
         option.id = nanoid()
         e.dataTransfer.setData('option', JSON.stringify(option))
-        e.dataTransfer.setData('targetDom', JSON.stringify(e.target))
     }
 
     return (
@@ -27,7 +26,9 @@ function Menu() {
                                 <Button key={index}
                                     style={{width: 100 + 'px'}}
                                     onClick={() => {
+                                        console.log(item);
                                         item.id = nanoid() 
+                                        console.log(item);
                                         dispatch(increment(item))
                                     }}
                                     draggable

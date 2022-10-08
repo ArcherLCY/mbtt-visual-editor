@@ -56,26 +56,26 @@ function Header() {
   );
 
   return (
-    <Card hoverable className={styles.header_card}>     
-        <div className={styles.header}>
-          <div>
-            <LeftOutlined />
-            <span style={{marginLeft: 10 + 'px'}}>未命名应用 自由表单设计</span>
-          </div>
-          <div className={styles.header_right}>
-          <Popover content={modelMarket}>
-          <Button>模板市场</Button>
-        </Popover>
-
-            {/* 辑和预览切换的组件 */}
-            <IsEdit/>  
-            {/* 操作按钮 */}
-            <Display />
-            {/* 配置面板 */}
-            <ContentSizeEdit/>
-          </div>
+    <Card hoverable className={styles.header_card}>
+      <div className={styles.header}>
+        <div>
+          <LeftOutlined />
+          <span style={{ marginLeft: 10 + 'px' }}>未命名应用 自由表单设计</span>
         </div>
-      </Card>
+        <div className={styles.header_right}>
+          <Popover content={modelMarket}>
+            <Button type='primary' style={{marginRight: '50px'}}>模板市场</Button>
+          </Popover>
+
+          {/* 辑和预览切换的组件 */}
+          <IsEdit />
+          {/* 操作按钮 */}
+          <Display />
+          {/* 配置面板 */}
+          <ContentSizeEdit />
+        </div>
+      </div>
+    </Card>
   );
 }
 

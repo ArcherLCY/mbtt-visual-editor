@@ -17,7 +17,12 @@ export default [
     {
         type: 'Radio',
         text: '单选按钮',
-        icon: '',       
+        icon: '', 
+        inputValue: [{
+            text: 'haha'
+        }, {
+            text: 'haha2'
+        }]      
     },
     {
         type: 'Checkbox',

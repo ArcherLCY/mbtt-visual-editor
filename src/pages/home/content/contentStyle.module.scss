@@ -15,12 +15,17 @@
     }
 }
 
+// 外嵌套一个盒子增加内边距
+.editOuter {
+    padding: 5px 10px;
+}
+
 .editBox{
-    border: 2px dotted #ddd;
+    border: 2px solid #ddd;
     padding: 10px;
     cursor: grab;
-    position: relative;
-    margin: 10px;
+    position: relative;   
+    border-radius: 5px;
 }
 
 // 伪元素进行功能遮挡
@@ -35,10 +40,18 @@
 }
 
 .editBox:hover{
-    border: 2px dotted rgb(29, 174, 231);
+    border: 2px solid rgb(29, 174, 231);
 }
 
 // 正在选择的盒子
 .selectBox{
-    border: 2px dotted rgb(29, 174, 231);
+    border: 2px solid rgb(29, 174, 231);
+}
+
+.preBox{
+    border: 2px solid #ddd;
+    padding: 10px;
+    margin: 10px 10px;
+    position: relative;   
+    border-radius: 5px;
 }

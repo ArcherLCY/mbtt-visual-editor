@@ -22,7 +22,6 @@ export const homeSlice = createSlice({
       state.domOptions = action.payload
       state.domId = action.payload.id
       state.domType = action.payload.type
-      console.log(state);
     },
     // 将用户修改或增加的属性更新到 dolist 中对应的元素当中
 
@@ -43,6 +42,7 @@ export const homeSlice = createSlice({
 
     // 改变编辑状态
     changeEditStatus: (state, action) => {
+      console.log(action);
       state.isEdit = action.payload
     },
 
@@ -58,32 +58,48 @@ export const homeSlice = createSlice({
 
     // 删除选中的dom
     deleteDom: (state, action) => {
-      console.log(state.domList);
-      state.domList.filter(item => {
-        return item.id !== state.domId
+      state.domList = state.domList.filter(item => {
+        return item.id !== action.payload 
       })
-      console.log(state.domList);
+      state.domOptions = {}
+      state.domId = ''
+      state.domType = ''
     },
 
     // 根据索引插入节点一个组件
-    incrementByIndex: (state, action) => {
-      state.domList.splice(action.payload.index, 0, action.payload.option)
-      state.domOptions = action.payload.option
-      state.domId = action.payload.option.id
-      state.domType = action.payload.option.type
+    incrementByIndex: (state, action) => {     
+      const {payload} = action
+      console.log('incrementByIndex',payload);
+      state.domList.splice(payload.index, 0, payload.option)
+      state.domOptions = payload.option
+      state.domId = payload.option.id
+      state.domType = payload.option.type
     },
 
-    // 更新正在拖拽的dom
-    updatedragDom: (state, action) => {
-      state.dragDom = action.payload
-      state.domOptions = action.payload
-      state.domId = action.payload.id
-      state.domType = action.payload.type
-      console.log(state);
+    // 根据索引移动一个组件
+    moveByIndex: (state, action) => {
+      const {payload} = action
+      console.log(payload);
+      state.domList.splice(payload.indexFrom, 1)
+      state.domList.splice(payload.indexTo, 0, payload.option)
+      state.domOptions = payload.option
+      state.domId = payload.option.id
+      state.domType = payload.option.type
     },
+
   },
 })
 
-export const { increment, changeOptions, changeId, changeEditStatus, changeContentSize, clearDomList, deleteDom, incrementByIndex  } = homeSlice.actions
+export const { 
+  increment, 
+  changeOptions, 
+  changeId, 
+  changeEditStatus, 
+  changeContentSize, 
+  clearDomList, 
+  deleteDom, 
+  incrementByIndex,
+  moveByIndex
+} = homeSlice.actions
 
 export default homeSlice.reducer
