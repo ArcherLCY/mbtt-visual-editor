@@ -28,11 +28,7 @@ export default [
         type: 'Radio',
         text: '单选按钮',
         icon: '', 
-        inputValue: [{
-            text: 'haha'
-        }, {
-            text: 'haha2'
-        }]      
+        inputValue: ["选项1","选项2"]      
     },
     {
         type: 'Checkbox',
