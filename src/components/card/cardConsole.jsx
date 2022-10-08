@@ -1,58 +1,64 @@
-import React from "react";
-import { changeOptions } from '../../pages/home/slice';
-import { useDispatch } from 'react-redux';
-import './index_style.css'
 import {
     Form,
     Input,
-    Checkbox,
     Radio,
-} from 'antd'
-import { FontColorsOutlined, } from '@ant-design/icons';
+} from 'antd';
+import { WalletOutlined, } from '@ant-design/icons';
+import { useDispatch } from 'react-redux';
+import { changeOptions } from '../../pages/home/slice'
+import '../../pages/home/console/consoleStyle.css'
+
 const App = (data) => {
-    let options = { ...data.options }
     const RadioGroup = Radio.Group;
     const RadioButton = Radio.Button;
-    const dispatch = useDispatch();
+    const dispatch = useDispatch()
+    let options = { ...data.options }
     return (
+        <div className='cardConsole'>
+            <h2 className='title'><WalletOutlined /> 卡片</h2>
 
-        <div className="contentConsole">
-            <h2 className='title'>
-                <FontColorsOutlined /> 单行文本</h2>
             <Form layout="vertical"
-                className='formStyle'>
+            className='formStyle'>
+                {/*标题 */}
                 <Form.Item label="标题">
                     <Input
                         placeholder="请输入标题"
-                        value={options.title}
                         onChange={(e) => {
-                            options.title = e.target.value;
-                            console.log(options);
+                            options.title = e.target.value; console.log(options);
                             dispatch(changeOptions(options))
                         }} />
                 </Form.Item>
-                <Form.Item label="提示">
+                {/* 描述 */}
+                <Form.Item label="描述">
                     <Input
-                        placeholder="请输入提示"
+                        placeholder="请输入描述"
                         className='tips'
                         onChange={(e) => {
-                            options.tips = e.target.value; console.log(options);
+                            options.description = e.target.value; console.log(options);
                             dispatch(changeOptions(options))
                         }} />
                 </Form.Item>
-                <Form.Item label="默认内容">
+                {/* 背景图片URL */}
+                <Form.Item label="背景图片URL">
                     <Input
-                        placeholder={'请输入默认内容'}
-                        className='default'
+                        placeholder="请输入背景图片URL"
                         onChange={(e) => {
-                            options.placeholder = e.target.value;
-                            console.log(options);
+                            options.backgroundUrl = e.target.value; console.log(options);
                             dispatch(changeOptions(options))
                         }} />
                 </Form.Item>
-                <Form.Item label="所占字段%">
+                {/* 头像图片URL */}
+                <Form.Item label="头像图片URL">
+                    <Input
+                        placeholder="请输入头像图片URL"
+                        onChange={(e) => {
+                            options.userUrl = e.target.value; console.log(options);
+                            dispatch(changeOptions(options))
+                        }} />
+                </Form.Item>
+                <Form.Item label="所占字段">
                     <RadioGroup
-                        defaultValue="d"
+                        defaultValue="b"
                         buttonStyle="solid"
                     >
                         <RadioButton
@@ -87,22 +93,8 @@ const App = (data) => {
                     </RadioGroup>
                 </Form.Item>
             </Form>
-            <Form.Item label=""
-                style={{
-                    fontFamily: '微软雅黑',
-                }}
-            >
-                <Checkbox
-                    onChange={(e) => {
-                        options.checked = e.target.checked; console.log(options);
-                        dispatch(changeOptions(options))
-                    }}
-                >
-                    这是个必填项
-                </Checkbox>
-            </Form.Item>
-        </div>
+        </div >
+    );
+};
 
-    )
-}
-export default App
+export default App;

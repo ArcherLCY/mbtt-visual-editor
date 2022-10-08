@@ -1,14 +1,16 @@
 import React from "react";
 import { changeOptions } from '../../pages/home/slice';
 import { useDispatch } from 'react-redux';
-import './index_style.css'
 import {
     Form,
+    Select,
+    Button,
     Input,
     Checkbox,
     Radio,
 } from 'antd'
-import { FontColorsOutlined, } from '@ant-design/icons';
+import { FontColorsOutlined, MailOutlined, PhoneOutlined, SmileOutlined, PictureOutlined, PaperClipOutlined, WalletOutlined, AppstoreAddOutlined, ScheduleOutlined } from '@ant-design/icons';
+
 const App = (data) => {
     let options = { ...data.options }
     const RadioGroup = Radio.Group;
@@ -18,15 +20,18 @@ const App = (data) => {
 
         <div className="contentConsole">
             <h2 className='title'>
-                <FontColorsOutlined /> 单行文本</h2>
+                <PhoneOutlined /> 电话</h2>
             <Form layout="vertical"
                 className='formStyle'>
+                    
                 <Form.Item label="标题">
                     <Input
                         placeholder="请输入标题"
                         value={options.title}
                         onChange={(e) => {
+
                             options.title = e.target.value;
+
                             console.log(options);
                             dispatch(changeOptions(options))
                         }} />
@@ -42,7 +47,7 @@ const App = (data) => {
                 </Form.Item>
                 <Form.Item label="默认内容">
                     <Input
-                        placeholder={'请输入默认内容'}
+                        placeholder={'修改默认内容'}
                         className='default'
                         onChange={(e) => {
                             options.placeholder = e.target.value;

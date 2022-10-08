@@ -1,7 +1,7 @@
 import React from 'react'
 import Content from '../content/index'
 import Textarea from '../textarea/index'
-import Picture from '../picture/index_'
+import Picture from '../picture/index'
 import Flower from './flower'
 import Work from './work'
 import { useDispatch } from 'react-redux';

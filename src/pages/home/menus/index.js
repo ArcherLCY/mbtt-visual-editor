@@ -56,6 +56,7 @@ function Menu() {
                                         let temp = {...item}
                                         getId(temp)
                                     }}
+                                    draggable
                                     onDragStart={(e) => dragStart(e, item)}
                                 >
                                     {item.text}

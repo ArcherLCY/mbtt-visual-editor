@@ -3,16 +3,24 @@ import { useDispatch } from 'react-redux';
 import { changeId } from '../../pages/home/slice'
 import {
   Form,
+  Select,
   Input,
+  Radio,
+  Checkbox
 } from 'antd'
-import '../../pages/home/console/consoleStyle.css'
-function App(options) {
-  const { TextArea } = Input;
-  const dispatch = useDispatch()
+import { MailOutlined } from '@ant-design/icons';
+const App = (options) => {
+
+  const dispatch = useDispatch();
   return (
-    <div className='textareaIndex'>
+    <div className='email'>
+     
       <Form layout="vertical">
-        <Form.Item label={options.options?.title || "多行文字"}
+        {/* 标题 */}
+        
+        <Form.Item
+ 
+          label={options.options?.title || "邮件"}
           required={options.options?.checked}
 
           onClick={() => {
@@ -23,8 +31,9 @@ function App(options) {
             fontWeight: 700,
             fontFamily: '微软雅黑',
             fontSize: options.options?.fontSize,
-          }}>
 
+          }}>
+          {/* 提示 */}
           <h4 className='indexTips'
             onClick={() => {
               console.log(options);
@@ -33,24 +42,21 @@ function App(options) {
             >
             {options.options?.tips || ""}
           </h4>
-          <div >
-            <TextArea rows={5}
-              placeholder={options.options?.placeholder || "输入默认内容"} onClick={() => {
-                console.log(options);
-                dispatch(changeId(options.options))
-              }}
-              style={{
-                height: options.options?.height,
-                width: options.options?.width,
-              }}
-              >
-            </TextArea>
-          </div>
+          <Input
+            className='content_input'
+            placeholder={options.options?.placeholder || "输入您的邮箱"}
+            onClick={() => {
+              console.log(options);
+              dispatch(changeId(options.options))
+            }}
+            style={{
+              height: options.options?.height,
+              width: options.options?.width || '100%',
+              borderRadius: 5,
+            }} />
         </Form.Item>
       </Form>
     </div>
   )
 }
-
-
-export default App;
+export default App
