@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export const homeSlice = createSlice({
   name: 'home',
   initialState: {
-    value: 0,
+    tab: 0,
     domList: [],
     domId: '',
     domType: '',

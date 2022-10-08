@@ -1,11 +1,13 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch} from 'react-redux';
+import { useRef } from 'react';
 import { changeId } from '../../pages/home/slice'
 import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
 import { Avatar, Card, Form } from 'antd';
 const { Meta } = Card;
 function App(options) {
   const dispatch = useDispatch()
+  const name = useRef();
   return (
     <div className='cardIndex'>
       <Form layout="vertical">

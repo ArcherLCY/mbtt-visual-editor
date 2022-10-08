@@ -14,14 +14,16 @@ import RadioConsole from '../../../components/radio/radioConsole'
 import TextConsole from '../../../components/text/textConsole'
 import DateConsole from '../../../components/datePicker/datePickerConsole'
 import LinkConsole from '../../../components/link/linkConsole'
-import { Divider,} from 'antd'
+import TestData from '../../../showCode/showCode'
+import { useState } from 'react'
+import { Divider } from 'antd'
 function Console() {
+  let [tab ,settab] = useState(true)
   const id = useSelector((state) => state.home.domId)
   const options = useSelector((state) => state.home.domOptions)
   const type = useSelector((state) => state.home.domType)
-  return (
-    <div className="Console">
-      <Divider><h3>控制台</h3></Divider>
+  let option = (
+    <div>
       {id === options.id && type === 'Card' && <CardConsole options={options} />}
       {id === options.id && type === 'Rate' && <RateConsole options={options} />}
       {id === options.id && type === 'Text' && <TextConsole options={options} />} 
@@ -36,8 +38,19 @@ function Console() {
       {id === options.id && type === 'Textarea' && <TextareaConsole options={options} />}
       {id === options.id && type === 'Checkbox' && <CheckboxConsole options={options} />}
       {id === options.id && type === 'Content' && <ContentConsole options={options} />}
-      {/* {id === options.id && type === 'Resume' && <ResumeConsole options={options} />} */}
+      {id === options.id && type === 'DatePicker' && <DatePicker options={options} />}
+      {id === options.id && type === 'Checkbox' && <CheckboxConsole options={options} />}
     </div>
+  )
+
+  return (
+    <div className="Console" >
+      <Divider> <button onClick={() => {settab(tab = true)}}>控制台</button> </Divider> 
+       <Divider > <button onClick={() => {settab(tab = false)}}>代码</button> </Divider>
+      {tab ? option :<TestData/>}
+    </div>
+
+
   );
 }
 
