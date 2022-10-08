@@ -1,10 +1,9 @@
 import { useDispatch } from 'react-redux'
 import { nanoid } from 'nanoid';
 import { increment } from '../slice'
+import './menuStyle.css'
 import './menuStyle.scss'
 import { FontColorsOutlined, WalletOutlined, AppstoreAddOutlined } from '@ant-design/icons';
-
-
 
 function Menu() {
   const dispatch = useDispatch()
@@ -12,10 +11,7 @@ function Menu() {
     <div className="Menu">
       <h2>基础组件</h2>
       <div className='Menu-list'>
-        <button onClick={() => dispatch(increment({ type: 'Text', id: Date.parse(new Date()), value: '单行文本' }))}>
-          <FontColorsOutlined />
-          <span>单行文本</span>
-        </button>
+
 
         <button onClick={() => dispatch(increment({ type: 'Card', id: Date.parse(new Date()), size: 'small', title: '标题' }))}>
           <WalletOutlined />
@@ -27,25 +23,36 @@ function Menu() {
           <span>按钮</span>
         </button>
 
+        <button onClick={() => dispatch(increment({ type: 'Switch', id: Date.parse(new Date()), text: '开关' }))}>
+          <FontColorsOutlined />
+          <span>开关</span>
+        </button>
+
+        <button onClick={() => dispatch(increment({ type: 'Text', id: Date.parse(new Date()), value: '单行文本' }))}>
+          <FontColorsOutlined />
+          <span>单行文本</span>
+        </button>
+
         <button onClick={() => dispatch(increment({
-          type: 'Radio', id: Date.parse(new Date()),
-          text: ['Apple', 'Pear', 'Orange']
+          type: 'Radio', 
+          id: nanoid(),
+          inputValue: ['Apple', 'Pear', 'Orange'],
+          title:'单项选择',
+          tooltip:'tooltip'
         }))}>
           <FontColorsOutlined />
           <span>单选按钮</span>
         </button>
+
 
         <button onClick={() => dispatch(increment({ type: 'Checkbox', id: Date.parse(new Date()), text: '复选框1' }))}>
           <FontColorsOutlined />
           <span>复选按钮</span>
         </button>
 
-        <button onClick={() => dispatch(increment({ type: 'Switch', id: Date.parse(new Date()), text: '开关' }))}>
-          <FontColorsOutlined />
-          <span>开关</span>
-        </button>
 
-        <button onClick={() => dispatch(increment({ type: 'Picture', id: Date.parse(new Date()), text: '图片' }))}>
+
+        <button onClick={() => dispatch(increment({ type: 'Picture', id: Date.parse(new Date()), text: '图片',title:'图片选择' }))}>
           <FontColorsOutlined />
           <span>选择图片</span>
         </button>
@@ -54,20 +61,22 @@ function Menu() {
           <FontColorsOutlined />
           <span>多行文本</span>
         </button>
-
-        <button onClick={() => dispatch(increment({ type: 'Content', id: Date.parse(new Date()), text: '文本' }))}>
-          <FontColorsOutlined />
-          <span>单行文本</span>
-        </button>
-      </div>
+     
 
       <h2>高级组件</h2>
-      <button onClick={() => dispatch(increment({ type: 'DatePicker', id: nanoid(), hasRange: 'DatePicker', showTime: true, placeholder: '' }))}>日期选择框</button>
+
+      <button onClick={() => dispatch(increment({ type: 'DatePicker', id: nanoid(), hasRange: 'DatePicker', showTime: true, placeholder: '' }))}>
+        <FontColorsOutlined />
+        <span>日期选择框</span>
+      </button>
 
       <h2>模板</h2>
-      <button onClick={() => dispatch(increment({ type: 'DatePicker', id: nanoid() }))}>疫情打卡</button>
+      <button onClick={() => dispatch(increment({ type: 'DatePicker', id: nanoid() }))}>
+        <FontColorsOutlined />
+        <span> 疫情打卡</span>
+      </button>
+      </div>
       <div style={{ height: '10000px' }}>
-        more
       </div>
     </div>
   );

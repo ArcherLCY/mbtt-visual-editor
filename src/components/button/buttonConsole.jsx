@@ -20,9 +20,6 @@ const App = (data) => {
         <Form
             layout="vertical"
         >
-            <Form.Item>
-                <h2>按钮</h2>
-            </Form.Item>
 
             <Form.Item label="按钮文字">
                 <Input onChange={(e) => {
@@ -30,6 +27,7 @@ const App = (data) => {
                     dispatch(changeOptions(options))
                 }} placeholder="修改按钮的文字" />
             </Form.Item>
+            
             <Form.Item label="按钮大小">
                 <Radio.Group onChange={(e) => {
                     options.size = e.target.value;

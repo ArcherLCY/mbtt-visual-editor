@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 // 导入自定义组件
 import CardConsole from '../../../components/card/cardConsole'
 import ButtonConsole from '../../../components/button/buttonConsole'
-import PictureConsole from '../../../components/picture/indexCosole'
+import PictureConsole from '../../../components/picture/pictureCosole'
 import TextareaConsole from '../../../components/textarea/indexConsole'
 import ContentConsole from '../../../components/content/contentConsole'
 import RateConsole from '../../../components/rate/rateConsole'
@@ -11,8 +11,8 @@ import SwitchConsole from '../../../components/switch/switchConsole'
 import CheckboxConsole from '../../../components/checkbox/checkboxConsole'
 import RadioConsole from '../../../components/radio/radioConsole'
 import TextConsole from '../../../components/text/textConsole'
+import DatePickerConsole from '../../../components/datePicker/datePickerConsole'
 import { Divider,} from 'antd'
-
 function Console() {
   const id = useSelector((state) => state.home.domId)
   const options = useSelector((state) => state.home.domOptions)
@@ -30,6 +30,7 @@ function Console() {
       {id === options.id && type === 'Picture' && <PictureConsole options={options} />}
       {id === options.id && type === 'Textarea' && <TextareaConsole options={options} />}
       {id === options.id && type === 'Checkbox' && <CheckboxConsole options={options} />}
+      {id === options.id && type === 'DatePicker' && <DatePickerConsole options={options} />}
 
     </div>
   );

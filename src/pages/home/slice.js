@@ -24,18 +24,13 @@ export const homeSlice = createSlice({
 
     // 改变高亮聚焦的dom
     changeOptions: (state, action) => {
-      console.log(action.payload);
-      // state.domOptions = action.payload
       state.domList.map((item, index) => {
-        console.log(state.domList[index]);
         return item.id === action.payload.id ? state.domList[index] = { ...action.payload } : item = item;
       })
-      console.log(state.domList[0]);
     },
 
     // 改变聚焦的id
     changeId: (state, action) => {
-      console.log(action.payload);
       state.domId = action.payload.id
       state.domOptions = action.payload
       state.domType = action.payload.type
@@ -48,7 +43,6 @@ export const homeSlice = createSlice({
 
     // 改变中心画布大小
     changeContentSize: (state, action) => {
-      console.log(action.payload)
       state.contentSize = action.payload
     },
   },

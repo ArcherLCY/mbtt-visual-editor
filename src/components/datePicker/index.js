@@ -1,14 +1,13 @@
 import { DatePicker } from 'antd';
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { changeId } from '../../pages/home/slice'
 
 const { RangePicker } = DatePicker;
 
-function DatePicker(options) {
+function App(options) {
   const dispatch = useDispatch()
   const { hasRange, showTime, placeholder } = options.options;
-  let environment = useSelector(state => state.home.environment);
 
   if (hasRange === 'DatePicker') {
     return (
@@ -46,4 +45,4 @@ function DatePicker(options) {
 }
 
 
-export default DatePicker;
+export default App;
