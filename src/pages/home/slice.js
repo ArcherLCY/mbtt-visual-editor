@@ -10,7 +10,6 @@ export const homeSlice = createSlice({
     domOptions: {},
     isEdit: true,
     contentSize: { width: 800, height: 1000}, //中心画布的大小
-    dragDom: null, //正在拖拽的dom
   },
     // 将新增的action的信息转移到 state 当中
   reducers: {   
@@ -69,7 +68,6 @@ export const homeSlice = createSlice({
     // 根据索引插入节点一个组件
     incrementByIndex: (state, action) => {     
       const {payload} = action
-      console.log('incrementByIndex',payload);
       state.domList.splice(payload.index, 0, payload.option)
       state.domOptions = payload.option
       state.domId = payload.option.id
@@ -79,7 +77,6 @@ export const homeSlice = createSlice({
     // 根据索引移动一个组件
     moveByIndex: (state, action) => {
       const {payload} = action
-      console.log(payload);
       state.domList.splice(payload.indexFrom, 1)
       state.domList.splice(payload.indexTo, 0, payload.option)
       state.domOptions = payload.option

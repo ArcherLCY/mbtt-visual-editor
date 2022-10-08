@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux'
 import { nanoid } from 'nanoid';
 import { increment } from '../slice'
-import './menuStyle.css'
+import styles from './index.module.scss'
 import {Button} from 'antd'
 import beseMenu from '../../../api/menuData/baseMenu'
 import mediaMenu from '../../../api/menuData/mediaMenu'
@@ -16,15 +16,14 @@ function Menu() {
     }
 
     return (
-        <div className="Menu">
+        <div className={styles.Menu}>
             <h2>基础组件</h2>
-            <div className='Menu-list'>   
+            <div className={styles.MenuList}>   
                 {
                     beseMenu.map((item, index) => {
                         return (
-                            <div className='Menu-item' key={index}>
+                            <div className={styles.MenuItem} key={index}>
                                 <Button key={index}
-                                    style={{width: 100 + 'px'}}
                                     onClick={() => {
                                         console.log(item);
                                         item.id = nanoid() 
@@ -42,14 +41,13 @@ function Menu() {
                 }                    
             </div>
             <h2>高级组件</h2>
-            <div style={{ height: '10000px' }} className='Menu-list'>
+            <div className={styles.MenuList}>
                 {
                     mediaMenu.map((item, index) => {
                         // const id = 
                         return (
-                            <div className='Menu-item' key={index}>
+                            <div className={styles.MenuItem} key={index}>
                                 <Button key={index}
-                                    style={{width: 100 + 'px'}}
                                     onClick={() => {
                                         item.id = nanoid()  
                                         dispatch(increment(item))

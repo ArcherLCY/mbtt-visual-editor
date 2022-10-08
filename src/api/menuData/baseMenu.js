@@ -15,6 +15,16 @@ export default [
         value: '按钮'   
     },
     {
+        type: 'Textarea',
+        text: '多行文本',
+        icon: '',       
+    },
+    {
+        type: 'Input',
+        text: '输入框',
+        icon: '',       
+    },
+    {
         type: 'Radio',
         text: '单选按钮',
         icon: '', 
@@ -34,4 +44,21 @@ export default [
         text: '开关',
         icon: '',       
     },
+    {
+        type: 'Content',
+        text: '内容',
+        icon: '',       
+    },
+    {
+        type: 'Rate',
+        text: '比率',
+        icon: '',       
+    },
+    {
+        type: 'Src',
+        text: '链接',
+        icon: '',       
+    },
+
+    
 ]

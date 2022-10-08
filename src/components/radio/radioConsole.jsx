@@ -27,16 +27,19 @@ const App = (data) => {
   return (
     <Form layout="vertical">
       <Form.Item label="单选框文本">
-        {
-          options.inputValue.map((item, index) => {
-            return (
-              <Input onChange={(e) => changeInputValue(e, index)} placeholder="修改文字" key={index} value={item.text}/>
-            )
-          })
-        }
-        <Button onClick={addInput}>添加</Button>
-        {/* <Button onClick={confirmValue}>确认</Button> */}
-      </Form.Item>
+                {
+                  options.text.map((item,index)=>{
+                    return (
+                      <Input onBlur={(e) => {
+                        radioValue[index] = e.target.value;
+                        dispatch(changeOptions(options))
+                    }} placeholder="修改文字" key={index}/>
+                    )
+                  })
+                }
+                <Button onClick={addInput}>添加</Button>
+                <Button>确认</Button>
+            </Form.Item>
 
       <Form.Item>
         <Checkbox onChange={(e) => {

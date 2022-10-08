@@ -1,0 +1,32 @@
+.Menu {
+    width: 280px;
+    height: 100%;
+    background: #fff;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-right: #777;
+
+    h2{
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: bold;
+        color: rgb(38, 177, 231);
+    }
+}
+
+.MenuList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.MenuItem {
+    width: 100px;
+    margin: 10px 0;
+    
+    button {
+        width: 100%;
+    }
+}

@@ -23,6 +23,7 @@ function Console() {
       {id === options.id && type === 'Rate' && <RateConsole options={options} />}
       {id === options.id && type === 'Text' && <TextConsole options={options} />} 
       {id === options.id && type === 'Radio' && <RadioConsole options={options} />}
+      {id === options.id && type === 'Checkbox' && <CheckboxConsole options={options} />}
       {id === options.id && type === 'Switch' && <SwitchConsole options={options} />}
       {id === options.id && type === 'Button' && <ButtonConsole options={options} />}
       {id === options.id && type === 'Content' && <ContentConsole options={options} />}

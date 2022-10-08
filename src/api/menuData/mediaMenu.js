@@ -1,13 +1,18 @@
 // import { FontColorsOutlined,WalletOutlined,AppstoreAddOutlined } from '@ant-design/icons';
 export default [
     {
-        type: 'Vedio',
-        text: '视频',
-        icon: '',      
+        type: 'DatePicker',
+        text: '日期选择器',
+        icon: '',    
     },
     {
-        type: 'Image',
+        type: 'Picture',
         text: '图片',
         icon: '',    
-    }
+    },
+    {
+        type: 'Resume',
+        text: '模板',
+        icon: '',    
+    },
 ]
