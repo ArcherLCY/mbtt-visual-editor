@@ -3,10 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { changeId } from '../../pages/home/slice'
 import {
   Form,
-  Select,
-  Input,
-  Radio,
-  Checkbox,
   DatePicker
 } from 'antd'
 const { RangePicker } = DatePicker;

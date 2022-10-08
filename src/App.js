@@ -13,7 +13,6 @@ function App() {
         <Route path="/home" element={<Home />}></Route>
         <Route path="/index" element={<Index />}></Route>
         <Route path="/template" element={<Template />}></Route>
-        <Route path="/template/vote/index" element={<Vote />}></Route>
       </Routes>
     </Router>
         

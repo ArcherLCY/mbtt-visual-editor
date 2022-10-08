@@ -3,10 +3,7 @@ import { useDispatch } from 'react-redux';
 import { changeId } from '../../pages/home/slice'
 import {
   Form,
-  Select,
   Input,
-  Radio,
-  Checkbox
 } from 'antd'
 import '../../pages/home/console/consoleStyle.css'
 function App(options) {

@@ -4,8 +4,6 @@ import { useDispatch } from 'react-redux';
 import './index_style.css'
 import {
     Form,
-    Select,
-    Button,
     Input,
     Checkbox,
     Radio,

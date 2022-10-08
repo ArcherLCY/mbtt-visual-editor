@@ -6,7 +6,6 @@ import './picture.css'
 import {
     Form,
     Button,
-    Select,
     Input,
     Checkbox
 } from 'antd';

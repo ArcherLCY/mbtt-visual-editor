@@ -3,8 +3,6 @@ import { changeOptions } from '../../pages/home/slice';
 import { useDispatch } from 'react-redux';
 import {
     Form,
-    Select,
-    Button,
     Input,
     Checkbox,
     Radio,
