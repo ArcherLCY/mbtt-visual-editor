@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/mbtt-visual-editor/static/css/main.cdd9ec58.css",
-    "main.js": "/mbtt-visual-editor/static/js/main.7ff029b0.js",
+    "main.css": "/mbtt-visual-editor/static/css/main.13c3d82f.css",
+    "main.js": "/mbtt-visual-editor/static/js/main.11304449.js",
     "static/js/787.66af1607.chunk.js": "/mbtt-visual-editor/static/js/787.66af1607.chunk.js",
     "static/media/background.jpg": "/mbtt-visual-editor/static/media/background.f1d3badc1dc8623b55c3.jpg",
     "index.html": "/mbtt-visual-editor/index.html",
-    "main.cdd9ec58.css.map": "/mbtt-visual-editor/static/css/main.cdd9ec58.css.map",
-    "main.7ff029b0.js.map": "/mbtt-visual-editor/static/js/main.7ff029b0.js.map",
+    "main.13c3d82f.css.map": "/mbtt-visual-editor/static/css/main.13c3d82f.css.map",
+    "main.11304449.js.map": "/mbtt-visual-editor/static/js/main.11304449.js.map",
     "787.66af1607.chunk.js.map": "/mbtt-visual-editor/static/js/787.66af1607.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cdd9ec58.css",
-    "static/js/main.7ff029b0.js"
+    "static/css/main.13c3d82f.css",
+    "static/js/main.11304449.js"
   ]
 }
