@@ -55,14 +55,13 @@ const App = (data) => {
             return (
               <Input
                 onChange={(e) => {
-                  console.log('copyText',copyText);
-                  console.log('index',index);
                   copyText[index] = e.target.value;
                   options.inputValue = [...copyText];
                   dispatch(changeOptions(options));
                 }}
                 placeholder="修改文字"
                 key={index}
+                style={{borderRadius: '5px'}}
               />
             )
           })
