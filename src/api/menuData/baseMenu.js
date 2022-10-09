@@ -1,12 +1,6 @@
 
 export default [
-    {
-        type: 'Card',
-        text: '卡片',
-        icon: '', 
-        value: '标题',
-        size: 'small'      
-    },
+   
     {
         type: 'Button',
         text: '按钮',
@@ -38,15 +32,7 @@ export default [
         text: '文本',
         icon: '',       
     },
-    {
-        type: 'Date',
-        text: '日期',
-        icon: '',    
-        hasRange: 'DatePicker',
-        showTime: true, 
-        placeholder: '' ,
-        icon: '',
-    },
+    
     {
         type: 'Radio',
         text: '单选按钮',
