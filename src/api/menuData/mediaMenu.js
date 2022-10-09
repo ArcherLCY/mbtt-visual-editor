@@ -1,6 +1,5 @@
 // import { FontColorsOutlined,WalletOutlined,AppstoreAddOutlined } from '@ant-design/icons';
 export default [
-   
     {
         type: 'Picture',
         text: '图片',

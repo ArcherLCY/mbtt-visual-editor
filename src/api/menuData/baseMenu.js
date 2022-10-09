@@ -68,6 +68,4 @@ export default [
         text: '多行文本',
         icon: '',       
     },
- 
-    
 ]
