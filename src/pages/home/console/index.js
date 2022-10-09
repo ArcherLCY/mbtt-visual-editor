@@ -15,6 +15,7 @@ import TextConsole from '../../../components/text/textConsole'
 import DateConsole from '../../../components/datePicker/datePickerConsole'
 import LinkConsole from '../../../components/link/linkConsole'
 import TestData from '../../../showCode/showCode'
+import Telephone from '../../../components/telephone/telephoneConsole'
 import { useState } from 'react'
 import { Divider } from 'antd'
 function Console() {
@@ -38,8 +39,8 @@ function Console() {
       {id === options.id && type === 'Textarea' && <TextareaConsole options={options} />}
       {id === options.id && type === 'Checkbox' && <CheckboxConsole options={options} />}
       {id === options.id && type === 'Content' && <ContentConsole options={options} />}
-      {id === options.id && type === 'DatePicker' && <DatePicker options={options} />}
       {id === options.id && type === 'Checkbox' && <CheckboxConsole options={options} />}
+      {id === options.id && type === 'Telephone' && <Telephone options={options} />}
     </div>
   )
 

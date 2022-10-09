@@ -23,6 +23,9 @@ function check(dom) {
     let border = dom.border
     let autoFocus = dom.autoFocus
     let defaultChecked = dom.defaultChecked
+    let href = dom.href
+    let checked = dom.checked
+    let placeholder = dom.placeholder
     switch (type) {
         case 'card': return (
             '<' + type + '>' + title + '<' + type + '/>'
@@ -72,6 +75,38 @@ function check(dom) {
         case 'button': return (
             '<' + type + '>' + value + '<' + type + '/>'
         )
+        case 'link' : return (
+            '<' + type + ' ' +
+            'style=' + '{{' + 'value:' + title + ',' + 
+            'href:' + href + ',' +
+            '>' + '<' + type + '/>' 
+        )
+        case 'rate' :return (
+            '<Rate' +
+            'style=' + '{{' + 'value:' + title + ',' +
+            'checked:' + checked + ',' +
+            'fontSize:' + fontSize + ',' +
+            '>' + '</Rate>'
+        )
+        case 'email' : return (
+            '<Input' +
+            'style=' + '{{' + 'placeholder:' + placeholder + ',' +
+            'checked:' + checked + ',' +
+            'fontSize:' + fontSize + ',' +
+            'width:' + width + ',' +
+            'height:' + height + ',' +
+            '>' + '</Input>'
+        )
+        case 'telephone' : return (
+            '<Input' +
+            'style=' + '{{' + 'placeholder:' + placeholder + ',' +
+            'checked:' + checked + ',' +
+            'fontSize:' + fontSize + ',' +
+            'width:' + width + ',' +
+            'height:' + height + ',' +
+            '>' + '</Input>'
+        )
+
     }
 }
 

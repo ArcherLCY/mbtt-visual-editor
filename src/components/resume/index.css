@@ -17,6 +17,11 @@
     flex-direction: column;
 }
 
+.firstLine_content_content {
+    display: flex;
+    flex-direction: row;
+}
+
 .secondLine {
     display: flex;
     flex-direction: column;

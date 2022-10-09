@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import Checkbox from '../../../../components/checkbox/index';
-import Raido from '../../../../components/radio/index';
-import DatePicker from '../../../../components/datepicker/index';
+import Radio from '../../../../components/radio/index';
+import DatePicker from '../../../../components/datePicker/index';
 import Picture from '../../../../components/picture/index';
-import Textarea from '../../../../components/textarea/index';
-
-
-function clockIn() {
+// import DatePicker from 'antd';
+import Form from 'antd/lib/form/Form';
+function ClockIn() {
   const [componentDisabled, setComponentDisabled] = useState(true);
 
   const onFormLayoutChange = ({ disabled }) => {
@@ -45,7 +44,7 @@ function clockIn() {
         </Form.Item>
 
         <Form.Item label="您最近一次的核算检测状况">
-          <DatePicker />
+          {/* <Date /> */}
         </Form.Item>
 
         <Form.Item label="您核酸检测的结果">
@@ -56,12 +55,15 @@ function clockIn() {
         </Form.Item>
 
         <Form.Item label="请上传您最近一次核酸检测结果的图片">
-          <Picture></Picture>
+          <img src="" alt="ss" />
         </Form.Item>
-
       </Form>
     </>
   );
 }
-
-export default clockIn;
+// const App = () => {
+//   return (
+//     <div>2222222222222222222222</div>
+//   )
+// }
+export default ClockIn;

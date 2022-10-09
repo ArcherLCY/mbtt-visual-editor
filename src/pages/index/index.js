@@ -4,12 +4,13 @@ import {
 } from '@ant-design/icons';
 import Template from './components/template';
 import Index from './components/index';
+import Establish from '../establish/resume';
 import { Menu } from 'antd';
 import React, { useState } from 'react';
 import './indexStyle.scss'
-import {get, post} from '../../api/http'
+import { get, post } from '../../api/http'
 // 路由使用
-import { Routes, Route, Navigate, useNavigate  } from "react-router-dom"
+import { Routes, Route, Navigate, useNavigate } from "react-router-dom"
 
 function getItem(label, key, icon, children, type) {
     return {
@@ -28,8 +29,8 @@ const items = [
         getItem('模板', 'template'),
     ]),
 ];
-function getFun(){
-    get('http://localhost:8080/commodity/findAll?page=1',{}).then(res=>{
+function getFun() {
+    get('http://localhost:8080/commodity/findAll?page=1', {}).then(res => {
         console.log(res);
     })
 }
@@ -62,12 +63,12 @@ const App = () => {
             </div>
             <div className='content'>
                 <Routes>
-                <Route path="template" element={<Template />}></Route>
-                <Route path="index" element={<Index />}></Route>
-                <Route path="*" element={<Navigate to="index" />} />
-            </Routes>
+                    <Route path="template" element={<Template />}></Route>
+                    <Route path="index" element={<Index />}></Route>
+                    <Route path="*" element={<Navigate to="index" />} />
+                    <Route path="estab" element={<Establish />} />
+                </Routes>
             </div>
-            
         </>
     );
 };

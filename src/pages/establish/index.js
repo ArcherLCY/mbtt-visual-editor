@@ -1,6 +1,9 @@
+import React from 'react'
+import Resume from '../../components/resume/index'
 function Establish(){
     return (
-        <div>establish</div>
+        // <div>111111111</div>
+        <Resume />
     )
 }
 
