@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/mbtt-visual-editor/static/css/main.03577069.css",
-    "main.js": "/mbtt-visual-editor/static/js/main.2114b07d.js",
+    "main.css": "/mbtt-visual-editor/static/css/main.13c3d82f.css",
+    "main.js": "/mbtt-visual-editor/static/js/main.11304449.js",
     "static/js/787.66af1607.chunk.js": "/mbtt-visual-editor/static/js/787.66af1607.chunk.js",
-    "static/media/山峦.jpg": "/mbtt-visual-editor/static/media/山峦.f1d3badc1dc8623b55c3.jpg",
+    "static/media/background.jpg": "/mbtt-visual-editor/static/media/background.f1d3badc1dc8623b55c3.jpg",
     "index.html": "/mbtt-visual-editor/index.html",
-    "main.03577069.css.map": "/mbtt-visual-editor/static/css/main.03577069.css.map",
-    "main.2114b07d.js.map": "/mbtt-visual-editor/static/js/main.2114b07d.js.map",
+    "main.13c3d82f.css.map": "/mbtt-visual-editor/static/css/main.13c3d82f.css.map",
+    "main.11304449.js.map": "/mbtt-visual-editor/static/js/main.11304449.js.map",
     "787.66af1607.chunk.js.map": "/mbtt-visual-editor/static/js/787.66af1607.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.03577069.css",
-    "static/js/main.2114b07d.js"
+    "static/css/main.13c3d82f.css",
+    "static/js/main.11304449.js"
   ]
 }
