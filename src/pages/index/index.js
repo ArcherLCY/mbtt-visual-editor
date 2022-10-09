@@ -7,9 +7,9 @@ import Index from './components/index';
 import { Menu } from 'antd';
 import React, { useState } from 'react';
 import './indexStyle.scss'
-import {get, post} from '../../api/http'
+import { get, post } from '../../api/http'
 // 路由使用
-import { Routes, Route, Navigate, useNavigate  } from "react-router-dom"
+import { Routes, Route, Navigate, useNavigate } from "react-router-dom"
 
 function getItem(label, key, icon, children, type) {
     return {
@@ -28,8 +28,27 @@ const items = [
         getItem('模板', 'template'),
     ]),
 ];
-function getFun(){
-    get('http://localhost:8080/commodity/findAll?page=1',{}).then(res=>{
+function getFun() {
+    // http://localhost:8080
+    post('/api/mform/addMForm', {
+        id: "123112",
+        name: "test",
+        rules: {
+            username: "admin",
+            password: "123456"
+        },
+        data: [
+            {code: 1}
+        ]
+    }).then(res => {
+        console.log(res);
+    })
+}
+
+function findOne() {
+    get('/api/mform/findOne', {
+        id: "123112"
+    }).then(res => {
         console.log(res);
     })
 }
@@ -43,13 +62,13 @@ const App = () => {
         setCurrent(e.key);
         navigate(e.key)
     };
-    getFun()
+    // getFun()
     return (
         <>
             <div
                 className='leftMenu'
             >
-                <h3>visual-editor</h3>
+                <h3 onClick={()=>findOne()}>visual-editor</h3>
                 <Menu
                     defaultSelectedKeys={['index']}
                     defaultOpenKeys={['sub1']}
@@ -62,12 +81,12 @@ const App = () => {
             </div>
             <div className='content'>
                 <Routes>
-                <Route path="template" element={<Template />}></Route>
-                <Route path="index" element={<Index />}></Route>
-                <Route path="*" element={<Navigate to="index" />} />
-            </Routes>
+                    <Route path="template" element={<Template />}></Route>
+                    <Route path="index" element={<Index />}></Route>
+                    <Route path="*" element={<Navigate to="index" />} />
+                </Routes>
             </div>
-            
+
         </>
     );
 };

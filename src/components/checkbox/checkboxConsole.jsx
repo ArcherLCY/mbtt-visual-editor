@@ -8,16 +8,14 @@ import {
 
 const App = (data) => {
     let options = { ...data.options }
-
     const dispatch = useDispatch()
-
     return (
         <Form layout="vertical">
             <Form.Item label="单选框文本">
                 <Input onChange={(e) => {
                     options.text = e.target.value;
                     dispatch(changeOptions(options))
-                }} placeholder="修改文字"/>
+                }} placeholder="选项"/>
             </Form.Item>
 
             <Form.Item>
