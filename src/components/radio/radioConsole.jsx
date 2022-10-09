@@ -4,12 +4,10 @@ import {
   Form,
   Checkbox,
   Input,
-  Button,
+  Button
 } from 'antd';
 
-// 设置一个计数器
-let count = 0;
-
+const count = 0
 const App = (data) => {
 
   let options = { ...data.options }
@@ -76,13 +74,6 @@ const App = (data) => {
           dispatch(changeOptions(options))
         }}>自动获取焦点</Checkbox>
       </Form.Item>
-
-      {/* <Form.Item>
-        <Checkbox onChange={(e) => {
-          options.defaultChecked = e.target.checked
-          dispatch(changeOptions(options))
-        }}>指定当前是否选中</Checkbox>
-      </Form.Item> */}
 
       <Form.Item>
         <Checkbox onChange={(e) => {
