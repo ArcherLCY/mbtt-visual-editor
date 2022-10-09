@@ -69,6 +69,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
+### 后端地址项目地址
+https://github.com/ArcherLCY/mbtt-visual-editor-node.git
+
 # 队员Github账户
 
 | 姓名   | 账户名                                        |
