@@ -1,6 +1,8 @@
 .resume {
     display: grid;
     grid-row-gap: 50px;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 .firstLine {
@@ -13,6 +15,11 @@
 .firstLine_content {
     display: flex;
     flex-direction: column;
+}
+
+.firstLine_content_content {
+    display: flex;
+    flex-direction: row;
 }
 
 .secondLine {

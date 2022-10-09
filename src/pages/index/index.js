@@ -4,6 +4,7 @@ import {
 } from '@ant-design/icons';
 import Template from './components/template';
 import Index from './components/index';
+import Establish from '../establish/resume';
 import { Menu } from 'antd';
 import React, { useState } from 'react';
 import './indexStyle.scss'
@@ -84,6 +85,7 @@ const App = () => {
                     <Route path="template" element={<Template />}></Route>
                     {/* <Route path="/index" element={<Index />}></Route> */}
                     <Route path="*" element={<Navigate to="index" />} />
+                    <Route path="estab" element={<Establish />} />
                 </Routes>
             </div>
 

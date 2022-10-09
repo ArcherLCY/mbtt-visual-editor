@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { nanoid } from 'nanoid';
 import { increment } from '../slice'
 import styles from './index.module.scss'

@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { changeOptions } from '../../pages/home/slice'
+import { changeOptions,changeId } from '../../pages/home/slice'
 import {
   Form,
   Checkbox,
@@ -12,19 +12,16 @@ const count = 0
 const App = (data) => {
 
   let options = { ...data.options }
-  // 此时options是一个props组成的对象
-
-  console.log(data);
 
   const dispatch = useDispatch();
 
   // 复制一份text值
   let copyText = [...options.inputValue];
-  console.log("copyText", copyText);
 
   // 添加input回调
   function addInput() {
     options.inputValue = [...options.inputValue, '默认' + (count++)];
+    copyText= options.inputValue;
     dispatch(changeOptions(options));
   }
 
@@ -70,7 +67,6 @@ const App = (data) => {
           })
         }
         <Button onClick={addInput}>添加</Button>
-        {/* <Button onClick={confirmValue}>确认</Button> */}
       </Form.Item>
 
 

@@ -4,46 +4,33 @@ import Textarea from '../textarea/index'
 import Picture from '../picture/index'
 import Flower from './flower'
 import Work from './work'
-import { useDispatch } from 'react-redux';
-import { changeId } from '../../pages/home/slice'
 import './index.css'
-import { increment } from '../card/silce'
 
-const Resume = (options) => {
-    const dispatch = useDispatch();
-    console.log('id',options.options.id)
+
+const Resume = ( ) => {
     return (
         <>
             <div className='resume'>
                 <div className='firstLine'>
                     <div className='firstLine_content' >
-                        <div>
-                        {/* options.options.id */}
-                            <Content 
-                            // value={options.options?.value_content_resume}
-
-                            // onClick={() => {
-                            //     console.log(options);
-                            //     dispatch(changeId(options.options))
-                            // }}
-                             />
-                             {/* Date.parse(new Date())}} */}
-                            <Content options={{type:'Content',id:Date.parse(new Date()) }} />
-                        </div>
-                        <div>
+                        <div className='firstLine_content_content'>
                             <Content />
                             <Content />
                         </div>
-                        <div>
+                        <div className='firstLine_content_content'>
                             <Content />
                             <Content />
                         </div>
-                        <div>
+                        <div className='firstLine_content_content'>
+                            <Content />
+                            <Content />
+                        </div>
+                        <div className='firstLine_content_content'>
                             <Content />
                             <Content />
                         </div>
                     </div>
-                    <Picture />
+                    <img src="https://gw.alipayobjects.com/zos/antfincdn/LlvErxo8H9/photo-1503185912284-5271ff81b9a8.webp" alt="pre"  className='picture'/>
                 </div>
 
                 <div className='secondLine'>
