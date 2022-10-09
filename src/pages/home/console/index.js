@@ -14,17 +14,16 @@ import RadioConsole from '../../../components/radio/radioConsole'
 import TextConsole from '../../../components/text/textConsole'
 import DateConsole from '../../../components/datePicker/datePickerConsole'
 import LinkConsole from '../../../components/link/linkConsole'
-import TestData from '../../../showCode/showCode'
-import Telephone from '../../../components/telephone/telephoneConsole'
-import { useState } from 'react'
-import { Divider } from 'antd'
+import TelephoneConsole from '../../../components/telephone/telephoneConsole'
+
+import { Divider,} from 'antd'
 function Console() {
-  let [tab ,settab] = useState(true)
   const id = useSelector((state) => state.home.domId)
   const options = useSelector((state) => state.home.domOptions)
   const type = useSelector((state) => state.home.domType)
-  let option = (
-    <div>
+  return (
+    <div className="Console">
+      <Divider><h3>控制台</h3></Divider>
       {id === options.id && type === 'Card' && <CardConsole options={options} />}
       {id === options.id && type === 'Rate' && <RateConsole options={options} />}
       {id === options.id && type === 'Text' && <TextConsole options={options} />} 
@@ -39,19 +38,9 @@ function Console() {
       {id === options.id && type === 'Textarea' && <TextareaConsole options={options} />}
       {id === options.id && type === 'Checkbox' && <CheckboxConsole options={options} />}
       {id === options.id && type === 'Content' && <ContentConsole options={options} />}
-      {id === options.id && type === 'Checkbox' && <CheckboxConsole options={options} />}
-      {id === options.id && type === 'Telephone' && <Telephone options={options} />}
+      {id === options.id && type === 'Telephone' && <TelephoneConsole options={options} />}
+      {/* {id === options.id && type === 'Resume' && <ResumeConsole options={options} />} */}
     </div>
-  )
-
-  return (
-    <div className="Console" >
-      <Divider> <button onClick={() => {settab(tab = true)}}>控制台</button> </Divider> 
-       <Divider > <button onClick={() => {settab(tab = false)}}>代码</button> </Divider>
-      {tab ? option :<TestData/>}
-    </div>
-
-
   );
 }
 
