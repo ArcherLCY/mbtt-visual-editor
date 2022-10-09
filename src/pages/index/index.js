@@ -83,7 +83,7 @@ const App = () => {
             <div className='content'>
                 <Routes>
                     <Route path="template" element={<Template />}></Route>
-                    <Route path="index" element={<Index />}></Route>
+                    {/* <Route path="/index" element={<Index />}></Route> */}
                     <Route path="*" element={<Navigate to="index" />} />
                     <Route path="estab" element={<Establish />} />
                 </Routes>
