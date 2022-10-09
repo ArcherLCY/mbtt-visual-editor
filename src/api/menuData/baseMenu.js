@@ -15,20 +15,43 @@ export default [
         value: '按钮'   
     },
     {
-        type: 'Textarea',
-        text: '多行文本',
+        type: 'Rate',
+        text: '评分',
         icon: '',       
     },
     {
-        type: 'Input',
-        text: '输入框',
+        type: 'Link',
+        text: '链接',
         icon: '',       
+    },
+    {
+        type: 'Email',
+        text: '邮件',
+        icon: '',       
+    },
+    {
+        type: 'Telephone',
+        text: '电话',       
+    },
+    {
+        type: 'Text',
+        text: '文本',
+        icon: '',       
+    },
+    {
+        type: 'Date',
+        text: '日期',
+        icon: '',    
+        hasRange: 'DatePicker',
+        showTime: true, 
+        placeholder: '' ,
+        icon: '',
     },
     {
         type: 'Radio',
         text: '单选按钮',
         icon: '', 
-        inputValue: ['Apple', 'Pear', 'Orange']     
+        inputValue: [ "选项","选项"]      
     },
     {
         type: 'Checkbox',
@@ -37,25 +60,15 @@ export default [
         inputValue: ['Apple', 'Pear', 'Orange']     
     },
     {
-        type: 'Switch',
-        text: '开关',
-        icon: '',       
-    },
-    {
         type: 'Content',
-        text: '内容',
+        text: '单行文本',
         icon: '',       
     },
     {
-        type: 'Rate',
-        text: '比率',
+        type: 'Textarea',
+        text: '多行文本',
         icon: '',       
     },
-    {
-        type: 'Src',
-        text: '链接',
-        icon: '',       
-    },
-
+ 
     
 ]

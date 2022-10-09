@@ -1,10 +1,12 @@
-.default {
+/* .default {
     border-radius: 15px;
     margin-top: 30px;
 }
 
 .title {
     border-radius: 15px;
+    color:darkgray
+
 }
 
 .textarea_index TextArea {
@@ -28,10 +30,10 @@
 
 .textarea_indexConsole Input {
     border-radius: 10px;
-}
+} */
 
 .textarea_index {
-    display: flex;
-    flex-direction: row;
+    width: 400px;
+
 }
 

@@ -34,6 +34,4 @@ function App(options) {
 
   )
 }
-
-
 export default App;

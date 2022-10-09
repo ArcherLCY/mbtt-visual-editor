@@ -1,0 +1,16 @@
+.title {
+  height: 40px;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: '微软雅黑';
+}
+.formStyle{
+  font-weight: 700;
+  font-family: '微软雅黑'
+}
+.indexTips{
+  font-size: 10px;
+  font-weight: 500;
+  font-family: '微软雅黑';
+  color: #b4b4bc;
+}

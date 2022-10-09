@@ -5,7 +5,7 @@ import {changeId} from '../../pages/home/slice'
 
 function App(options) {
   const dispatch = useDispatch()
-  const { style, value, shape, href, target, size, disabled } = options.options;
+  const { style,width, value, shape, href, target, size, disabled } = options.options;
   return (
     <Button 
       type={style} 
@@ -13,6 +13,7 @@ function App(options) {
       href={href} 
       target={target} 
       size={size} 
+      style={{width:width||"25%"}}
       disabled={disabled} 
       onClick={() => { dispatch(changeId(options.options))}}>
         {value}

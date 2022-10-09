@@ -1,32 +1,42 @@
 // 显示在屏幕中间
-import {  Card } from 'antd';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { changeId } from '../../pages/home/slice'
-const { Meta } = Card;
-
+import {
+  Form,
+} from 'antd'
 function App(options) {
-  const dispatch = useDispatch();
-  const { height,width,marginLeft,marginRight,marginBottom,marginTop,zIndex,position,src,title } = options.options;
-
+  const dispatch = useDispatch()
   return (
-    <Card
-      size="small"
-      title={title}
-    >
-      <Meta description="这是描述" />
-      <img src={src} className={'picture'} onClick={() => { dispatch(changeId(options.options)) }}
+    <Form layout="vertical">
+      <Form.Item label={options.options?.title || "图片"}
+        required={options.options?.checked}
+        onClick={() => {
+          console.log(options);
+          dispatch(changeId(options.options))
+        }}
         style={{
-          height: height,
-          width: width,
-          marginLeft: marginLeft || 15,
-          marginRight: marginRight || 15,
-          marginBottom: marginBottom,
-          marginTop: marginTop || 15,
-          zIndex: zIndex,
-          position: position
-        }} />
-    </Card>
+          fontWeight: 700,
+          fontFamily: '微软雅黑',
+          fontSize: options.options?.fontSize,
+        }}>
+        <div className='picturIndex'>
+
+          <h4 className='indexTips'
+            onClick={() => {
+              console.log(options);
+              dispatch(changeId(options.options))
+            }}
+          >
+            {options.options?.tips || ""}
+          </h4>
+          <img src={options.options?.src} className={'picture'} onClick={() => { console.log(options); dispatch(changeId(options.options)) }}
+            style={{
+
+            }} />
+        </div>
+      </Form.Item>
+    </Form>
   )
 }
 

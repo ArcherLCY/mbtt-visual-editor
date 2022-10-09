@@ -15,6 +15,12 @@ function Menu() {
         e.dataTransfer.setData('option', JSON.stringify(option))
     }
 
+    
+    const getId = (option) => {
+        option.id = nanoid()
+        dispatch(increment(option))
+    }
+
     return (
         <div className={styles.Menu}>
             <h2>基础组件</h2>
@@ -24,9 +30,9 @@ function Menu() {
                         return (
                             <div className={styles.MenuItem} key={index}>
                                 <Button key={index}
-                                    onClick={() => {
-                                        item.id = nanoid() 
-                                        dispatch(increment(item))
+                                    onClick={() => { 
+                                        let temp = {...item}
+                                        getId(temp)
                                     }}
                                     draggable
                                     onDragStart={(e) => dragStart(e, item)}
@@ -46,9 +52,10 @@ function Menu() {
                             <div className={styles.MenuItem} key={index}>
                                 <Button key={index}
                                     onClick={() => {
-                                        item.id = nanoid()  
-                                        dispatch(increment(item))
+                                        let temp = {...item}
+                                        getId(temp)
                                     }}
+                                    draggable
                                     onDragStart={(e) => dragStart(e, item)}
                                 >
                                     {item.text}

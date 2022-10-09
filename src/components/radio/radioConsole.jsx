@@ -59,7 +59,6 @@ const App = (data) => {
                 placeholder="修改文字"
                 key={index}
               />
-
             )
           })
         }
