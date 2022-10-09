@@ -25,9 +25,7 @@ function Menu() {
                             <div className={styles.MenuItem} key={index}>
                                 <Button key={index}
                                     onClick={() => {
-                                        console.log(item);
                                         item.id = nanoid() 
-                                        console.log(item);
                                         dispatch(increment(item))
                                     }}
                                     draggable
@@ -44,7 +42,6 @@ function Menu() {
             <div className={styles.MenuList}>
                 {
                     mediaMenu.map((item, index) => {
-                        // const id = 
                         return (
                             <div className={styles.MenuItem} key={index}>
                                 <Button key={index}

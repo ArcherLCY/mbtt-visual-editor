@@ -28,16 +28,13 @@ export default [
         type: 'Radio',
         text: '单选按钮',
         icon: '', 
-        inputValue: [{
-            text: 'haha'
-        }, {
-            text: 'haha2'
-        }]      
+        inputValue: ['Apple', 'Pear', 'Orange']     
     },
     {
         type: 'Checkbox',
         text: '复选按钮',
-        icon: '',       
+        icon: '', 
+        inputValue: ['Apple', 'Pear', 'Orange']     
     },
     {
         type: 'Switch',
