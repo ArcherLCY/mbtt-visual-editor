@@ -25,7 +25,7 @@ function getItem(label, key, icon, children, type) {
 const items = [
     getItem('首页', 'index', <PieChartOutlined />),
     getItem('创建', 'sub1', <MailOutlined />, [
-        getItem('新建', 'home'),
+        getItem('新建', '/home'),
         getItem('模板', 'template'),
     ]),
 ];
@@ -85,7 +85,7 @@ const App = () => {
                     <Route path="template" element={<Template />}></Route>
                     <Route path="/index" element={<Index />}></Route>
                     <Route path="*" element={<Navigate to="index" />} />
-                    <Route path="estab" element={<Establish />} />
+                    <Route path="establish" element={<Establish />} />
                 </Routes>
             </div>
 

@@ -18,21 +18,22 @@ const App = () => {
     };
     return (
         <div className="Index">
-            <section class="sky">
-                <span class="start"></span>
-                <span class="start"></span>
-                <span class="start"></span>
-                <span class="start"></span>
-                <span class="start"></span>
-                <span class="start"></span>
-                <span class="start"></span>
-                <span class="start"></span>
-                <span class="start"></span>
-                <span class="start"></span>
-                <span class="start"></span>
-                <span class="start"></span>
-                <span class="start"></span>
-                <span class="start"></span>
+            <section className="sky">
+                <span className="start"></span>
+                <span className="start"></span>
+                <span className="start"></span>
+                <span className="start"></span>
+                <span className="start"></span>
+                <span className="start"></span>
+                <span className="start"></span>
+                <span className="start"></span>
+                <span className="start"></span>
+                <span className="start"></span>
+                <span className="start"></span>
+                <span className="start"></span>
+                <span className="start"></span>
+                <span className="start"></span>
+
             </section>
             <Card title="登录" bordered={false} style={{ width: 300, borderRadius: '10px' }}>
                 <Form
