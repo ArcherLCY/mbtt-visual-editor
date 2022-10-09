@@ -18,7 +18,7 @@ import TelephoneConsole from '../../../components/telephone/telephoneConsole'
 import ShowCode from '../../../showCode/showCode'
 import { useState } from 'react'
 
-import { Divider,} from 'antd'
+import { Divider,Button  } from 'antd'
 function Console() {
   let [showCode,setShowCode] = useState(false)
   const id = useSelector((state) => state.home.domId)
@@ -48,9 +48,12 @@ function Console() {
   )
   return (
     <div className="Console">
-      <Divider><button onClick={() => {(setShowCode(showCode = true))}}>控制台</button></Divider>
-      <Divider><button  onClick={() => {(setShowCode(showCode = false))}}>生成代码</button></Divider>
-      {showCode == true ? control : Showcode}
+      
+        <div className='haha'><Button onClick={() => {(setShowCode(showCode = true))}} shape='round'>控制台</Button>
+        <Button  onClick={() => {(setShowCode(showCode = false))}} shape='round'>生成代码</Button></div>
+      <div>
+        {showCode == true ? control : Showcode}
+      </div>
     </div>
   );
 }
