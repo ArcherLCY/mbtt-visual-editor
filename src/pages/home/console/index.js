@@ -15,16 +15,18 @@ import TextConsole from '../../../components/text/textConsole'
 import DateConsole from '../../../components/datePicker/datePickerConsole'
 import LinkConsole from '../../../components/link/linkConsole'
 import TelephoneConsole from '../../../components/telephone/telephoneConsole'
+import ShowCode from '../../../showCode/showCode'
+import { useState } from 'react'
 
 import { Divider,} from 'antd'
 function Console() {
+  let [showCode,setShowCode] = useState(false)
   const id = useSelector((state) => state.home.domId)
   const options = useSelector((state) => state.home.domOptions)
   const type = useSelector((state) => state.home.domType)
-  return (
-    <div className="Console">
-      <Divider><h3>控制台</h3></Divider>
-      {id === options.id && type === 'Card' && <CardConsole options={options} />}
+  let control = (
+    <>
+     {id === options.id && type === 'Card' && <CardConsole options={options} />}
       {id === options.id && type === 'Rate' && <RateConsole options={options} />}
       {id === options.id && type === 'Text' && <TextConsole options={options} />} 
       {id === options.id && type === 'Link' && <LinkConsole options={options} />} 
@@ -39,7 +41,16 @@ function Console() {
       {id === options.id && type === 'Checkbox' && <CheckboxConsole options={options} />}
       {id === options.id && type === 'Content' && <ContentConsole options={options} />}
       {id === options.id && type === 'Telephone' && <TelephoneConsole options={options} />}
-      {/* {id === options.id && type === 'Resume' && <ResumeConsole options={options} />} */}
+    </>
+  )
+  let Showcode = (
+    <ShowCode/>
+  )
+  return (
+    <div className="Console">
+      <Divider><button onClick={() => {(setShowCode(showCode = true))}}>控制台</button></Divider>
+      <Divider><button  onClick={() => {(setShowCode(showCode = false))}}>生成代码</button></Divider>
+      {showCode == true ? control : Showcode}
     </div>
   );
 }
