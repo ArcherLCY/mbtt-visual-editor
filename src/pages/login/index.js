@@ -8,7 +8,7 @@ const App = () => {
 
     const navigate = useNavigate()
 
-    const onFinish = (values) => {  
+    const onFinish = (values) => {
         navigate('/index')
         // alert('登录成功！！低代码引擎，创造你想创造的!');
     };
@@ -18,6 +18,22 @@ const App = () => {
     };
     return (
         <div className="Index">
+            <section class="sky">
+                <span class="start"></span>
+                <span class="start"></span>
+                <span class="start"></span>
+                <span class="start"></span>
+                <span class="start"></span>
+                <span class="start"></span>
+                <span class="start"></span>
+                <span class="start"></span>
+                <span class="start"></span>
+                <span class="start"></span>
+                <span class="start"></span>
+                <span class="start"></span>
+                <span class="start"></span>
+                <span class="start"></span>
+            </section>
             <Card title="登录" bordered={false} style={{ width: 300, borderRadius: '10px' }}>
                 <Form
                     name="basic"
