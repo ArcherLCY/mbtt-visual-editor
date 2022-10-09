@@ -11,11 +11,11 @@ function Menu() {
 
     // 开启拖拽
     const dragStart = (e, option) => {
+        console.log(option,'213');
         option.id = nanoid()
         e.dataTransfer.setData('option', JSON.stringify(option))
     }
-
-    
+ 
     const getId = (option) => {
         option.id = nanoid()
         dispatch(increment(option))
@@ -48,7 +48,6 @@ function Menu() {
             <div className={styles.MenuList}>
                 {
                     mediaMenu.map((item, index) => {
-                        // const id = 
                         return (
                             <div className={styles.MenuItem} key={index}>
                                 <Button key={index}

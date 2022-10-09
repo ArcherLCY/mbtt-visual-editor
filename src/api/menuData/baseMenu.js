@@ -42,8 +42,7 @@ export default [
     {
         type: 'Checkbox',
         text: '复选按钮',
-        icon: '',    
-        inputValue:['Apple','Pear','Orange']   
+        icon: '',       
     },
     {
         type: 'Content',

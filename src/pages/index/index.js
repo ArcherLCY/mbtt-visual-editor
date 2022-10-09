@@ -30,7 +30,26 @@ const items = [
     ]),
 ];
 function getFun() {
-    get('http://localhost:8080/commodity/findAll?page=1', {}).then(res => {
+    // http://localhost:8080
+    post('/api/mform/addMForm', {
+        id: "123112",
+        name: "test",
+        rules: {
+            username: "admin",
+            password: "123456"
+        },
+        data: [
+            {code: 1}
+        ]
+    }).then(res => {
+        console.log(res);
+    })
+}
+
+function findOne() {
+    get('/api/mform/findOne', {
+        id: "123112"
+    }).then(res => {
         console.log(res);
     })
 }
@@ -44,13 +63,13 @@ const App = () => {
         setCurrent(e.key);
         navigate(e.key)
     };
-    getFun()
+    // getFun()
     return (
         <>
             <div
                 className='leftMenu'
             >
-                <h3>visual-editor</h3>
+                <h3 onClick={()=>findOne()}>visual-editor</h3>
                 <Menu
                     defaultSelectedKeys={['index']}
                     defaultOpenKeys={['sub1']}
@@ -69,6 +88,7 @@ const App = () => {
                     <Route path="estab" element={<Establish />} />
                 </Routes>
             </div>
+
         </>
     );
 };

@@ -4,13 +4,11 @@ import {
   Form,
   Checkbox,
   Input,
-  Button,
+  Button
 } from 'antd';
 import { FontColorsOutlined, } from '@ant-design/icons';
 
-// 设置一个计数器
-let count = 0;
-
+const count = 0
 const App = (data) => {
 
   let options = { ...data.options }
@@ -54,27 +52,26 @@ const App = (data) => {
           />
         </Form.Item>
 
-        <Form.Item label="选项文本">
-          {
-            copyText.map((item, index) => {
-              return (
-                <Input
-                  onChange={(e) => {
-                    console.log('copyText', copyText);
-                    console.log('index', index);
-                    copyText[index] = e.target.value;
-                    options.inputValue = [...copyText];
-                    dispatch(changeOptions(options));
-                  }}
-                  placeholder="修改文字"
-                  key={index}
-                />
-              )
-            })
-          }
-          <Button onClick={addInput}>添加</Button>
-          {/* <Button onClick={confirmValue}>确认</Button> */}
-        </Form.Item>
+      <Form.Item label="单选框文本">
+        {
+          copyText.map((item, index) => {
+            return (
+              <Input
+                onChange={(e) => {
+                  copyText[index] = e.target.value;
+                  options.inputValue = [...copyText];
+                  dispatch(changeOptions(options));
+                }}
+                placeholder="修改文字"
+                key={index}
+                style={{borderRadius: '5px'}}
+              />
+            )
+          })
+        }
+        <Button onClick={addInput}>添加</Button>
+        {/* <Button onClick={confirmValue}>确认</Button> */}
+      </Form.Item>
 
 
 
@@ -104,18 +101,7 @@ const App = (data) => {
         }}>自动获取焦点</Checkbox>
       </Form.Item>
 
-      {/* <Form.Item>
-        <Checkbox onChange={(e) => {
-          options.defaultChecked = e.target.checked
-          dispatch(changeOptions(options))
-        }}>指定当前是否选中</Checkbox>
-      </Form.Item> */}
-
-      <Form.Item
-        style={{
-          fontFamily: '微软雅黑',
-        }}
-      >
+      <Form.Item>
         <Checkbox onChange={(e) => {
           options.disabled = e.target.checked
           dispatch(changeOptions(options))
