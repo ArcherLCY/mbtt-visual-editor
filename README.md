@@ -32,3 +32,8 @@ https://github.com/ArcherLCY/mbtt-visual-editor-node.git
 | 钟国政 | [victinSever](https://github.com/victinSever) |
 | 程新格 | [CXGBro](https://github.com/CXGBro)           |
 
+# 安装包
+
+链接：https://pan.baidu.com/s/18JifDlKyIO0KwiDsskRD5g 
+提取码：vk2g 
+--来自百度网盘超级会员V1的分享
