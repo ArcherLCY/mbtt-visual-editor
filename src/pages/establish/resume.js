@@ -1,6 +1,6 @@
 import React from 'react'
 import Resume from '../../components/resume'
-import ClockIn from '../home/model/clockIn/index'
+import ClockIn from './clockIn/index'
 import { useLocation } from 'react-router'
 
 const App = () => {
