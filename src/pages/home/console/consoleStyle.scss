@@ -4,10 +4,18 @@
     background: #fff;
     overflow-y: scroll;
     padding: 10px;
+    
+
     h3{
         font-weight: bold;
     }
     padding: 10px;
+
+    .haha{
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 20px;
+    }
 }   
 
 .Console .Consoole-title {
@@ -15,4 +23,5 @@
     text-align: center;
     line-height: 40px;
     font-weight: bold;
+  
 }
