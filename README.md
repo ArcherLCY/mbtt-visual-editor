@@ -8,7 +8,7 @@
 项目部署在Github Pages，项目地址：https://archerlcy.github.io/mbtt-visual-editor/
 
 # 技术选型
-React, Redux, MongoDB, antd
+React, Redux, MongoDB, antd, Koa
 
 # 项目命令
 
